@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+  <head>
+     
+    <meta charset="UTF-8">
+    <title>PAT (Advanced Level) Practice 1005 Spell It Right - Wespc</title>
+    <link rel="shortcut icon" href="/static/img/icon.png">
+    <link rel="icon" href="/static/img/icon.png" sizes="192x192"/>
+    
+<link rel="stylesheet" href="/static/kico.css">
+<link rel="stylesheet" href="/static/hingle.css">
+
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/FortAwesome/Font-Awesome/css/font-awesome.min.css">
+
+    <meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1"/>
+    <meta property="og:site_name" content="Wespc">
+    <meta property="og:title" content="PAT (Advanced Level) Practice 1005 Spell It Right"/>
+    
+    <style>body:before{ content: ''; background-image: url(https://api.paugram.com/wallpaper?source=gh) }</style>
+    
+<meta name="generator" content="Hexo 5.4.1"></head>
+
+  <body>
+    <header>
+    <div class="head-title">
+        <h4>Wespc</h4>
+    </div>
+    <div class="head-action">
+        <div class="toggle-btn"></div>
+        <div class="light-btn"></div>
+        <div class="search-btn"></div>
+    </div>
+    <form class="head-search" method="post">
+        <input type="text" name="s" placeholder="搜索什么？">
+    </form>
+    <nav class="head-menu">
+        <a href="/">首页</a>
+        <div class="has-child">
+            <a>标签</a>
+            <div class="sub-menu">
+                <a class="tag-link" href="/tags/DFS/" rel="tag">DFS</a><a class="tag-link" href="/tags/PAT/" rel="tag">PAT</a><a class="tag-link" href="/tags/PAT%E7%94%B2%E7%BA%A7/" rel="tag">PAT甲级</a><a class="tag-link" href="/tags/dfs/" rel="tag">dfs</a><a class="tag-link" href="/tags/queue/" rel="tag">queue</a><a class="tag-link" href="/tags/%E5%85%AB%E7%9A%87%E5%90%8E/" rel="tag">八皇后</a><a class="tag-link" href="/tags/%E5%88%BA%E5%AE%A2%E4%BF%A1%E6%9D%A1/" rel="tag">刺客信条</a><a class="tag-link" href="/tags/%E5%9B%9E%E6%96%87/" rel="tag">回文</a><a class="tag-link" href="/tags/%E5%9B%BE/" rel="tag">图</a><a class="tag-link" href="/tags/%E5%A4%A7%E5%AD%A6%E6%A0%A1%E5%9B%AD/" rel="tag">大学校园</a><a class="tag-link" href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/" rel="tag">字符串</a><a class="tag-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="tag">数据结构</a><a class="tag-link" href="/tags/%E6%97%A5%E5%B8%B8/" rel="tag">日常</a><a class="tag-link" href="/tags/%E6%9C%80%E7%9F%AD%E8%B7%AF/" rel="tag">最短路</a><a class="tag-link" href="/tags/%E6%9D%A8%E8%BE%89%E4%B8%89%E8%A7%92/" rel="tag">杨辉三角</a><a class="tag-link" href="/tags/%E6%A0%91%E7%9A%84%E5%B1%82%E9%81%8D%E5%8E%86/" rel="tag">树的层遍历</a><a class="tag-link" href="/tags/%E6%B8%B8%E6%88%8F/" rel="tag">游戏</a><a class="tag-link" href="/tags/%E7%AE%97%E6%B3%95%E7%AB%9E%E8%B5%9B/" rel="tag">算法竞赛</a><a class="tag-link" href="/tags/%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/" rel="tag">背包问题</a><a class="tag-link" href="/tags/%E8%93%9D%E6%A1%A5%E6%9D%AF/" rel="tag">蓝桥杯</a><a class="tag-link" href="/tags/%E8%A7%86%E9%A2%91/" rel="tag">视频</a><a class="tag-link" href="/tags/%E8%AF%BB%E4%B9%A6/" rel="tag">读书</a><a class="tag-link" href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" rel="tag">读书笔记</a><a class="tag-link" href="/tags/%E9%98%9F/" rel="tag">队</a><a class="tag-link" href="/tags/%E9%9A%8F%E7%AC%94/" rel="tag">随笔</a>
+            </div>
+        </div>
+        
+            <a href="/aboutme">关于我</a>
+        
+            <a href="/friends">朋友们</a>
+        
+    </nav>
+</header>
+
+    <main>
+    <div class="wrap min">
+        <section class="post-title">
+            <h2>PAT (Advanced Level) Practice 1005 Spell It Right</h2>
+            <div class="post-meta">
+                <time class="date">2022.04.14 18:50:35</time>
+            
+            </div>
+        </section>
+        <article class="post-content">
+            <blockquote>由于量子力学测不准原理,我只能大概告诉你,这篇文章创建于13±1.0天前。当然你数学好也可以自己算</blockquote>
+        
+            <p>Given a non-negative integer <strong>N</strong>, your task is to compute the sum of all the digits of <strong>N</strong>, and output every digit of the sum in English.</p>
+<p><em>Input Specification:</em></p>
+<p>Each input file contains one test case. Each case occupies one line which contains an <strong>N</strong> (≤10^100).</p>
+<p><em>Output Specification:</em></p>
+<p>For each test case, output in one line the digits of the sum in English words. There must be one space between two consecutive words, but no extra space at the end of a line.</p>
+<p><em>Sample Input:</em></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">12345</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><em>Sample Output:</em></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">one five</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><em>Analysis</em><br>高精度问题（maybe？）<br>数字范围达到10^100，超出数据范围，需要用字符串处理，单词拼写不要拼错了就没问题啦！</p>
+<p><em>Code</em></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">void</span>)</span>&#123;</span><br><span class="line">    <span class="type">int</span> sum = <span class="number">0</span>;</span><br><span class="line">    <span class="type">char</span> s[<span class="number">115</span>];</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%s&quot;</span>,s);              <span class="comment">//读入数字</span></span><br><span class="line">    <span class="type">int</span> len = <span class="built_in">strlen</span>(s);</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>;i&lt;len;i++)&#123;</span><br><span class="line">        sum+=s[i] - <span class="string">&#x27;0&#x27;</span>;        <span class="comment">//获得每一位数字累加和</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="type">char</span> res[<span class="number">10</span>];               </span><br><span class="line">    <span class="type">char</span> alphabet[<span class="number">13</span>][<span class="number">10</span>] =&#123;<span class="string">&quot;zero&quot;</span>,<span class="string">&quot;one&quot;</span>,<span class="string">&quot;two&quot;</span>,<span class="string">&quot;three&quot;</span>,<span class="string">&quot;four&quot;</span>,<span class="string">&quot;five&quot;</span>,<span class="string">&quot;six&quot;</span>,<span class="string">&quot;seven&quot;</span>,<span class="string">&quot;eight&quot;</span>,<span class="string">&quot;nine&quot;</span>&#125;;    <span class="comment">//英文字母串</span></span><br><span class="line">    <span class="built_in">sprintf</span>(res,<span class="string">&quot;%d&quot;</span>,sum);      <span class="comment">//累加和写入res串</span></span><br><span class="line">    len = <span class="built_in">strlen</span>(res);</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>;i&lt;len;i++)&#123;   <span class="comment">//从头输出每个数字对应英文</span></span><br><span class="line">        <span class="built_in">printf</span>(i == <span class="number">0</span>?<span class="string">&quot;%s&quot;</span>:<span class="string">&quot; %s&quot;</span>,alphabet[res[i] - <span class="string">&#x27;0&#x27;</span>]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">putchar</span>(<span class="string">&#x27;\n&#x27;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+        </article>
+        <section class="post-near">
+            <ul>
+                
+                    <li>上一篇: <a href="/2022/04/15/test-7/">PAT (Advanced Level) Practice 1006 Sign In and Sign Out</a></li>
+                
+                
+                    <li>下一篇: <a href="/2022/04/14/text/">雨后江南</a></li>
+                
+            </ul>
+        </section>
+        
+            <section class="post-tags">
+            <a class="-none-link" href="/tags/PAT/" rel="tag">PAT</a>
+            </section>
+        
+    
+        <section class="post-author">
+        
+            <figure class="author-avatar">
+                <img src="https://img-blog.csdnimg.cn/81f52c090b754321acfe1bf4d9f04110.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAcHVtcGtpbl9saW9u,size_18,color_FFFFFF,t_70,g_se,x_16" alt="wespc" />
+            </figure>
+        
+            <div class="author-info">
+                <h4>wespc</h4>
+                <p>我是个还在上学的菜鸡，对社会充满恐惧，希望以后还是不要离开学校了···（卑微）</p>
+            </div>
+        </section>
+    
+    </div>
+</main>
+
+    <footer>
+    <div class="buttons">
+        <a class="to-top" href="#"></a>
+    </div>
+    <div class="wrap min">
+        <section class="widget">
+            <div class="row">
+                <div class="col-m-4">
+                    <h3 class="title-recent">最新文章：</h3>
+                    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2022/04/27/test-20/">1019 General Palindromic Number PAT (Advanced Level) Practice</a></li><li class="post-list-item"><a class="post-list-link" href="/2022/04/27/suibi-4/">午夜猎食行动</a></li><li class="post-list-item"><a class="post-list-link" href="/2022/04/26/test-19/">1018 Public Bike Management PAT (Advanced Level) Practice</a></li><li class="post-list-item"><a class="post-list-link" href="/2022/04/25/suibi-3/">我来签到啦♪( ´▽｀)</a></li><li class="post-list-item"><a class="post-list-link" href="/2022/04/24/suibi-2/">《关于这几天没做题都在摆烂这件事》</a></li><li class="post-list-item"><a class="post-list-link" href="/2022/04/24/test-18/">1017 Queueing at Bank PAT (Advanced Level) Practice</a></li></ul>
+                </div>
+                <div class="col-m-4">
+                    <h3 class="title-date">时光机：</h3>
+                    <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a></li></ul>
+                </div>
+                <div class="col-m-4">
+                    <h3 class="title-tags">标签云：</h3>
+                    <a href="/tags/DFS/" style="font-size: 10px;">DFS</a> <a href="/tags/PAT/" style="font-size: 16px;">PAT</a> <a href="/tags/PAT%E7%94%B2%E7%BA%A7/" style="font-size: 20px;">PAT甲级</a> <a href="/tags/dfs/" style="font-size: 10px;">dfs</a> <a href="/tags/queue/" style="font-size: 10px;">queue</a> <a href="/tags/%E5%85%AB%E7%9A%87%E5%90%8E/" style="font-size: 10px;">八皇后</a> <a href="/tags/%E5%88%BA%E5%AE%A2%E4%BF%A1%E6%9D%A1/" style="font-size: 10px;">刺客信条</a> <a href="/tags/%E5%9B%9E%E6%96%87/" style="font-size: 10px;">回文</a> <a href="/tags/%E5%9B%BE/" style="font-size: 12px;">图</a> <a href="/tags/%E5%A4%A7%E5%AD%A6%E6%A0%A1%E5%9B%AD/" style="font-size: 10px;">大学校园</a> <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/" style="font-size: 10px;">字符串</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 10px;">数据结构</a> <a href="/tags/%E6%97%A5%E5%B8%B8/" style="font-size: 10px;">日常</a> <a href="/tags/%E6%9C%80%E7%9F%AD%E8%B7%AF/" style="font-size: 14px;">最短路</a> <a href="/tags/%E6%9D%A8%E8%BE%89%E4%B8%89%E8%A7%92/" style="font-size: 10px;">杨辉三角</a> <a href="/tags/%E6%A0%91%E7%9A%84%E5%B1%82%E9%81%8D%E5%8E%86/" style="font-size: 10px;">树的层遍历</a> <a href="/tags/%E6%B8%B8%E6%88%8F/" style="font-size: 10px;">游戏</a> <a href="/tags/%E7%AE%97%E6%B3%95%E7%AB%9E%E8%B5%9B/" style="font-size: 18px;">算法竞赛</a> <a href="/tags/%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/" style="font-size: 10px;">背包问题</a> <a href="/tags/%E8%93%9D%E6%A1%A5%E6%9D%AF/" style="font-size: 18px;">蓝桥杯</a> <a href="/tags/%E8%A7%86%E9%A2%91/" style="font-size: 10px;">视频</a> <a href="/tags/%E8%AF%BB%E4%B9%A6/" style="font-size: 10px;">读书</a> <a href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" style="font-size: 12px;">读书笔记</a> <a href="/tags/%E9%98%9F/" style="font-size: 10px;">队</a> <a href="/tags/%E9%9A%8F%E7%AC%94/" style="font-size: 10px;">随笔</a>
+                </div>
+            </div>
+        </section>
+        <section class="sub-footer">
+            <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span >你是第 <span id="busuanzi_value_site_uv"></span>个来看我的喵!!! \(≧▽≦)/</span>
+            <p>© 2022 <a href="/">Wespc</a>. All Rights Reserved. Theme By <a href="https://github.com/Dreamer-Paul/Hingle" target="_blank" rel="nofollow">Hingle</a>.</p>
+        </section>
+    </div>
+</footer>
+
+
+<script src="/static/kico.js"></script>
+<script src="/static/hingle.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<script>var hingle = new Paul_Hingle( {"copyright":true,"night":true});</script>
+
+
+  <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>

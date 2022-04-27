@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+  <head>
+     
+    <meta charset="UTF-8">
+    <title>1019 General Palindromic Number PAT (Advanced Level) Practice - Wespc</title>
+    <link rel="shortcut icon" href="/static/img/icon.png">
+    <link rel="icon" href="/static/img/icon.png" sizes="192x192"/>
+    
+<link rel="stylesheet" href="/static/kico.css">
+<link rel="stylesheet" href="/static/hingle.css">
+
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/FortAwesome/Font-Awesome/css/font-awesome.min.css">
+
+    <meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1"/>
+    <meta property="og:site_name" content="Wespc">
+    <meta property="og:title" content="1019 General Palindromic Number PAT (Advanced Level) Practice"/>
+    
+    <style>body:before{ content: ''; background-image: url(https://api.paugram.com/wallpaper?source=gh) }</style>
+    
+<meta name="generator" content="Hexo 5.4.1"></head>
+
+  <body>
+    <header>
+    <div class="head-title">
+        <h4>Wespc</h4>
+    </div>
+    <div class="head-action">
+        <div class="toggle-btn"></div>
+        <div class="light-btn"></div>
+        <div class="search-btn"></div>
+    </div>
+    <form class="head-search" method="post">
+        <input type="text" name="s" placeholder="搜索什么？">
+    </form>
+    <nav class="head-menu">
+        <a href="/">首页</a>
+        <div class="has-child">
+            <a>标签</a>
+            <div class="sub-menu">
+                <a class="tag-link" href="/tags/DFS/" rel="tag">DFS</a><a class="tag-link" href="/tags/PAT/" rel="tag">PAT</a><a class="tag-link" href="/tags/PAT%E7%94%B2%E7%BA%A7/" rel="tag">PAT甲级</a><a class="tag-link" href="/tags/dfs/" rel="tag">dfs</a><a class="tag-link" href="/tags/queue/" rel="tag">queue</a><a class="tag-link" href="/tags/%E5%85%AB%E7%9A%87%E5%90%8E/" rel="tag">八皇后</a><a class="tag-link" href="/tags/%E5%88%BA%E5%AE%A2%E4%BF%A1%E6%9D%A1/" rel="tag">刺客信条</a><a class="tag-link" href="/tags/%E5%9B%9E%E6%96%87/" rel="tag">回文</a><a class="tag-link" href="/tags/%E5%9B%BE/" rel="tag">图</a><a class="tag-link" href="/tags/%E5%A4%A7%E5%AD%A6%E6%A0%A1%E5%9B%AD/" rel="tag">大学校园</a><a class="tag-link" href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/" rel="tag">字符串</a><a class="tag-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="tag">数据结构</a><a class="tag-link" href="/tags/%E6%97%A5%E5%B8%B8/" rel="tag">日常</a><a class="tag-link" href="/tags/%E6%9C%80%E7%9F%AD%E8%B7%AF/" rel="tag">最短路</a><a class="tag-link" href="/tags/%E6%9D%A8%E8%BE%89%E4%B8%89%E8%A7%92/" rel="tag">杨辉三角</a><a class="tag-link" href="/tags/%E6%A0%91%E7%9A%84%E5%B1%82%E9%81%8D%E5%8E%86/" rel="tag">树的层遍历</a><a class="tag-link" href="/tags/%E6%B8%B8%E6%88%8F/" rel="tag">游戏</a><a class="tag-link" href="/tags/%E7%AE%97%E6%B3%95%E7%AB%9E%E8%B5%9B/" rel="tag">算法竞赛</a><a class="tag-link" href="/tags/%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/" rel="tag">背包问题</a><a class="tag-link" href="/tags/%E8%93%9D%E6%A1%A5%E6%9D%AF/" rel="tag">蓝桥杯</a><a class="tag-link" href="/tags/%E8%A7%86%E9%A2%91/" rel="tag">视频</a><a class="tag-link" href="/tags/%E8%AF%BB%E4%B9%A6/" rel="tag">读书</a><a class="tag-link" href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" rel="tag">读书笔记</a><a class="tag-link" href="/tags/%E9%98%9F/" rel="tag">队</a><a class="tag-link" href="/tags/%E9%9A%8F%E7%AC%94/" rel="tag">随笔</a>
+            </div>
+        </div>
+        
+            <a href="/aboutme">关于我</a>
+        
+            <a href="/friends">朋友们</a>
+        
+    </nav>
+</header>
+
+    <main>
+    <div class="wrap min">
+        <section class="post-title">
+            <h2>1019 General Palindromic Number PAT (Advanced Level) Practice</h2>
+            <div class="post-meta">
+                <time class="date">2022.04.27 20:37:48</time>
+            
+            </div>
+        </section>
+        <article class="post-content">
+            <blockquote>由于量子力学测不准原理,我只能大概告诉你,这篇文章创建于0±1.0天前。当然你数学好也可以自己算</blockquote>
+        
+            <p>A number that will be the same when it is written forwards or backwards is known as a <strong>Palindromic Number</strong>. For example, 1234321 is a palindromic number. All single digit numbers are palindromic numbers.</p>
+<p>Although palindromic numbers are most often considered in the decimal system, the concept of palindromicity can be applied to the natural numbers in any numeral system. Consider a number <strong>N</strong>&gt;0 in base <strong>b</strong>≥2, where it is written in standard notation with <strong>k</strong>+1 digits <strong>ai</strong> as ∑<strong>i</strong>&#x3D;0<strong>k</strong>(<strong>aibi</strong>). Here, as usual, 0≤<strong>ai</strong>&lt;<strong>b</strong> for all <strong>i</strong> and <strong>ak</strong> is non-zero. Then <strong>N</strong> is palindromic if and only if <strong>ai</strong>&#x3D;<strong>ak</strong>−<strong>i</strong> for all <strong>i</strong>. Zero is written 0 in any base and is also palindromic by definition.</p>
+<p>Given any positive decimal integer <strong>N</strong> and a base <strong>b</strong>, you are supposed to tell if <strong>N</strong> is a palindromic number in base <strong>b</strong>.</p>
+<p><em>Input Specification:</em></p>
+<p>Each input file contains one test case. Each case consists of two positive numbers <strong>N</strong> and <strong>b</strong>, where 0&lt;<strong>N</strong>≤109 is the decimal number and 2≤<strong>b</strong>≤109 is the base. The numbers are separated by a space.</p>
+<p><em>Output Specification:</em></p>
+<p>For each test case, first print in one line <code>Yes</code> if <strong>N</strong> is a palindromic number in base <strong>b</strong>, or <code>No</code> if not. Then in the next line, print <strong>N</strong> as the number in base <strong>b</strong> in the form “<strong>ak</strong> <strong>ak</strong>−1 … <strong>a</strong>0”. Notice that there must be no extra space at the end of output.</p>
+<p><em>Sample Input:</em></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">27 2</span><br></pre></td></tr></table></figure>
+
+<p><em>Sample Output:</em></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Yes</span><br><span class="line">1 1 0 1 1</span><br></pre></td></tr></table></figure>
+
+<p><em>Sample Input:</em></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">121 5</span><br></pre></td></tr></table></figure>
+
+<p><em>Sample Output:</em></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">No</span><br><span class="line">4 4 1</span><br></pre></td></tr></table></figure>
+
+<p><em>Analysis</em><br>一道简单的回文数，把n进行进制转换并存在数组中，用头尾指针逐一比较，while退出的条件是head &lt; tail，用flag作为标记，把刚刚的数组反转并输出，就ac了～<br>如果这个数是0直接yes退出，因为0 无法进入循环</p>
+<p><em>Code</em></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">int</span> s[<span class="number">100</span>];</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="type">long</span> <span class="type">long</span> n,b;</span><br><span class="line">    cin &gt;&gt; n &gt;&gt; b;</span><br><span class="line">    <span class="keyword">if</span>(n == <span class="number">0</span>)&#123;</span><br><span class="line">        cout &lt;&lt; <span class="string">&quot;Yes\n&quot;</span> &lt;&lt; <span class="number">0</span> &lt;&lt;endl;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="type">int</span> i = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>( n &gt; <span class="number">0</span>)&#123;</span><br><span class="line">        s[i++] = n%b;</span><br><span class="line">        n/=b;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="type">bool</span> flag = <span class="literal">true</span>;</span><br><span class="line">    <span class="type">int</span> head = <span class="number">0</span>,tail = i<span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">while</span>( head &lt;= tail)&#123;</span><br><span class="line">        <span class="keyword">if</span>(s[head++] != s[tail--])&#123;flag = <span class="literal">false</span>;<span class="keyword">break</span>;&#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">reverse</span>(s,s + i);</span><br><span class="line">    <span class="built_in">printf</span>(flag ? <span class="string">&quot;Yes\n&quot;</span> : <span class="string">&quot;No\n&quot;</span>);</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">0</span>;j &lt;i;j++ )&#123;</span><br><span class="line">        <span class="built_in">printf</span>( j==<span class="number">0</span>?<span class="string">&quot;%d&quot;</span>:<span class="string">&quot; %d&quot;</span>,s[j]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+        </article>
+        <section class="post-near">
+            <ul>
+                
+                    <li>上一篇: 看完啦 (つд⊂)</li>
+                
+                
+                    <li>下一篇: <a href="/2022/04/27/suibi-4/">午夜猎食行动</a></li>
+                
+            </ul>
+        </section>
+        
+            <section class="post-tags">
+            <a class="-none-link" href="/tags/PAT%E7%94%B2%E7%BA%A7/" rel="tag">PAT甲级</a>
+            </section>
+        
+    
+        <section class="post-author">
+        
+            <figure class="author-avatar">
+                <img src="https://img-blog.csdnimg.cn/81f52c090b754321acfe1bf4d9f04110.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAcHVtcGtpbl9saW9u,size_18,color_FFFFFF,t_70,g_se,x_16" alt="wespc" />
+            </figure>
+        
+            <div class="author-info">
+                <h4>wespc</h4>
+                <p>我是个还在上学的菜鸡，对社会充满恐惧，希望以后还是不要离开学校了···（卑微）</p>
+            </div>
+        </section>
+    
+    </div>
+</main>
+
+    <footer>
+    <div class="buttons">
+        <a class="to-top" href="#"></a>
+    </div>
+    <div class="wrap min">
+        <section class="widget">
+            <div class="row">
+                <div class="col-m-4">
+                    <h3 class="title-recent">最新文章：</h3>
+                    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2022/04/27/test-20/">1019 General Palindromic Number PAT (Advanced Level) Practice</a></li><li class="post-list-item"><a class="post-list-link" href="/2022/04/27/suibi-4/">午夜猎食行动</a></li><li class="post-list-item"><a class="post-list-link" href="/2022/04/26/test-19/">1018 Public Bike Management PAT (Advanced Level) Practice</a></li><li class="post-list-item"><a class="post-list-link" href="/2022/04/25/suibi-3/">我来签到啦♪( ´▽｀)</a></li><li class="post-list-item"><a class="post-list-link" href="/2022/04/24/suibi-2/">《关于这几天没做题都在摆烂这件事》</a></li><li class="post-list-item"><a class="post-list-link" href="/2022/04/24/test-18/">1017 Queueing at Bank PAT (Advanced Level) Practice</a></li></ul>
+                </div>
+                <div class="col-m-4">
+                    <h3 class="title-date">时光机：</h3>
+                    <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a></li></ul>
+                </div>
+                <div class="col-m-4">
+                    <h3 class="title-tags">标签云：</h3>
+                    <a href="/tags/DFS/" style="font-size: 10px;">DFS</a> <a href="/tags/PAT/" style="font-size: 16px;">PAT</a> <a href="/tags/PAT%E7%94%B2%E7%BA%A7/" style="font-size: 20px;">PAT甲级</a> <a href="/tags/dfs/" style="font-size: 10px;">dfs</a> <a href="/tags/queue/" style="font-size: 10px;">queue</a> <a href="/tags/%E5%85%AB%E7%9A%87%E5%90%8E/" style="font-size: 10px;">八皇后</a> <a href="/tags/%E5%88%BA%E5%AE%A2%E4%BF%A1%E6%9D%A1/" style="font-size: 10px;">刺客信条</a> <a href="/tags/%E5%9B%9E%E6%96%87/" style="font-size: 10px;">回文</a> <a href="/tags/%E5%9B%BE/" style="font-size: 12px;">图</a> <a href="/tags/%E5%A4%A7%E5%AD%A6%E6%A0%A1%E5%9B%AD/" style="font-size: 10px;">大学校园</a> <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/" style="font-size: 10px;">字符串</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 10px;">数据结构</a> <a href="/tags/%E6%97%A5%E5%B8%B8/" style="font-size: 10px;">日常</a> <a href="/tags/%E6%9C%80%E7%9F%AD%E8%B7%AF/" style="font-size: 14px;">最短路</a> <a href="/tags/%E6%9D%A8%E8%BE%89%E4%B8%89%E8%A7%92/" style="font-size: 10px;">杨辉三角</a> <a href="/tags/%E6%A0%91%E7%9A%84%E5%B1%82%E9%81%8D%E5%8E%86/" style="font-size: 10px;">树的层遍历</a> <a href="/tags/%E6%B8%B8%E6%88%8F/" style="font-size: 10px;">游戏</a> <a href="/tags/%E7%AE%97%E6%B3%95%E7%AB%9E%E8%B5%9B/" style="font-size: 18px;">算法竞赛</a> <a href="/tags/%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/" style="font-size: 10px;">背包问题</a> <a href="/tags/%E8%93%9D%E6%A1%A5%E6%9D%AF/" style="font-size: 18px;">蓝桥杯</a> <a href="/tags/%E8%A7%86%E9%A2%91/" style="font-size: 10px;">视频</a> <a href="/tags/%E8%AF%BB%E4%B9%A6/" style="font-size: 10px;">读书</a> <a href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" style="font-size: 12px;">读书笔记</a> <a href="/tags/%E9%98%9F/" style="font-size: 10px;">队</a> <a href="/tags/%E9%9A%8F%E7%AC%94/" style="font-size: 10px;">随笔</a>
+                </div>
+            </div>
+        </section>
+        <section class="sub-footer">
+            <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span >你是第 <span id="busuanzi_value_site_uv"></span>个来看我的喵!!! \(≧▽≦)/</span>
+            <p>© 2022 <a href="/">Wespc</a>. All Rights Reserved. Theme By <a href="https://github.com/Dreamer-Paul/Hingle" target="_blank" rel="nofollow">Hingle</a>.</p>
+        </section>
+    </div>
+</footer>
+
+
+<script src="/static/kico.js"></script>
+<script src="/static/hingle.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<script>var hingle = new Paul_Hingle( {"copyright":true,"night":true});</script>
+
+
+  <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>

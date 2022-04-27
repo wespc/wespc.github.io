@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+  <head>
+     
+    <meta charset="UTF-8">
+    <title>路径 - Wespc</title>
+    <link rel="shortcut icon" href="/static/img/icon.png">
+    <link rel="icon" href="/static/img/icon.png" sizes="192x192"/>
+    
+<link rel="stylesheet" href="/static/kico.css">
+<link rel="stylesheet" href="/static/hingle.css">
+
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/FortAwesome/Font-Awesome/css/font-awesome.min.css">
+
+    <meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1"/>
+    <meta property="og:site_name" content="Wespc">
+    <meta property="og:title" content="路径"/>
+    
+    <style>body:before{ content: ''; background-image: url(https://api.paugram.com/wallpaper?source=gh) }</style>
+    
+<meta name="generator" content="Hexo 5.4.1"></head>
+
+  <body>
+    <header>
+    <div class="head-title">
+        <h4>Wespc</h4>
+    </div>
+    <div class="head-action">
+        <div class="toggle-btn"></div>
+        <div class="light-btn"></div>
+        <div class="search-btn"></div>
+    </div>
+    <form class="head-search" method="post">
+        <input type="text" name="s" placeholder="搜索什么？">
+    </form>
+    <nav class="head-menu">
+        <a href="/">首页</a>
+        <div class="has-child">
+            <a>标签</a>
+            <div class="sub-menu">
+                <a class="tag-link" href="/tags/DFS/" rel="tag">DFS</a><a class="tag-link" href="/tags/PAT/" rel="tag">PAT</a><a class="tag-link" href="/tags/PAT%E7%94%B2%E7%BA%A7/" rel="tag">PAT甲级</a><a class="tag-link" href="/tags/dfs/" rel="tag">dfs</a><a class="tag-link" href="/tags/queue/" rel="tag">queue</a><a class="tag-link" href="/tags/%E5%85%AB%E7%9A%87%E5%90%8E/" rel="tag">八皇后</a><a class="tag-link" href="/tags/%E5%88%BA%E5%AE%A2%E4%BF%A1%E6%9D%A1/" rel="tag">刺客信条</a><a class="tag-link" href="/tags/%E5%9B%9E%E6%96%87/" rel="tag">回文</a><a class="tag-link" href="/tags/%E5%9B%BE/" rel="tag">图</a><a class="tag-link" href="/tags/%E5%A4%A7%E5%AD%A6%E6%A0%A1%E5%9B%AD/" rel="tag">大学校园</a><a class="tag-link" href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/" rel="tag">字符串</a><a class="tag-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="tag">数据结构</a><a class="tag-link" href="/tags/%E6%97%A5%E5%B8%B8/" rel="tag">日常</a><a class="tag-link" href="/tags/%E6%9C%80%E7%9F%AD%E8%B7%AF/" rel="tag">最短路</a><a class="tag-link" href="/tags/%E6%9D%A8%E8%BE%89%E4%B8%89%E8%A7%92/" rel="tag">杨辉三角</a><a class="tag-link" href="/tags/%E6%A0%91%E7%9A%84%E5%B1%82%E9%81%8D%E5%8E%86/" rel="tag">树的层遍历</a><a class="tag-link" href="/tags/%E6%B8%B8%E6%88%8F/" rel="tag">游戏</a><a class="tag-link" href="/tags/%E7%AE%97%E6%B3%95%E7%AB%9E%E8%B5%9B/" rel="tag">算法竞赛</a><a class="tag-link" href="/tags/%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/" rel="tag">背包问题</a><a class="tag-link" href="/tags/%E8%93%9D%E6%A1%A5%E6%9D%AF/" rel="tag">蓝桥杯</a><a class="tag-link" href="/tags/%E8%A7%86%E9%A2%91/" rel="tag">视频</a><a class="tag-link" href="/tags/%E8%AF%BB%E4%B9%A6/" rel="tag">读书</a><a class="tag-link" href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" rel="tag">读书笔记</a><a class="tag-link" href="/tags/%E9%98%9F/" rel="tag">队</a><a class="tag-link" href="/tags/%E9%9A%8F%E7%AC%94/" rel="tag">随笔</a>
+            </div>
+        </div>
+        
+            <a href="/aboutme">关于我</a>
+        
+            <a href="/friends">朋友们</a>
+        
+    </nav>
+</header>
+
+    <main>
+    <div class="wrap min">
+        <section class="post-title">
+            <h2>路径</h2>
+            <div class="post-meta">
+                <time class="date">2022.04.06 15:09:40</time>
+            
+            </div>
+        </section>
+        <article class="post-content">
+            <blockquote>由于量子力学测不准原理,我只能大概告诉你,这篇文章创建于21±1.0天前。当然你数学好也可以自己算</blockquote>
+        
+            <p><em>题目描述</em></p>
+<p>小蓝学习了最短路径之后特别高兴，他定义了一个特别的图，希望找到图 中的最短路径。小蓝的图由 2021 个结点组成，依次编号 1 至 2021。对于两个不同的结点 a, b，如果 a 和 b 的差的绝对值大于 21，则两个结点 之间没有边相连；如果 a 和 b 的差的绝对值小于等于 21，则两个点之间有一条 长度为 a 和 b 的最小公倍数的无向边相连。</p>
+<p>例如：结点 1 和结点 23 之间没有边相连；结点 3 和结点 24 之间有一条无 向边，长度为 24；结点 15 和结点 25 之间有一条无向边，长度为 75。</p>
+<p>请计算，结点 1 和结点 2021  之间的最短路径长度是多少。</p>
+<p><em>分析</em></p>
+<p>利用<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E6%AD%90%E5%B9%BE%E9%87%8C%E5%BE%97%E7%AE%97%E6%B3%95/1647675">欧几里得辗转相除法</a>求的最大公约数gcd，再利用最大公约数求的最小公倍数lcm，用邻接矩阵表示图，狄杰斯特拉单源最短路算法求的最短路径长度。</p>
+<img src="/2022/04/06/test9/lcm.png" class="">
+
+<p><em>题解</em></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdbool.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> MAXINT 99999999</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> &#123;</span></span><br><span class="line">    <span class="type">int</span> vexs[<span class="number">2050</span>];</span><br><span class="line">    <span class="type">int</span> arcs[<span class="number">2050</span>][<span class="number">2050</span>];</span><br><span class="line">    <span class="type">int</span> vexnum,arcnum;</span><br><span class="line">&#125;AMGraph;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span>  <span class="title function_">lcm</span><span class="params">(<span class="type">int</span> a,<span class="type">int</span> b)</span>&#123;</span><br><span class="line">    <span class="type">int</span> gcd,c,d,temp,lcm,m,n;</span><br><span class="line">    m = a;n = b;</span><br><span class="line">    <span class="keyword">if</span>(a &lt;b)&#123;                 <span class="comment">// 若a &lt; b,交换a，b；</span></span><br><span class="line">        temp = a; a = b; b = temp;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%4d %4d  &quot;</span>,a,b);</span><br><span class="line">    <span class="keyword">do</span>&#123;                   <span class="comment">// a / b = c 余 d   欧几里得算法求最大公约数</span></span><br><span class="line">        d = a%b;</span><br><span class="line">        a = b; b = d;</span><br><span class="line">    &#125;<span class="keyword">while</span>(d!= <span class="number">0</span>);</span><br><span class="line">    gcd = a;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;gcd %4d  &quot;</span>,a);</span><br><span class="line">    lcm = m*n/gcd;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;lcm %8d\n&quot;</span>,lcm);</span><br><span class="line">    <span class="keyword">return</span> lcm;</span><br><span class="line">&#125;   <span class="comment">//求最小公倍数</span></span><br><span class="line">AMGraph G;</span><br><span class="line"><span class="type">int</span> Path[<span class="number">2050</span>],S[<span class="number">2050</span>];</span><br><span class="line"><span class="type">int</span> D[<span class="number">2050</span>];</span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">int</span> argc, <span class="type">char</span> *argv[])</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>;i &lt;=<span class="number">2021</span>;i++)&#123;        <span class="comment">//图初始化</span></span><br><span class="line">        G.vexs[i] = i;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">1</span>;j&lt;=<span class="number">2021</span>;j++)&#123;</span><br><span class="line">            G.arcs[i][j] = MAXINT;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    G.vexnum = <span class="number">2021</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>;i &lt;=<span class="number">2021</span>;i++)&#123;          <span class="comment">//求节点之间边的权值           //</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">1</span>;j&lt;=<span class="number">21</span> &amp;&amp; i+j &lt;=<span class="number">2021</span>;j++)&#123;         <span class="comment">// i 的21范围内的节点求权值</span></span><br><span class="line">            G.arcs[i][i+j] = lcm(i,i+j);</span><br><span class="line">            G.arcs[i+j][i] = G.arcs[i][i+j];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//求节点1 到所有节点的最短路径</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">2</span>;i&lt;=<span class="number">2021</span>;i++)&#123;         <span class="comment">//初始化辅助数组</span></span><br><span class="line">        S[i] = <span class="literal">false</span>;</span><br><span class="line">        D[i] = G.arcs[<span class="number">1</span>][i];</span><br><span class="line">    &#125;</span><br><span class="line">    D[<span class="number">1</span>] =<span class="number">0</span>;</span><br><span class="line">    S[<span class="number">1</span>] = <span class="literal">true</span>;</span><br><span class="line">    <span class="type">int</span> min,v;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">2</span>;i &lt;= <span class="number">2021</span>;i++)&#123;            <span class="comment">//循环 2021-2+1 次，将 v-s 中的点加入 s</span></span><br><span class="line">        min = MAXINT;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">1</span>;j &lt;=<span class="number">2021</span>;j++)&#123;          <span class="comment">//找到最小消耗</span></span><br><span class="line">            <span class="keyword">if</span>(S[j] == <span class="literal">false</span> &amp;&amp; D[j] &lt; min)&#123;</span><br><span class="line">                min  = D[j];</span><br><span class="line">                v = j;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        S[v] = <span class="literal">true</span>;        <span class="comment">//v 加入 s集合</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">1</span>;j &lt;=<span class="number">2021</span>;j++)&#123; <span class="comment">//更新v-s 集合到 v0的最短路</span></span><br><span class="line">            <span class="keyword">if</span>(S[j] == <span class="literal">false</span> &amp;&amp; D[v] + G.arcs[v][j] &lt; D[j])&#123;      <span class="comment">//要不要加s[i] == false??</span></span><br><span class="line">                D[j] = D[v] + G.arcs[v][j];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>,D[<span class="number">2021</span>]);</span><br><span class="line"><span class="comment">//    printf(&quot;%d&quot;, lcm(24,7));</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p><em>总结</em></p>
+<ul>
+<li><p>在求边长度时，外层循环设置为2000（2021-21），因为想到内层不能超过2021，2000之后的节点没有求出边长，导致答案错误，大于正确答案。</p>
+</li>
+<li><p>节点数组好像可以直接忽略，降低空间复杂度。</p>
+</li>
+<li><p>在函数内设置大量数组空间过大导致段错误（不确定是不是这个原因，但把数组改为全局后问题解决。</p>
+</li>
+</ul>
+<blockquote><p>在运行时，程序会动态创建一个堆栈段，里面存放着调用栈，因此保存着函数的函数的调用关系和局部变量。</p>
+<p>建议把较大的数组放在main函数之外，因为局部变量也是存放在堆栈段，栈溢出不见得是递归调用太多，也可能是局部变量太大了，只要总大小超过了允许的范围，就会产生栈溢出。</p>
+<footer><strong>刘汝佳</strong><cite>算法竞赛入门经典</cite></footer></blockquote>
+
+<hr>
+
+        </article>
+        <section class="post-near">
+            <ul>
+                
+                    <li>上一篇: <a href="/2022/04/08/diaryApr8/">中国的’中‘</a></li>
+                
+                
+                    <li>下一篇: <a href="/2022/04/06/test8/">时间显示🕙</a></li>
+                
+            </ul>
+        </section>
+        
+            <section class="post-tags">
+            <a class="-none-link" href="/tags/%E5%9B%BE/" rel="tag">图</a><a class="-none-link" href="/tags/%E6%9C%80%E7%9F%AD%E8%B7%AF/" rel="tag">最短路</a><a class="-none-link" href="/tags/%E7%AE%97%E6%B3%95%E7%AB%9E%E8%B5%9B/" rel="tag">算法竞赛</a><a class="-none-link" href="/tags/%E8%93%9D%E6%A1%A5%E6%9D%AF/" rel="tag">蓝桥杯</a>
+            </section>
+        
+    
+        <section class="post-author">
+        
+            <figure class="author-avatar">
+                <img src="https://img-blog.csdnimg.cn/81f52c090b754321acfe1bf4d9f04110.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAcHVtcGtpbl9saW9u,size_18,color_FFFFFF,t_70,g_se,x_16" alt="wespc" />
+            </figure>
+        
+            <div class="author-info">
+                <h4>wespc</h4>
+                <p>我是个还在上学的菜鸡，对社会充满恐惧，希望以后还是不要离开学校了···（卑微）</p>
+            </div>
+        </section>
+    
+    </div>
+</main>
+
+    <footer>
+    <div class="buttons">
+        <a class="to-top" href="#"></a>
+    </div>
+    <div class="wrap min">
+        <section class="widget">
+            <div class="row">
+                <div class="col-m-4">
+                    <h3 class="title-recent">最新文章：</h3>
+                    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2022/04/27/test-20/">1019 General Palindromic Number PAT (Advanced Level) Practice</a></li><li class="post-list-item"><a class="post-list-link" href="/2022/04/27/suibi-4/">午夜猎食行动</a></li><li class="post-list-item"><a class="post-list-link" href="/2022/04/26/test-19/">1018 Public Bike Management PAT (Advanced Level) Practice</a></li><li class="post-list-item"><a class="post-list-link" href="/2022/04/25/suibi-3/">我来签到啦♪( ´▽｀)</a></li><li class="post-list-item"><a class="post-list-link" href="/2022/04/24/suibi-2/">《关于这几天没做题都在摆烂这件事》</a></li><li class="post-list-item"><a class="post-list-link" href="/2022/04/24/test-18/">1017 Queueing at Bank PAT (Advanced Level) Practice</a></li></ul>
+                </div>
+                <div class="col-m-4">
+                    <h3 class="title-date">时光机：</h3>
+                    <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a></li></ul>
+                </div>
+                <div class="col-m-4">
+                    <h3 class="title-tags">标签云：</h3>
+                    <a href="/tags/DFS/" style="font-size: 10px;">DFS</a> <a href="/tags/PAT/" style="font-size: 16px;">PAT</a> <a href="/tags/PAT%E7%94%B2%E7%BA%A7/" style="font-size: 20px;">PAT甲级</a> <a href="/tags/dfs/" style="font-size: 10px;">dfs</a> <a href="/tags/queue/" style="font-size: 10px;">queue</a> <a href="/tags/%E5%85%AB%E7%9A%87%E5%90%8E/" style="font-size: 10px;">八皇后</a> <a href="/tags/%E5%88%BA%E5%AE%A2%E4%BF%A1%E6%9D%A1/" style="font-size: 10px;">刺客信条</a> <a href="/tags/%E5%9B%9E%E6%96%87/" style="font-size: 10px;">回文</a> <a href="/tags/%E5%9B%BE/" style="font-size: 12px;">图</a> <a href="/tags/%E5%A4%A7%E5%AD%A6%E6%A0%A1%E5%9B%AD/" style="font-size: 10px;">大学校园</a> <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/" style="font-size: 10px;">字符串</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 10px;">数据结构</a> <a href="/tags/%E6%97%A5%E5%B8%B8/" style="font-size: 10px;">日常</a> <a href="/tags/%E6%9C%80%E7%9F%AD%E8%B7%AF/" style="font-size: 14px;">最短路</a> <a href="/tags/%E6%9D%A8%E8%BE%89%E4%B8%89%E8%A7%92/" style="font-size: 10px;">杨辉三角</a> <a href="/tags/%E6%A0%91%E7%9A%84%E5%B1%82%E9%81%8D%E5%8E%86/" style="font-size: 10px;">树的层遍历</a> <a href="/tags/%E6%B8%B8%E6%88%8F/" style="font-size: 10px;">游戏</a> <a href="/tags/%E7%AE%97%E6%B3%95%E7%AB%9E%E8%B5%9B/" style="font-size: 18px;">算法竞赛</a> <a href="/tags/%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/" style="font-size: 10px;">背包问题</a> <a href="/tags/%E8%93%9D%E6%A1%A5%E6%9D%AF/" style="font-size: 18px;">蓝桥杯</a> <a href="/tags/%E8%A7%86%E9%A2%91/" style="font-size: 10px;">视频</a> <a href="/tags/%E8%AF%BB%E4%B9%A6/" style="font-size: 10px;">读书</a> <a href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" style="font-size: 12px;">读书笔记</a> <a href="/tags/%E9%98%9F/" style="font-size: 10px;">队</a> <a href="/tags/%E9%9A%8F%E7%AC%94/" style="font-size: 10px;">随笔</a>
+                </div>
+            </div>
+        </section>
+        <section class="sub-footer">
+            <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span >你是第 <span id="busuanzi_value_site_uv"></span>个来看我的喵!!! \(≧▽≦)/</span>
+            <p>© 2022 <a href="/">Wespc</a>. All Rights Reserved. Theme By <a href="https://github.com/Dreamer-Paul/Hingle" target="_blank" rel="nofollow">Hingle</a>.</p>
+        </section>
+    </div>
+</footer>
+
+
+<script src="/static/kico.js"></script>
+<script src="/static/hingle.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<script>var hingle = new Paul_Hingle( {"copyright":true,"night":true});</script>
+
+
+  <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>
