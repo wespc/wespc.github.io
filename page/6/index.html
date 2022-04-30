@@ -3,7 +3,7 @@
   <head>
      
     <meta charset="UTF-8">
-    <title>时间显示🕙 - Wespc</title>
+    <title>Wespc</title>
     <link rel="shortcut icon" href="/static/img/icon.png">
     <link rel="icon" href="/static/img/icon.png" sizes="192x192"/>
     
@@ -15,7 +15,7 @@
 
     <meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1"/>
     <meta property="og:site_name" content="Wespc">
-    <meta property="og:title" content="时间显示🕙"/>
+    <meta property="og:title" content=""/>
     
     <style>body:before{ content: ''; background-image: url(https://api.paugram.com/wallpaper?source=gh) }</style>
     
@@ -52,66 +52,50 @@
 
     <main>
     <div class="wrap min">
-        <section class="post-title">
-            <h2>时间显示🕙</h2>
-            <div class="post-meta">
-                <time class="date">2022.04.06 15:08:27</time>
+        <section class="home-title">
+            <h1>Wespc</h1>
+            <span></span>
             
-            </div>
-        </section>
-        <article class="post-content">
-            <blockquote>由于量子力学测不准原理,我只能大概告诉你,这篇文章创建于24±1.0天前。当然你数学好也可以自己算</blockquote>
-        
-            <p><em>题目描述</em></p>
-<p>小蓝要和朋友合作开发一个时间显示的网站。</p>
-<p>在服务器上，朋友已经获取了当前的时间，用一个整数表示，值为从 1970 年 1 月 1 日 00:00:00到当前时刻经过的毫秒数。</p>
-<p>现在，小蓝要在客户端显示出这个时间。小蓝不用显示出年月日，只需要显示出时分秒即可，毫秒也不用显示，直接舍去即可。</p>
-<p>给定一个用整数表示的时间，请将这个时间对应的时分秒输出。</p>
-<p><em>输入描述</em></p>
-<p>输入一行包含一个整数，表示时间。</p>
-<p><em>输出描述</em></p>
-<p>输出时分秒表示的当前时间，格式形如 <code>HH:MM:SS</code>，其中 <code>HH</code> 表示时，值为 00 到 2323，<code>MM</code> 表示分，值为 0 到 59，<code>SS</code>表示秒，值为 0 到 59。时、分、秒 不足两位时补前导 0。</p>
-<p><em>输入输出示例</em></p>
-<p>输入</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1618708103123</span><br></pre></td></tr></table></figure>
-
-<p>输出</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">01:08:23</span><br></pre></td></tr></table></figure>
-
-<p><em>题解</em></p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">int</span> argc, <span class="type">char</span> *argv[])</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// 请在此输入您的代码</span></span><br><span class="line">    <span class="type">long</span> <span class="type">long</span> cycle = <span class="number">24</span>*<span class="number">60</span>*<span class="number">60</span>,n;</span><br><span class="line">    <span class="type">int</span> h,m,s;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%lld&quot;</span>,&amp;n);</span><br><span class="line">    n = n/<span class="number">1000</span>;     <span class="comment">//舍去毫秒部分</span></span><br><span class="line"></span><br><span class="line">    n=n%cycle;      <span class="comment">//舍去超过一天时间的部分</span></span><br><span class="line">    <span class="comment">//分别获取一天内的小时，分钟，秒</span></span><br><span class="line">    h = n/<span class="number">3600</span>;</span><br><span class="line">    m = n%<span class="number">3600</span>/<span class="number">60</span>;</span><br><span class="line">    s = n%<span class="number">60</span>;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%02d:%02d:%02d&quot;</span>,h,m,s);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<hr>
-
-        </article>
-        <section class="post-near">
-            <ul>
-                
-                    <li>上一篇: <a href="/2022/04/06/test9/">路径</a></li>
-                
-                
-                    <li>下一篇: <a href="/2022/04/06/test7/">跳跃</a></li>
-                
-            </ul>
-        </section>
-        
-            <section class="post-tags">
-            <a class="-none-link" href="/tags/%E7%AE%97%E6%B3%95%E7%AB%9E%E8%B5%9B/" rel="tag">算法竞赛</a><a class="-none-link" href="/tags/%E8%93%9D%E6%A1%A5%E6%9D%AF/" rel="tag">蓝桥杯</a>
-            </section>
-        
+    <div class="home-social">
     
-        <section class="post-author">
-        
-            <figure class="author-avatar">
-                <img src="https://img-blog.csdnimg.cn/81f52c090b754321acfe1bf4d9f04110.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAcHVtcGtpbl9saW9u,size_18,color_FFFFFF,t_70,g_se,x_16" alt="wespc" />
-            </figure>
-        
-            <div class="author-info">
-                <h4>wespc</h4>
-                <p>我是个还在上学的菜鸡，对社会充满恐惧，希望以后还是不要离开学校了···（卑微）</p>
-            </div>
-        </section>
+        <a target="_blank" rel="noopener" href="https://github.com/wespc" title="Github">
+            <i class="fa fa-github"></i>
+        </a>
     
+        <a target="_blank" rel="noopener" href="https://wespc.github.io" title="首页">
+            <i class="fa fa-home"></i>
+        </a>
+    
+        <a target="_blank" rel="noopener" href="https://steamcommunity.com/profiles/76561198990664375" title="Steam">
+            <i class="fa fa-steam"></i>
+        </a>
+    
+    </div>
+
+
+
+        </section>
+        <section class="home-posts">
+    
+    <div class="post-item">
+        <h2>
+            <a href="/2022/03/04/hello-world/">Hello World</a>
+        </h2>
+    
+        <p>Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any ...</p>
+    
+        <div class="post-meta">
+            <time class="date">2022.03.04</time>
+            
+            
+        </div>
+    </div>
+    
+</section>
+
+        <section class="page-navigator">
+            <a class="extend prev" rel="prev" href="/page/5/">«</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span>
+        </section>
     </div>
 </main>
 
