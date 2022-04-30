@@ -3,7 +3,7 @@
   <head>
      
     <meta charset="UTF-8">
-    <title>DFS - Wespc</title>
+    <title>PAT (Advanced Level) Practice - Wespc</title>
     <link rel="shortcut icon" href="/static/img/icon.png">
     <link rel="icon" href="/static/img/icon.png" sizes="192x192"/>
     
@@ -15,7 +15,7 @@
 
     <meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1"/>
     <meta property="og:site_name" content="Wespc">
-    <meta property="og:title" content=""/>
+    <meta property="og:title" content="PAT (Advanced Level) Practice"/>
     
     <style>body:before{ content: ''; background-image: url(https://api.paugram.com/wallpaper?source=gh) }</style>
     
@@ -52,34 +52,61 @@
 
     <main>
     <div class="wrap min">
-        <section class="home-title">
+        <section class="post-title">
+            <h2>PAT (Advanced Level) Practice</h2>
+            <div class="post-meta">
+                <time class="date">2022.05.01 03:46:37</time>
             
-            <h1>“DFS”</h1>
+            </div>
         </section>
-        <section class="home-posts">
-    
-    <div class="post-item">
-        <h2>
-            <a href="/2022/04/08/test/">受伤的皇后</a>
-        </h2>
-    
-        <p>题目描述
-有一个 n×n 的国际象棋棋盘（n行 n列的方格图），请在棋盘中摆放 n个受伤的国际象棋皇后，要求：任何两个皇后不在同一行。任何两个皇后不在同一列。如果两个皇后在同一条 45 度角的斜...</p>
-    
-        <div class="post-meta">
-            <time class="date">2022.04.08</time>
-            
-            
-                <span class="tags"><a class="-none-link" href="/tags/DFS/" rel="tag">DFS</a>，<a class="-none-link" href="/tags/%E5%85%AB%E7%9A%87%E5%90%8E/" rel="tag">八皇后</a>，<a class="-none-link" href="/tags/%E7%AE%97%E6%B3%95%E7%AB%9E%E8%B5%9B/" rel="tag">算法竞赛</a>，<a class="-none-link" href="/tags/%E8%93%9D%E6%A1%A5%E6%9D%AF/" rel="tag">蓝桥杯</a></span>
-            
-        </div>
-    </div>
-    
-</section>
+        <article class="post-content">
+            <blockquote>由于量子力学测不准原理,我只能大概告诉你,这篇文章创建于0±1.0天前。当然你数学好也可以自己算</blockquote>
+        
+            <p>Suppose that all the keys in a binary tree are distinct positive integers. Given the postorder and inorder traversal sequences, you are supposed to output the level order traversal sequence of the corresponding binary tree.</p>
+<p><em>Input Specification:</em></p>
+<p>Each input file contains one test case. For each case, the first line gives a positive integer <strong>N</strong> (≤30), the total number of nodes in the binary tree. The second line gives the postorder sequence and the third line gives the inorder sequence. All the numbers in a line are separated by a space.</p>
+<p><em>Output Specification:</em></p>
+<p>For each test case, print in one line the level order traversal sequence of the corresponding binary tree. All the numbers in a line must be separated by exactly one space, and there must be no extra space at the end of the line.</p>
+<p><em>Sample Input:</em></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">7</span><br><span class="line">2 3 1 5 7 6 4</span><br><span class="line">1 2 3 4 5 6 7</span><br></pre></td></tr></table></figure>
 
-        <section class="page-navigator">
-            <span class="page-number current">1</span>
+<p><em>Sample Output:</em></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">4 1 6 3 5 7 2</span><br></pre></td></tr></table></figure>
+
+<p><em>Analysis</em><br>后续中序转前序的基础上加上下标</p>
+<p><em>Code</em></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;map&gt;</span></span></span><br><span class="line"></span><br><span class="line">using namespace <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">map</span> &lt;<span class="type">int</span>,<span class="type">int</span> &gt; level;</span><br><span class="line"><span class="type">int</span> post[<span class="number">35</span>],in[<span class="number">35</span>];</span><br><span class="line"><span class="type">void</span> <span class="title function_">pre</span><span class="params">(<span class="type">int</span> root,<span class="type">int</span> start,<span class="type">int</span> end,<span class="type">int</span> index)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(start &lt;= end)&#123;</span><br><span class="line">        level[index] = post[root];</span><br><span class="line">        <span class="type">int</span> i;</span><br><span class="line">        <span class="keyword">for</span>(i = start;  in[i] != post[root]; i++);</span><br><span class="line">        pre(root - (end - i +<span class="number">1</span>),start,i<span class="number">-1</span>,<span class="number">2</span> * index +<span class="number">1</span>);</span><br><span class="line">        pre(root - <span class="number">1</span>, i+<span class="number">1</span>, end, <span class="number">2</span> * index +<span class="number">2</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span>&#123;</span><br><span class="line">    <span class="type">int</span> n;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>;i &lt;=n;i++)&#123;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; post[i];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;=n; i++)&#123;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; in[i];</span><br><span class="line">    &#125;</span><br><span class="line">    pre(n,<span class="number">1</span>,n,<span class="number">0</span>);</span><br><span class="line">    <span class="keyword">auto</span> it = level.begin();</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; it -&gt;second;</span><br><span class="line">    <span class="keyword">while</span>(++it != level.end())<span class="built_in">cout</span> &lt;&lt;<span class="string">&#x27; &#x27;</span>&lt;&lt; it-&gt;second;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">&#x27;\n&#x27;</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+        </article>
+        <section class="post-near">
+            <ul>
+                
+                    <li>上一篇: <a href="/2022/05/01/test-23/">PAT (Advanced Level) Practice</a></li>
+                
+                
+                    <li>下一篇: <a href="/2022/05/01/test-21/">二叉树给后序、中序求先序</a></li>
+                
+            </ul>
         </section>
+        
+            <section class="post-tags">
+            <a class="-none-link" href="/tags/PAT%E7%94%B2%E7%BA%A7/" rel="tag">PAT甲级</a>
+            </section>
+        
+    
+        <section class="post-author">
+        
+            <figure class="author-avatar">
+                <img src="https://img-blog.csdnimg.cn/81f52c090b754321acfe1bf4d9f04110.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAcHVtcGtpbl9saW9u,size_18,color_FFFFFF,t_70,g_se,x_16" alt="wespc" />
+            </figure>
+        
+            <div class="author-info">
+                <h4>wespc</h4>
+                <p>我是个还在上学的菜鸡，对社会充满恐惧，希望以后还是不要离开学校了···（卑微）</p>
+            </div>
+        </section>
+    
     </div>
 </main>
 
