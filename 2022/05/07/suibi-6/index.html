@@ -3,7 +3,7 @@
   <head>
      
     <meta charset="UTF-8">
-    <title>PAT (Advanced Level) Practice 1005 Spell It Right - Wespc</title>
+    <title>为自己造神 - Wespc</title>
     <link rel="shortcut icon" href="/static/img/icon.png">
     <link rel="icon" href="/static/img/icon.png" sizes="192x192"/>
     
@@ -15,7 +15,7 @@
 
     <meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1"/>
     <meta property="og:site_name" content="Wespc">
-    <meta property="og:title" content="PAT (Advanced Level) Practice 1005 Spell It Right"/>
+    <meta property="og:title" content="为自己造神"/>
     
     <style>body:before{ content: ''; background-image: url(https://api.paugram.com/wallpaper?source=gh) }</style>
     
@@ -53,45 +53,37 @@
     <main>
     <div class="wrap min">
         <section class="post-title">
-            <h2>PAT (Advanced Level) Practice 1005 Spell It Right</h2>
+            <h2>为自己造神</h2>
             <div class="post-meta">
-                <time class="date">2022.04.14 18:50:35</time>
+                <time class="date">2022.05.07 00:43:19</time>
             
             </div>
         </section>
         <article class="post-content">
-            <blockquote>由于量子力学测不准原理,我只能大概告诉你,这篇文章创建于22±1.0天前。当然你数学好也可以自己算</blockquote>
+            <blockquote>由于量子力学测不准原理,我只能大概告诉你,这篇文章创建于0±1.0天前。当然你数学好也可以自己算</blockquote>
         
-            <p>Given a non-negative integer <strong>N</strong>, your task is to compute the sum of all the digits of <strong>N</strong>, and output every digit of the sum in English.</p>
-<p><em>Input Specification:</em></p>
-<p>Each input file contains one test case. Each case occupies one line which contains an <strong>N</strong> (≤10^100).</p>
-<p><em>Output Specification:</em></p>
-<p>For each test case, output in one line the digits of the sum in English words. There must be one space between two consecutive words, but no extra space at the end of a line.</p>
-<p><em>Sample Input:</em></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">12345</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p><em>Sample Output:</em></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">one five</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p><em>Analysis</em><br>高精度问题（maybe？）<br>数字范围达到10^100，超出数据范围，需要用字符串处理，单词拼写不要拼错了就没问题啦！</p>
-<p><em>Code</em></p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">void</span>)</span>&#123;</span><br><span class="line">    <span class="type">int</span> sum = <span class="number">0</span>;</span><br><span class="line">    <span class="type">char</span> s[<span class="number">115</span>];</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%s&quot;</span>,s);              <span class="comment">//读入数字</span></span><br><span class="line">    <span class="type">int</span> len = <span class="built_in">strlen</span>(s);</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>;i&lt;len;i++)&#123;</span><br><span class="line">        sum+=s[i] - <span class="string">&#x27;0&#x27;</span>;        <span class="comment">//获得每一位数字累加和</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="type">char</span> res[<span class="number">10</span>];               </span><br><span class="line">    <span class="type">char</span> alphabet[<span class="number">13</span>][<span class="number">10</span>] =&#123;<span class="string">&quot;zero&quot;</span>,<span class="string">&quot;one&quot;</span>,<span class="string">&quot;two&quot;</span>,<span class="string">&quot;three&quot;</span>,<span class="string">&quot;four&quot;</span>,<span class="string">&quot;five&quot;</span>,<span class="string">&quot;six&quot;</span>,<span class="string">&quot;seven&quot;</span>,<span class="string">&quot;eight&quot;</span>,<span class="string">&quot;nine&quot;</span>&#125;;    <span class="comment">//英文字母串</span></span><br><span class="line">    <span class="built_in">sprintf</span>(res,<span class="string">&quot;%d&quot;</span>,sum);      <span class="comment">//累加和写入res串</span></span><br><span class="line">    len = <span class="built_in">strlen</span>(res);</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>;i&lt;len;i++)&#123;   <span class="comment">//从头输出每个数字对应英文</span></span><br><span class="line">        <span class="built_in">printf</span>(i == <span class="number">0</span>?<span class="string">&quot;%s&quot;</span>:<span class="string">&quot; %s&quot;</span>,alphabet[res[i] - <span class="string">&#x27;0&#x27;</span>]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">putchar</span>(<span class="string">&#x27;\n&#x27;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+            <p>最近几天很是痛苦，因为不断在工业设计和计算机两边跑，两边都很难顾及，工业设计那边的作业我尽量少放心思，但由于都是小组合作，想完全躺平不是很好，计算机这边每天都不能完成任务，由之前的计划每天两题三题，减到几天一题，也不完全是没有时间，有时候全部心思都在考虑工业设计那边的作业要怎么解决，实在是没法专心思考，犹犹豫豫，三心二意，导致效率很低，甚至为了缓解压力，我会抛开一切去看几节高数课，以缓解内心的愧疚。</p>
+<p>到了大三下学期，我每天都在计算自己剩下的时间，看看课程能不能及时学完，进度会不会比别人慢，同时学校里的其他事也总是烦恼不断，最近传出消息可能要强制实习一个月，这会严重占用暑假的集中复习时间，很让人担心。<br>前几天逃了班导师的课，他知道我在学计算机，并且最近他也在打听班级其他同学关于以后的打算，我之前和他有过一次简短的对话，他劝我务实，不要把目标定的太高，因为相比科班学生我实在没有优势，他还告诫我之前二战的学生都不理想，我对这件事，实在和他没什么可聊的，但我感觉他很想知道我的想法，索性下课之后去截住他，顺便也试探一下逃他的课他什么态度。在之前我和他说我会考虑他的提议，其实我只是出于礼貌，我这次干脆和他坦白，没有改变自己志向的意愿，对于那些二战不理想的人，我也不用去考虑，因为他们即使读研也是为了工资待遇，所以考的差也就算了，但我没有这个打算， 我以后的目标就是搞研究，不管到了什么时候，也不会为一口饭去小公司将就自己，因为那样的生活对我没意义，他说我太理想太犟，以后会吃亏，但他比我还犟，我此番来的目的也不是说服他，我不想说服任何人，因为说服了别人对我也没什么好处，我想要什么只有自己知道，我很清楚一定会这样走下去。当我得知他并不关心我是否逃课就心安理得的结束了谈话。</p>
+<p>最近有几门课结束了，所以课程大作业催的很急，交作业时作业又被班导批评“太普通，要大改动”，我平日里生活就没什么值得高兴的，只能不断告诉自己前辈的话“哭着也要学完。”无论怎么的痛苦，那些先行者都曾经历过，我也必须经历。我的痛苦俯仰皆是，我的惆怅人皆有之。</p>
+<p>今天课程上某老师布置了任务，他的名声早已远扬，人尽皆知他爱为难学生，我考虑到6月还有计算机考试，数数日子，在工业设计的课上实在不能浪费太多的时间了，所以很快便想完了十个方案让他来看，可他看也不看遍直接说”不要和我搞这些虚的，给我看让草图，直到我满意为止“。我之所以直接给他看，因为他没有提及草图的事，我是有偷工减料的嫌疑，但也是用心思考，他这样看清我的成果，对我很不尊重，实在是不应该，至少在看完后给一些指导，我不需要鼓励的话，但说我的努力是”虚的“实在伤人。从此也不想去理会这个老师。我很不能理解这种将心思大量投入教学的大学老师是怎么想的，以及对部分学术圈老师带学生是为了学生发文章能给自己带来利益这种现象深恶痛绝，我只听说过普朗克效应，牛顿力学定律，从未听说过什么爱因斯坦的老师定律，霍金的老师现象，可见，真正的科研成果都要靠自己去努力。</p>
+<p>这个世界已经很糟糕了，每个人都承受自己的难过，谁都不应该给别人的生活添堵。这是我这几年学到的唯一的东西，就是请待人友好，以及远离SB。<br>尼采说人们都渴望一个偶像，一个让自己崇拜的神，没有也不惜自己造一个，我现在理解了，要想做特立独行者，先锋者很难，我们都希望有一个榜样走在前面，我们跟在后面，我不知道那些天才是不是这样，但没有一个偶像，我真的很难坚持下去。</p>
+<hr>
+<p>写的不好，觉得很不值得发出来，但因为这也是一个记录我个人成长的地方，所以在这里露拙了。同时也是觉得如果我以后成为了厉害的人（可能性很小），希望大家也能意识到，我也是个普通人。(&gt;﹏&lt;)</p>
 
         </article>
         <section class="post-near">
             <ul>
                 
-                    <li>上一篇: <a href="/2022/04/15/test-7/">PAT (Advanced Level) Practice 1006 Sign In and Sign Out</a></li>
+                    <li>上一篇: 看完啦 (つд⊂)</li>
                 
                 
-                    <li>下一篇: <a href="/2022/04/14/text/">雨后江南</a></li>
+                    <li>下一篇: <a href="/2022/05/01/suibi-5/">随便讲两句</a></li>
                 
             </ul>
         </section>
         
             <section class="post-tags">
-            <a class="-none-link" href="/tags/PAT/" rel="tag">PAT</a>
+            <a class="-none-link" href="/tags/%E9%9A%8F%E7%AC%94/" rel="tag">随笔</a>
             </section>
         
     
