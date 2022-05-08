@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+  <head>
+     
+    <meta charset="UTF-8">
+    <title>1022 Digital Library PAT (Advanced Level) Practice - Wespc</title>
+    <link rel="shortcut icon" href="/static/img/icon.png">
+    <link rel="icon" href="/static/img/icon.png" sizes="192x192"/>
+    
+<link rel="stylesheet" href="/static/kico.css">
+<link rel="stylesheet" href="/static/hingle.css">
+
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/FortAwesome/Font-Awesome/css/font-awesome.min.css">
+
+    <meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1"/>
+    <meta property="og:site_name" content="Wespc">
+    <meta property="og:title" content="1022 Digital Library PAT (Advanced Level) Practice"/>
+    
+    <style>body:before{ content: ''; background-image: url(https://api.paugram.com/wallpaper?source=gh) }</style>
+    
+<meta name="generator" content="Hexo 5.4.1"></head>
+
+  <body>
+    <header>
+    <div class="head-title">
+        <h4>Wespc</h4>
+    </div>
+    <div class="head-action">
+        <div class="toggle-btn"></div>
+        <div class="light-btn"></div>
+        <div class="search-btn"></div>
+    </div>
+    <form class="head-search" method="post">
+        <input type="text" name="s" placeholder="搜索什么？">
+    </form>
+    <nav class="head-menu">
+        <a href="/">首页</a>
+        <div class="has-child">
+            <a>标签</a>
+            <div class="sub-menu">
+                <a class="tag-link" href="/tags/DFS/" rel="tag">DFS</a><a class="tag-link" href="/tags/PAT/" rel="tag">PAT</a><a class="tag-link" href="/tags/PAT%E7%94%B2%E7%BA%A7/" rel="tag">PAT甲级</a><a class="tag-link" href="/tags/dfs/" rel="tag">dfs</a><a class="tag-link" href="/tags/queue/" rel="tag">queue</a><a class="tag-link" href="/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/" rel="tag">二叉树</a><a class="tag-link" href="/tags/%E5%85%AB%E7%9A%87%E5%90%8E/" rel="tag">八皇后</a><a class="tag-link" href="/tags/%E5%88%BA%E5%AE%A2%E4%BF%A1%E6%9D%A1/" rel="tag">刺客信条</a><a class="tag-link" href="/tags/%E5%9B%9E%E6%96%87/" rel="tag">回文</a><a class="tag-link" href="/tags/%E5%9B%BE/" rel="tag">图</a><a class="tag-link" href="/tags/%E5%A4%A7%E5%AD%A6%E6%A0%A1%E5%9B%AD/" rel="tag">大学校园</a><a class="tag-link" href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/" rel="tag">字符串</a><a class="tag-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="tag">数据结构</a><a class="tag-link" href="/tags/%E6%97%A5%E5%B8%B8/" rel="tag">日常</a><a class="tag-link" href="/tags/%E6%9C%80%E7%9F%AD%E8%B7%AF/" rel="tag">最短路</a><a class="tag-link" href="/tags/%E6%9D%A8%E8%BE%89%E4%B8%89%E8%A7%92/" rel="tag">杨辉三角</a><a class="tag-link" href="/tags/%E6%A0%91%E7%9A%84%E5%B1%82%E9%81%8D%E5%8E%86/" rel="tag">树的层遍历</a><a class="tag-link" href="/tags/%E6%B8%B8%E6%88%8F/" rel="tag">游戏</a><a class="tag-link" href="/tags/%E7%AE%97%E6%B3%95%E7%AB%9E%E8%B5%9B/" rel="tag">算法竞赛</a><a class="tag-link" href="/tags/%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/" rel="tag">背包问题</a><a class="tag-link" href="/tags/%E8%93%9D%E6%A1%A5%E6%9D%AF/" rel="tag">蓝桥杯</a><a class="tag-link" href="/tags/%E8%A7%86%E9%A2%91/" rel="tag">视频</a><a class="tag-link" href="/tags/%E8%AF%BB%E4%B9%A6/" rel="tag">读书</a><a class="tag-link" href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" rel="tag">读书笔记</a><a class="tag-link" href="/tags/%E9%98%9F/" rel="tag">队</a><a class="tag-link" href="/tags/%E9%9A%8F%E7%AC%94/" rel="tag">随笔</a>
+            </div>
+        </div>
+        
+            <a href="/aboutme">关于我</a>
+        
+            <a href="/friends">朋友们</a>
+        
+    </nav>
+</header>
+
+    <main>
+    <div class="wrap min">
+        <section class="post-title">
+            <h2>1022 Digital Library PAT (Advanced Level) Practice</h2>
+            <div class="post-meta">
+                <time class="date">2022.05.08 14:59:13</time>
+            
+            </div>
+        </section>
+        <article class="post-content">
+            <blockquote>由于量子力学测不准原理,我只能大概告诉你,这篇文章创建于0±1.0天前。当然你数学好也可以自己算</blockquote>
+        
+            <p>A Digital Library contains millions of books, stored according to their titles, authors, key words of their abstracts, publishers, and published years. Each book is assigned an unique 7-digit number as its ID. Given any query from a reader, you are supposed to output the resulting books, sorted in increasing order of their ID’s.</p>
+<p><em>Input Specification:</em></p>
+<p>Each input file contains one test case. For each case, the first line contains a positive integer N (≤104) which is the total number of books. Then N blocks follow, each contains the information of a book in 6 lines:</p>
+<ul>
+<li>Line #1: the 7-digit ID number;</li>
+<li>Line #2: the book title – a string of no more than 80 characters;</li>
+<li>Line #3: the author – a string of no more than 80 characters;</li>
+<li>Line #4: the key words – each word is a string of no more than 10 characters without any white space, and the keywords are separated by exactly one space;</li>
+<li>Line #5: the publisher – a string of no more than 80 characters;</li>
+<li>Line #6: the published year – a 4-digit number which is in the range [1000, 3000].</li>
+</ul>
+<p>It is assumed that each book belongs to one author only, and contains no more than 5 key words; there are no more than 1000 distinct key words in total; and there are no more than 1000 distinct publishers.</p>
+<p>After the book information, there is a line containing a positive integer M (≤1000) which is the number of user’s search queries. Then M lines follow, each in one of the formats shown below:</p>
+<ul>
+<li>1: a book title</li>
+<li>2: name of an author</li>
+<li>3: a key word</li>
+<li>4: name of a publisher</li>
+<li>5: a 4-digit number representing the year</li>
+</ul>
+<p><em>Output Specification:</em></p>
+<p>For each query, first print the original query in a line, then output the resulting book ID’s in increasing order, each occupying a line. If no book is found, print <code>Not Found</code> instead.</p>
+<p><em>Sample Input:</em></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">3</span><br><span class="line">1111111</span><br><span class="line">The Testing Book</span><br><span class="line">Yue Chen</span><br><span class="line">test code debug sort keywords</span><br><span class="line">ZUCS Print</span><br><span class="line">2011</span><br><span class="line">3333333</span><br><span class="line">Another Testing Book</span><br><span class="line">Yue Chen</span><br><span class="line">test code sort keywords</span><br><span class="line">ZUCS Print2</span><br><span class="line">2012</span><br><span class="line">2222222</span><br><span class="line">The Testing Book</span><br><span class="line">CYLL</span><br><span class="line">keywords debug book</span><br><span class="line">ZUCS Print2</span><br><span class="line">2011</span><br><span class="line">6</span><br><span class="line">1: The Testing Book</span><br><span class="line">2: Yue Chen</span><br><span class="line">3: keywords</span><br><span class="line">4: ZUCS Print</span><br><span class="line">5: 2011</span><br><span class="line">3: blablabla</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><em>Sample Output:</em></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">1: The Testing Book</span><br><span class="line">1111111</span><br><span class="line">2222222</span><br><span class="line">2: Yue Chen</span><br><span class="line">1111111</span><br><span class="line">3333333</span><br><span class="line">3: keywords</span><br><span class="line">1111111</span><br><span class="line">2222222</span><br><span class="line">3333333</span><br><span class="line">4: ZUCS Print</span><br><span class="line">1111111</span><br><span class="line">5: 2011</span><br><span class="line">1111111</span><br><span class="line">2222222</span><br><span class="line">3: blablabla</span><br><span class="line">Not Found</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><em>Analysis</em></p>
+<p><em>Code</em></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;set&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;map&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;string&gt;</span></span></span><br><span class="line">using namespace <span class="built_in">std</span>;</span><br><span class="line"><span class="type">void</span> <span class="title function_">search</span><span class="params">(<span class="built_in">map</span>&lt;<span class="built_in">string</span>,<span class="built_in">set</span>&lt;<span class="type">int</span>&gt;&gt; &amp;m,<span class="built_in">string</span> &amp;s)</span>&#123; <span class="comment">//引用类型怎么用？</span></span><br><span class="line">    <span class="keyword">if</span>(m.find(s) != m.end())&#123;                   <span class="comment">//以及如果找到返回什么？</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">auto</span> it = m[s].begin();it != m[s].end();it++)&#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;%07d\n&quot;</span>,*it);               </span><br><span class="line">        &#125;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;Not Found\n&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">map</span>&lt;<span class="built_in">string</span>,<span class="built_in">set</span>&lt;<span class="type">int</span>&gt;&gt;title,author,key,publisher,year;</span><br><span class="line"><span class="type">int</span> id,n,m;</span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span>&#123;</span><br><span class="line">    <span class="built_in">string</span> ttitle,tauthor,tkey,tpublisher,tyear;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span> ;i &lt; n; i++)&#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d\n&quot;</span>,&amp;id);			<span class="comment">//需要用scanf 把\n换行符也读进去，不然下一个getline只会读到一个换行符</span></span><br><span class="line">        getline(<span class="built_in">cin</span>,ttitle);</span><br><span class="line">        title[ttitle].insert(id);</span><br><span class="line">        getline(<span class="built_in">cin</span>,tauthor);</span><br><span class="line">        author[tauthor].insert(id);</span><br><span class="line">        <span class="keyword">while</span>(<span class="built_in">cin</span> &gt;&gt; tkey)&#123;</span><br><span class="line">            key[tkey].insert(id);       <span class="comment">//没有tkey为键的map就创建一个？</span></span><br><span class="line">            <span class="type">char</span> ch = getchar();</span><br><span class="line">            <span class="keyword">if</span>(ch == <span class="string">&#x27;\n&#x27;</span>)<span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        getline(<span class="built_in">cin</span>,tpublisher);</span><br><span class="line">        publisher[tpublisher].insert(id);</span><br><span class="line">        getline(<span class="built_in">cin</span>,tyear);</span><br><span class="line">        year[tyear].insert(id);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; m;</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> num;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>;i &lt; m; i++)&#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d: &quot;</span>,&amp;num);</span><br><span class="line">        <span class="built_in">string</span> temp;</span><br><span class="line">        getline(<span class="built_in">cin</span>,temp);</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; num &lt;&lt; <span class="string">&quot;: &quot;</span> &lt;&lt; temp &lt;&lt; <span class="string">&#x27;\n&#x27;</span>;</span><br><span class="line">        <span class="keyword">switch</span>(num)&#123;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">                search(title,temp);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">                search(author,temp);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">3</span>:</span><br><span class="line">                search(key,temp);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">4</span>:</span><br><span class="line">                search(publisher,temp);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">5</span>:</span><br><span class="line">                search(year,temp);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+        </article>
+        <section class="post-near">
+            <ul>
+                
+                    <li>上一篇: 看完啦 (つд⊂)</li>
+                
+                
+                    <li>下一篇: <a href="/2022/05/07/suibi-6/">为自己造神</a></li>
+                
+            </ul>
+        </section>
+        
+            <section class="post-tags">
+            <a class="-none-link" href="/tags/PAT%E7%94%B2%E7%BA%A7/" rel="tag">PAT甲级</a>
+            </section>
+        
+    
+        <section class="post-author">
+        
+            <figure class="author-avatar">
+                <img src="https://img-blog.csdnimg.cn/81f52c090b754321acfe1bf4d9f04110.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAcHVtcGtpbl9saW9u,size_18,color_FFFFFF,t_70,g_se,x_16" alt="wespc" />
+            </figure>
+        
+            <div class="author-info">
+                <h4>wespc</h4>
+                <p>我是个还在上学的菜鸡，对社会充满恐惧，希望以后还是不要离开学校了···（卑微）</p>
+            </div>
+        </section>
+    
+    </div>
+</main>
+
+    <footer>
+    <div class="buttons">
+        <a class="to-top" href="#"></a>
+    </div>
+    <div class="wrap min">
+        <section class="widget">
+            <div class="row">
+                <div class="col-m-4">
+                    <h3 class="title-recent">最新文章：</h3>
+                    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2022/05/08/test-24/">1022 Digital Library PAT (Advanced Level) Practice</a></li><li class="post-list-item"><a class="post-list-link" href="/2022/05/07/suibi-6/">为自己造神</a></li><li class="post-list-item"><a class="post-list-link" href="/2022/05/01/suibi-5/">随便讲两句</a></li><li class="post-list-item"><a class="post-list-link" href="/2022/05/01/test-23/">1021 Deepest Root PAT (Advanced Level) Practice</a></li><li class="post-list-item"><a class="post-list-link" href="/2022/05/01/test-22/">1020 Tree Traversals PAT (Advanced Level) Practice</a></li><li class="post-list-item"><a class="post-list-link" href="/2022/05/01/test-21/">二叉树给后序、中序求先序</a></li></ul>
+                </div>
+                <div class="col-m-4">
+                    <h3 class="title-date">时光机：</h3>
+                    <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">May 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a></li></ul>
+                </div>
+                <div class="col-m-4">
+                    <h3 class="title-tags">标签云：</h3>
+                    <a href="/tags/DFS/" style="font-size: 10px;">DFS</a> <a href="/tags/PAT/" style="font-size: 16px;">PAT</a> <a href="/tags/PAT%E7%94%B2%E7%BA%A7/" style="font-size: 20px;">PAT甲级</a> <a href="/tags/dfs/" style="font-size: 12px;">dfs</a> <a href="/tags/queue/" style="font-size: 10px;">queue</a> <a href="/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/" style="font-size: 14px;">二叉树</a> <a href="/tags/%E5%85%AB%E7%9A%87%E5%90%8E/" style="font-size: 10px;">八皇后</a> <a href="/tags/%E5%88%BA%E5%AE%A2%E4%BF%A1%E6%9D%A1/" style="font-size: 10px;">刺客信条</a> <a href="/tags/%E5%9B%9E%E6%96%87/" style="font-size: 10px;">回文</a> <a href="/tags/%E5%9B%BE/" style="font-size: 12px;">图</a> <a href="/tags/%E5%A4%A7%E5%AD%A6%E6%A0%A1%E5%9B%AD/" style="font-size: 10px;">大学校园</a> <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/" style="font-size: 10px;">字符串</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 10px;">数据结构</a> <a href="/tags/%E6%97%A5%E5%B8%B8/" style="font-size: 10px;">日常</a> <a href="/tags/%E6%9C%80%E7%9F%AD%E8%B7%AF/" style="font-size: 14px;">最短路</a> <a href="/tags/%E6%9D%A8%E8%BE%89%E4%B8%89%E8%A7%92/" style="font-size: 10px;">杨辉三角</a> <a href="/tags/%E6%A0%91%E7%9A%84%E5%B1%82%E9%81%8D%E5%8E%86/" style="font-size: 10px;">树的层遍历</a> <a href="/tags/%E6%B8%B8%E6%88%8F/" style="font-size: 10px;">游戏</a> <a href="/tags/%E7%AE%97%E6%B3%95%E7%AB%9E%E8%B5%9B/" style="font-size: 18px;">算法竞赛</a> <a href="/tags/%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/" style="font-size: 10px;">背包问题</a> <a href="/tags/%E8%93%9D%E6%A1%A5%E6%9D%AF/" style="font-size: 18px;">蓝桥杯</a> <a href="/tags/%E8%A7%86%E9%A2%91/" style="font-size: 10px;">视频</a> <a href="/tags/%E8%AF%BB%E4%B9%A6/" style="font-size: 10px;">读书</a> <a href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" style="font-size: 12px;">读书笔记</a> <a href="/tags/%E9%98%9F/" style="font-size: 10px;">队</a> <a href="/tags/%E9%9A%8F%E7%AC%94/" style="font-size: 12px;">随笔</a>
+                </div>
+            </div>
+        </section>
+        <section class="sub-footer">
+            <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span >你是第 <span id="busuanzi_value_site_uv"></span>个来看我的喵!!! \(≧▽≦)/</span>
+            <p>© 2022 <a href="/">Wespc</a>. All Rights Reserved. Theme By <a href="https://github.com/Dreamer-Paul/Hingle" target="_blank" rel="nofollow">Hingle</a>.</p>
+        </section>
+    </div>
+</footer>
+
+
+<script src="/static/kico.js"></script>
+<script src="/static/hingle.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<script>var hingle = new Paul_Hingle( {"copyright":true,"night":true});</script>
+
+
+  <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>
