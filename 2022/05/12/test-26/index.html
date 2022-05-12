@@ -3,7 +3,7 @@
   <head>
      
     <meta charset="UTF-8">
-    <title>砝码称重 - Wespc</title>
+    <title>1024 Palindromic Number - Wespc</title>
     <link rel="shortcut icon" href="/static/img/icon.png">
     <link rel="icon" href="/static/img/icon.png" sizes="192x192"/>
     
@@ -15,7 +15,7 @@
 
     <meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1"/>
     <meta property="og:site_name" content="Wespc">
-    <meta property="og:title" content="砝码称重"/>
+    <meta property="og:title" content="1024 Palindromic Number"/>
     
     <style>body:before{ content: ''; background-image: url(https://api.paugram.com/wallpaper?source=gh) }</style>
     
@@ -53,68 +53,55 @@
     <main>
     <div class="wrap min">
         <section class="post-title">
-            <h2>砝码称重</h2>
+            <h2>1024 Palindromic Number</h2>
             <div class="post-meta">
-                <time class="date">2022.04.09 14:18:16</time>
+                <time class="date">2022.05.12 21:25:26</time>
             
             </div>
         </section>
         <article class="post-content">
-            <blockquote>由于量子力学测不准原理,我只能大概告诉你,这篇文章创建于33±1.0天前。当然你数学好也可以自己算</blockquote>
+            <blockquote>由于量子力学测不准原理,我只能大概告诉你,这篇文章创建于0±1.0天前。当然你数学好也可以自己算</blockquote>
         
-            <p><em>题目描述</em></p>
-<p>你有一架天平和 N 个砝码，这 N 个砝码重量依次是 W1,W2,⋅⋅⋅,WN。 请你计算一共可以称出多少种不同的重量？ 注意砝码可以放在天平两边。</p>
-<p><em>输入描述</em></p>
-<p>输入的第一行包含一个整数 N。 第二行包含 N 个整数：W1,W2,W3,⋅⋅⋅,WN。</p>
-<p><em>输出描述</em></p>
-<p>输出一个整数代表答案。</p>
-<p><em>输入输出样例</em></p>
-<p>输入</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">3</span><br><span class="line">1 4 6</span><br></pre></td></tr></table></figure>
+            <p>A number that will be the same when it is written forwards or backwards is known as a <strong>Palindromic Number</strong>. For example, 1234321 is a palindromic number. All single digit numbers are palindromic numbers.</p>
+<p>Non-palindromic numbers can be paired with palindromic ones via a series of operations. First, the non-palindromic number is reversed and the result is added to the original number. If the result is not a palindromic number, this is repeated until it gives a palindromic number. For example, if we start from 67, we can obtain a palindromic number in 2 steps: 67 + 76 &#x3D; 143, and 143 + 341 &#x3D; 484.</p>
+<p>Given any positive integer <strong>N</strong>, you are supposed to find its paired palindromic number and the number of steps taken to find it.</p>
+<p><em>Input Specification:</em></p>
+<p>Each input file contains one test case. Each case consists of two positive numbers <strong>N</strong> and <strong>K</strong>, where <strong>N</strong> (≤1010) is the initial numer and <strong>K</strong> (≤100) is the maximum number of steps. The numbers are separated by a space.</p>
+<p><em>Output Specification:</em></p>
+<p>For each test case, output two numbers, one in each line. The first number is the paired palindromic number of <strong>N</strong>, and the second number is the number of steps taken to find the palindromic number. If the palindromic number is not found after <strong>K</strong> steps, just output the number obtained at the <strong>K</strong>th step and <strong>K</strong> instead.</p>
+<p><em>Sample Input:</em></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">67 3</span><br></pre></td></tr></table></figure>
 
-<p>输出</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">10</span><br></pre></td></tr></table></figure>
+<p><em>Sample Output:</em></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">484</span><br><span class="line">2</span><br></pre></td></tr></table></figure>
 
-<p><em>分析</em></p>
-<p>背包问题，有限制的选择问题 ，动态规划问题，要求统计可能的情况个数。</p>
-<p>用数组j [ i ] [ j ] 记录所有可能的情况，其中 i 表示考虑第 i个砝码， j 表示选择前 i 个砝码能否配出质量 j ，之所以说是前 i 个砝码，是因为后面的 i 的情况，由 i -1 递推得出。</p>
-<p>f [i ] [j]的值为0 或1，表示选择前i个砝码不可以配出 重量为 j，或可以。</p>
-<p>f [i] [j]的值取决于三种情况， 不选择 第 i 个砝码，选择 第 i 个砝码并放在左边，或选择第 i 个砝码并放在右边。 如果这三种情况有一种情况能凑出 重量值为 j ，则 f[i] [j]为 true，可以用‘或‘运算</p>
-<p>之所以三种情况决定 f [i] [j] 的值是因为，我们要求的是 能凑出多少种重量，所以不用管是哪几个凑出的（关于回溯求得那几个砝码凑出的我也不理解，可以去查阅背包问题）。</p>
-<p>将砝码放在左边的情况和放在右边的情况分别认为是重量为+和-</p>
-<p>j的值从 -重量总和～+重量总和注意判断，但是数组下标不可为-，为了解决这个问题，可以给所有j加一个偏移量，，让所有值偏向正侧。在统计最后能凑出多少种重量时，-值和+值只要看一半即可，因为是对称重复的。</p>
-<p>f [ n] [j] 即表示 考虑前 n 个砝码，能否凑出 j质量，循环判断累加即可得到答案。</p>
-<hr>
-<p>怎么递推：</p>
-<p>比如第i个砝码能否凑出 j质量 ，三种情况：</p>
-<ol>
-<li>不选择第i 个砝码，能否凑出 j重量，这取决于f[i-1] [j], f [i-1] [j]表示只考虑前i-1个砝码，如果能凑出j重量， 考虑 第i个砝码而不放和考虑前i-1个砝码应该是一样的。</li>
-<li>选择 第 i 个砝码并放在左边，我们记左边则质量为+，那放了 第i 个砝码能不能凑出重量j ，只要看，不放 第i 个砝码，能不能凑出 j质量 减去第i个砝码。</li>
-<li>同理，选择第 i 个砝码放在右边，质量记为 -，如果 不放第 i 个砝码在右边，能凑出质量 j  + 砝码i 的质量， 那当把砝码放在右边就是 j + 砝码i的质量 - 砝码i 的质量就可以凑出。</li>
-</ol>
-<p>以上为递推过程。我也是第一次做背包问题，如果有讲错的可以和我联系，同时参照以下内容：</p>
-<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/sbxd-yyn/p/15904244.html">蓝桥杯砝码称重</a></p>
-<p><a target="_blank" rel="noopener" href="https://binaryco.top/2022/02/14/%E3%80%90%E8%93%9D%E6%A1%A5%E6%9D%AF2021%E7%9C%9F%E9%A2%98g%E3%80%91%E7%A0%9D%E7%A0%81%E7%A7%B0%E9%87%8D/">【蓝桥杯2021真题g】砝码称重</a></p>
-<p><em>题解</em></p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> N 110</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> M 200010</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> B 100010</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> w[N],f[N][M];</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="type">int</span> n,m = <span class="number">0</span>;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;n);</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>;i &lt;= n;i++) <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;w[i]),m+=w[i];     <span class="comment">//获取每一个砝码的重量，同时统计总重量</span></span><br><span class="line"></span><br><span class="line">    f[<span class="number">0</span>][B] = <span class="number">1</span>;        <span class="comment">//0个砝码，凑出0质量成立，则置为1</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>;i &lt;=n;i++)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> j = -m;j &lt;=m;j++)&#123;      <span class="comment">//j从-m开始判断</span></span><br><span class="line">            f[i][j+B] = f[i<span class="number">-1</span>][j+B];    <span class="comment">//不放第i个砝码，</span></span><br><span class="line">            <span class="keyword">if</span>(j-w[i] &gt;=-m) f[i][j+B] = f[i][j+B]||f[i<span class="number">-1</span>][j-w[i]+B];</span><br><span class="line">            <span class="keyword">if</span>(j+w[i] &lt;= m)f[i][j+B] = f[i][j+B]||f[i<span class="number">-1</span>][j+w[i]+B];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="type">int</span> res = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>;i &lt;=m;i++)<span class="keyword">if</span>(f[n][i+B])res++;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>,res);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><em>Sample Input:</em></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">69 3</span><br></pre></td></tr></table></figure>
 
-<hr>
-<p>代码虽然看着简短可并不容易理解，这也只是一个背包问题的应用，要想掌握动态规划，灵活运用还需要做很多题。</p>
+<p><em>Sample Output:</em></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1353</span><br><span class="line">3</span><br></pre></td></tr></table></figure>
+
+
+
+<p><em>Analysis</em><br>c++ 现在用起来还是很费劲啊。人真的是有惰性，几天不做题，真的一点也不想做了。即使这样一道题，也足足做了2小时，我是废物啊(T_T)<br>这道题号是我生日，这是我的幸运题了。（根本不幸运，我恨超长数字！）</p>
+<p><em>Code</em></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line">string s1,s2;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">add</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="type">int</span> carry = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>;i &lt; s2.<span class="built_in">size</span>();i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(s1[i]  + s2[i] + carry - <span class="number">2</span> * <span class="string">&#x27;0&#x27;</span> &gt;=<span class="number">10</span>)&#123;</span><br><span class="line">            s1[i] = s1[i] + s2[i] + carry - <span class="string">&#x27;0&#x27;</span> - <span class="number">10</span>;</span><br><span class="line">            carry = <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            s1[i] = s1[i] + s2[i] - <span class="string">&#x27;0&#x27;</span> + carry;</span><br><span class="line">            carry = <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(carry)s1+=<span class="string">&#x27;1&#x27;</span>;</span><br><span class="line">    <span class="built_in">reverse</span>(s1.<span class="built_in">begin</span>(),s1.<span class="built_in">end</span>());</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">isPal</span><span class="params">(string s)</span></span>&#123;</span><br><span class="line">    <span class="type">int</span> i = <span class="number">0</span>, j = s.<span class="built_in">size</span>()<span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">while</span>(i &lt;j &amp;&amp; s[i] == s[j])i++,j--;</span><br><span class="line">    <span class="keyword">return</span> i &gt;=j;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> k,cnt = <span class="number">0</span>;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    cin &gt;&gt; s1 &gt;&gt; k;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>;i &lt;k;i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(<span class="built_in">isPal</span>(s1))<span class="keyword">break</span>;</span><br><span class="line">        s2 = s1;</span><br><span class="line">        <span class="built_in">reverse</span>(s2.<span class="built_in">begin</span>(),s2.<span class="built_in">end</span>());</span><br><span class="line">        <span class="built_in">add</span>();</span><br><span class="line">        cnt++;</span><br><span class="line">    &#125;</span><br><span class="line">    cout &lt;&lt; s1 &lt;&lt;endl &lt;&lt; cnt &lt;&lt; endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 
         </article>
         <section class="post-near">
             <ul>
                 
-                    <li>上一篇: <a href="/2022/04/09/suibi-1/">APR 9 随笔</a></li>
+                    <li>上一篇: 看完啦 (つд⊂)</li>
                 
                 
-                    <li>下一篇: <a href="/2022/04/08/test/">受伤的皇后</a></li>
+                    <li>下一篇: <a href="/2022/05/11/suibi-7/">我成为了坚果小贩</a></li>
                 
             </ul>
         </section>
         
             <section class="post-tags">
-            <a class="-none-link" href="/tags/%E7%AE%97%E6%B3%95%E7%AB%9E%E8%B5%9B/" rel="tag">算法竞赛</a><a class="-none-link" href="/tags/%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/" rel="tag">背包问题</a><a class="-none-link" href="/tags/%E8%93%9D%E6%A1%A5%E6%9D%AF/" rel="tag">蓝桥杯</a>
+            <a class="-none-link" href="/tags/PAT-Advanced-Level-Practice/" rel="tag">PAT (Advanced Level) Practice</a><a class="-none-link" href="/tags/PAT%E7%94%B2%E7%BA%A7/" rel="tag">PAT甲级</a>
             </section>
         
     
