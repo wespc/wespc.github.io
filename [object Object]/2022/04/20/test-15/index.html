@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9V6Z62L6BY"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-9V6Z62L6BY');
+</script>
+<!-- End Google Analytics -->
+  
+  
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="Hexo Theme Redefine">
+    <meta name="description" content="hello">
+    <meta name="author" content="peng cheng">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-redefine.png">
+    <!-- preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://evan.beee.top" crossorigin>
+    
+    <!--- Seo Part-->
+    
+    <link rel="canonical" href="http://example.com/[object object]/2022/04/20/test-15/"/>
+    <meta name="robots" content="index,follow">
+    <meta name="googlebot" content="index,follow">
+    <meta name="revisit-after" content="1 days">
+    
+        <meta name="description" content="Suppose a bank has N windows open for service. There is a yellow line in front of the windows which devides the waiting area into two parts. The rules for the customers to wait in line are:  The space">
+<meta property="og:type" content="article">
+<meta property="og:title" content="1014 Waiting in Line PAT (Advanced Level) Practice">
+<meta property="og:url" content="http://example.com/[object%20Object]/2022/04/20/test-15/index.html">
+<meta property="og:site_name" content="ピーターのブログ">
+<meta property="og:description" content="Suppose a bank has N windows open for service. There is a yellow line in front of the windows which devides the waiting area into two parts. The rules for the customers to wait in line are:  The space">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-04-19T20:11:36.000Z">
+<meta property="article:modified_time" content="2022-04-20T03:49:37.469Z">
+<meta property="article:author" content="Peng Cheng">
+<meta property="article:tag" content="PAT甲级">
+<meta property="article:tag" content="queue">
+<meta property="article:tag" content="队">
+<meta name="twitter:card" content="summary">
+    
+    <!--- Icon Part-->
+    <link rel="icon" type="image/png" href="https://wespc.github.io/2022/04/10/game/939934C9823AD2CEFBD140696EB78B59.jpg" sizes="192x192">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://wespc.github.io/2022/04/10/game/939934C9823AD2CEFBD140696EB78B59.jpg">
+    <meta name="theme-color" content="#A31F34">
+    <link rel="shortcut icon" href="https://wespc.github.io/2022/04/10/game/939934C9823AD2CEFBD140696EB78B59.jpg">
+    <!--- Page Info-->
+    
+    <title>
+        
+            1014 Waiting in Line PAT (Advanced Level) Practice -
+        
+        チェンのブログ
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+<link rel="stylesheet" href="/assets/fonts.css">
+
+    <!--- Font Part-->
+    
+    
+    
+    
+
+    <!--- Inject Part-->
+    
+    <script id="hexo-configurations">
+    let Global = window.Global || {};
+    Global.hexo_config = {"hostname":"example.com","root":"/","language":"en"};
+    Global.theme_config = {"articles":{"style":{"font_size":"16px","line_height":1.5,"image_border_radius":"14px","image_alignment":"center"},"word_count":{"enable":true,"count":true,"min2read":true},"author_label":{"enable":false,"auto":false,"list":[""]},"code_block":{"copy":true,"style":"mac","font":{"enable":false,"family":null,"url":null}},"toc":{"enable":true,"max_depth":3,"number":false,"expand":true,"init_open":true},"copyright":true,"lazyload":true,"recommendation":{"enable":false,"title":"推荐阅读","limit":3,"placeholder":"/images/wallhaven-wqery6-light.webp","skip_dirs":[]}},"colors":{"primary":"#A31F34","secondary":null},"global":{"fonts":{"chinese":{"enable":false,"family":null,"url":null},"english":{"enable":false,"family":null,"url":null}},"content_max_width":"1000px","sidebar_width":"210px","hover":{"shadow":true,"scale":false},"scroll_progress":{"bar":false,"percentage":true},"busuanzi_counter":{"enable":true,"site_pv":true,"site_uv":true,"post_pv":true},"pjax":true,"open_graph":true},"home_banner":{"enable":true,"image":{"light":"/images/wallhaven-wqery6-light.webp","dark":"/images/wallhaven-wqery6-dark.webp"},"title":"Enjoy your wonderful life.","subtitle":{"text":[],"typing_speed":100,"backing_speed":80,"starting_delay":500,"backing_delay":1500,"loop":true,"smart_backspace":true},"text_color":{"light":"#fff","dark":"#d1d1b6"},"text_style":{"title_size":"2.8rem","subtitle_size":"1.5rem","line_height":1.2},"custom_font":{"enable":false,"family":null,"url":null},"social_links":{"enable":true,"links":{"github":"https://github.com/wespc","instagram":null,"zhihu":null,"twitter":null,"email":"pcid757@gmail.com","bilibili":null}}},"plugins":{"feed":{"enable":false},"aplayer":{"enable":false,"audios":[{"name":"Gymnopedie No.1","artist":"Erik Satie","url":"https://music.163.com/song?id=1436101985&userid=283128325","cover":"https://i.kfs.io/album/global/3922765,0v1/fit/500x500.jpg"},{"name":"fish in the pool","artist":"ヘクとパスカル","url":"https://music.163.com/song?id=31861287&userid=283128325","cover":"https://i.scdn.co/image/ab67616d00001e02627e71b21ea6ff3eb8b806da"}]},"mermaid":{"enable":false,"version":"9.3.0"}},"version":"2.1.0","navbar":{"auto_hide":false,"color":{"left":"#f78736","right":"#367df7","transparency":35},"links":{"Home":{"path":"/","icon":"fa-regular fa-house"},"Archives":{"path":"/archives","icon":"fa-regular fa-archive"}},"search":{"enable":false,"preload":true}},"page_templates":{"friends_column":2,"tags_style":"blur"},"home":{"sidebar":{"enable":true,"position":"left","announcement":null,"links":null},"article_date_format":"auto","categories":{"enable":true,"limit":3},"tags":{"enable":true,"limit":3}}};
+    Global.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
+  </script>
+    
+    <!--- Fontawesome Part-->
+    
+<link rel="stylesheet" href="/fontawesome/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/brands.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/solid.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/regular.min.css">
+
+    
+    
+    
+    
+<meta name="generator" content="Hexo 5.4.1"><link rel="alternate" href="/atom.xml" title="ピーターのブログ" type="application/atom+xml">
+</head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+        <span class="pjax-progress-icon">
+            <i class="fa-solid fa-circle-notch fa-spin"></i>
+        </span>
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="main-content-container">
+
+        <div class="main-content-header">
+            <header class="navbar-container">
+    
+    <div class="navbar-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                
+                チェンのブログ
+                
+            </a>
+        </div>
+
+        <div class="right">
+            <!-- PC -->
+            <div class="desktop">
+                <ul class="navbar-list">
+                    
+                        
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class="" 
+                                    href="/"  >
+                                    
+                                        
+                                            <i class="fa-regular fa-house"></i>
+                                        
+                                        HOME
+                                    
+                                </a>
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class="" 
+                                    href="/archives"  >
+                                    
+                                        
+                                            <i class="fa-regular fa-archive"></i>
+                                        
+                                        ARCHIVES
+                                    
+                                </a>
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                    
+                </ul>
+            </div>
+            <!-- Mobile -->
+            <div class="mobile">
+                
+                <div class="icon-item navbar-bar">
+                    <div class="navbar-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile drawer -->
+    <div class="navbar-drawer">
+        <ul class="drawer-navbar-list">
+            
+                
+                    <li class="drawer-navbar-item flex-center">
+                        <a class="" 
+                        href="/"  >
+                             
+                                
+                                    <i class="fa-regular fa-house"></i>
+                                
+                                HOME
+                            
+                        </a>
+                    </li>
+                    <!-- Submenu -->
+                    
+            
+                
+                    <li class="drawer-navbar-item flex-center">
+                        <a class="" 
+                        href="/archives"  >
+                             
+                                
+                                    <i class="fa-regular fa-archive"></i>
+                                
+                                ARCHIVES
+                            
+                        </a>
+                    </li>
+                    <!-- Submenu -->
+                    
+            
+
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="main-content-body">
+
+            
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="post-page-container">
+        <div class="article-content-container">
+
+            
+            
+                <div class="article-title">
+                    <h1 class="article-title-regular">1014 Waiting in Line PAT (Advanced Level) Practice</h1>
+                </div>
+            
+                
+            
+
+            
+                <div class="article-header">
+                    <div class="avatar">
+                        <img src="https://wespc.github.io/2022/04/10/game/939934C9823AD2CEFBD140696EB78B59.jpg">
+                    </div>
+                    <div class="info">
+                        <div class="author">
+                            <span class="name">peng cheng</span>
+                            
+                        </div>
+                        <div class="meta-info">
+                            <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fa-regular fa-pen-fancy"></i>&nbsp;
+        <span class="desktop">2022-04-20 04:11:36</span>
+        <span class="mobile">2022-04-20 04:11</span>
+        <span class="hover-info">Created</span>
+    </span>
+    
+        <span class="article-date article-meta-item">
+            <i class="fa-regular fa-wrench"></i>&nbsp;
+            <span class="desktop">2022-04-20 11:49:37</span>
+            <span class="mobile">2022-04-20 11:49</span>
+            <span class="hover-info">Updated</span>
+        </span>
+    
+
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fa-regular fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/PAT%E7%94%B2%E7%BA%A7/">PAT甲级</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/queue/">queue</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/%E9%98%9F/">队</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+    
+    
+</div>
+
+                        </div>
+                    </div>
+                </div>
+            
+
+            <div class="article-content markdown-body">
+                <p>Suppose a bank has <strong>N</strong> windows open for service. There is a yellow line in front of the windows which devides the waiting area into two parts. The rules for the customers to wait in line are:</p>
+<ul>
+<li>The space inside the yellow line in front of each window is enough to contain a line with <strong>M</strong> customers. Hence when all the <strong>N</strong> lines are full, all the customers after (and including) the (<strong>NM</strong>+1)st one will have to wait in a line behind the yellow line.</li>
+<li>Each customer will choose the shortest line to wait in when crossing the yellow line. If there are two or more lines with the same length, the customer will always choose the window with the smallest number.</li>
+<li><strong>Customeri</strong> will take <strong>Ti</strong> minutes to have his&#x2F;her transaction processed.</li>
+<li>The first <strong>N</strong> customers are assumed to be served at 8:00am.</li>
+</ul>
+<p>Now given the processing time of each customer, you are supposed to tell the exact time at which a customer has his&#x2F;her business done.</p>
+<p>For example, suppose that a bank has 2 windows and each window may have 2 customers waiting inside the yellow line. There are 5 customers waiting with transactions taking 1, 2, 6, 4 and 3 minutes, respectively. At 08:00 in the morning, <strong>Customer1</strong> is served at <strong>window1</strong>while<strong>Customer2</strong> is served at <strong>window2</strong>. <strong>Customer3</strong> will wait in front of  <strong>window1</strong> and  <strong>Customer4</strong> will wait in front of <strong>window2</strong>.  <strong>Customer5</strong> will wait behind the yellow line.</p>
+<p>At 08:01, <strong>Customer1</strong> is done and <strong>Customer5</strong>  enters the line in front of  <strong>window1</strong> since that line seems shorter now. <strong>Customer2</strong> will leave at 08:02, <strong>Customer4</strong> at 08:06, <strong>Customer3</strong>  at 08:07, and finally <strong>Customer5</strong> at 08:10.</p>
+<p><em>Input Specification:</em></p>
+<p>Each input file contains one test case. Each case starts with a line containing 4 positive integers: <strong>N</strong> (≤20, number of windows), <strong>M</strong> (≤10, the maximum capacity of each line inside the yellow line), <strong>K</strong> (≤1000, number of customers), and <strong>Q</strong> (≤1000, number of customer queries).</p>
+<p>The next line contains <strong>K</strong> positive integers, which are the processing time of the <strong>K</strong> customers.</p>
+<p>The last line contains <strong>Q</strong> positive integers, which represent the customers who are asking about the time they can have their transactions done. The customers are numbered from 1 to <strong>K</strong>.</p>
+<p><em>Output Specification:</em></p>
+<p>For each of the <strong>Q</strong> customers, print in one line the time at which his&#x2F;her transaction is finished, in the format <code>HH:MM</code> where <code>HH</code> is in [08, 17] and <code>MM</code> is in [00, 59]. Note that since the bank is closed everyday after 17:00, for those customers who cannot be served before 17:00, you must output <code>Sorry</code> instead.</p>
+<p><em>Sample Input:</em></p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">2 2 7 5</span><br><span class="line">1 2 6 4 3 534 2</span><br><span class="line">3 4 5 6 7</span><br></pre></td></tr></table></figure></div>
+
+<p><em>Sample Output:</em></p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">08:07</span><br><span class="line">08:06</span><br><span class="line">08:10</span><br><span class="line">17:00</span><br><span class="line">Sorry</span><br></pre></td></tr></table></figure></div>
+
+<p><em>Analysis</em></p>
+<p>题意为有N个窗口，每个窗口前有M个等待位置，当M个等待位置未满，顾客选择队伍最短的那个，如果有并列，选择序号最小的那个。如果等待位置满了，需要有空缺才可以顺序补上。<br>可以想象K个顾客是排好队进银行的，在前N×M个位置，只要顺序给N个窗口分发即可，分发M次。如果N×M循环顾客还没有发完，就要进行选则。每个窗口创建一个结构体变量，内部记录poptime，endtime，和一个长度为M的队。poptime为队头的人结束的时间点，endtime为队尾结束的时间。同时利用endtime也可以确定新入队的元素是否会被说sorry。如果endtime已经到了17:00，后面入队的人一定会被说sorry。<br>利用辅助数组time[i] 记录第i 个人服务结束的时间，sorry[i]数组标记第 i 个人是否会被说sorry，时间以8:00为原点以分钟累计，在输出时转换一下就好。<br>poptime并不是时间段，而是时间点，在前N×M个人入队时都为窗口第一个人服务时间，因为这些人是同时开始排队的。N×M人之后，下一个人选择poptime最小的窗口入队，因为这一队是最早有空位置的，该队队头出队新人入队，用数组模拟循环队列，出队后，这个窗口的的poptime加上下一个人的服务时间，作为这个队下一次弹出的时间。如此循环直到所有人服务结束。<br>思路来自柳神，详情请参考以下链接：</p>
+<p><a class="link"   target="_blank" rel="noopener" href="https://www.liuchuo.net/archives/2943" >1014 Waiting in Line (30)-PAT甲级真题（queue的应用） <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a><br><em>Code</em></p>
+<div class="highlight-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> &#123;</span></span><br><span class="line">    <span class="type">int</span> poptime,endtime;</span><br><span class="line">    <span class="type">int</span> <span class="built_in">queue</span>[<span class="number">15</span>];</span><br><span class="line">    <span class="type">int</span> head,tail;</span><br><span class="line">&#125;Node;</span><br><span class="line">Node window[<span class="number">25</span>];</span><br><span class="line"><span class="type">int</span> serve[<span class="number">1015</span>];        <span class="comment">//每个人服务时常</span></span><br><span class="line"><span class="type">int</span> time[<span class="number">1015</span>];         <span class="comment">//每个人服务结束时间</span></span><br><span class="line"><span class="type">int</span> sorry[<span class="number">1015</span>] = &#123;<span class="number">0</span>&#125;;  <span class="comment">//被说sorry标记</span></span><br><span class="line"><span class="type">int</span> N,M,K,Q;</span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">void</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d%d%d%d&quot;</span>,&amp;N,&amp;M,&amp;K,&amp;Q);  </span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>;i&lt;=K;i++)&#123;        <span class="comment">//获取每个人办理时常</span></span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;serve[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="type">int</span> index = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>;i&lt;<span class="number">25</span>;i++)&#123;        <span class="comment">//初始化</span></span><br><span class="line">        window[i].endtime = <span class="number">0</span>;</span><br><span class="line">        window[i].head = <span class="number">0</span>;</span><br><span class="line">        window[i].tail = <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>;i&lt;=M;i++)&#123;        <span class="comment">//处理前N*M个数据，直接顺序填入窗口即可</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">1</span>;j&lt;=N;j++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(index &lt;= K)&#123;</span><br><span class="line">                <span class="keyword">if</span>(window[j].endtime &gt;= <span class="number">540</span>)sorry[index] =<span class="number">1</span>;       <span class="comment">//结束时间必须在17:00前还是开始必须在17:00前？</span></span><br><span class="line">                window[j].endtime+=serve[index];</span><br><span class="line">                time[index] = window[j].endtime;</span><br><span class="line">                window[j].<span class="built_in">queue</span>[window[j].tail++] = serve[index];</span><br><span class="line">                <span class="keyword">if</span>(i == <span class="number">1</span>)window[j].poptime = serve[index];</span><br><span class="line">                index++;</span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="type">int</span> v,min;</span><br><span class="line">    <span class="keyword">while</span>(index &lt;=K)&#123;                       <span class="comment">//如果填完N*M个还有客户的话继续更新</span></span><br><span class="line">        v = <span class="number">1</span>,min = window[<span class="number">1</span>].poptime;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>;i&lt;=N;i++)&#123;            <span class="comment">//选择一个弹出时间最短的，也就是最早有空位的那个窗口</span></span><br><span class="line">            <span class="keyword">if</span>(window[i].poptime &lt; min)&#123;v = i;min = window[i].poptime;&#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(window[v].endtime &gt;=<span class="number">540</span>)sorry[index] = <span class="number">1</span>;    <span class="comment">//如果窗口服务时常已经超过17:00，后面的人会被说sorry</span></span><br><span class="line">        window[v].endtime +=serve[index];               <span class="comment">//更新窗口结束服务时间</span></span><br><span class="line">        time[index] = window[v].endtime;                <span class="comment">//更新该客户服务结束时间</span></span><br><span class="line">        window[v].head++;                               <span class="comment">//该窗口弹出出队对头客户</span></span><br><span class="line">        <span class="keyword">if</span>(window[v].head &gt;=<span class="number">15</span>)window[v].head = <span class="number">0</span>;      <span class="comment">//循环队</span></span><br><span class="line">        window[v].poptime +=window[v].<span class="built_in">queue</span>[window[v].head];        <span class="comment">//更新弹出时间</span></span><br><span class="line">        window[v].<span class="built_in">queue</span>[window[v].tail++] = serve[index];           <span class="comment">//入队</span></span><br><span class="line">        <span class="keyword">if</span>(window[v].tail &gt;=<span class="number">15</span>)window[v].tail =<span class="number">0</span>;</span><br><span class="line">        index++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="type">int</span> num;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i =<span class="number">1</span>;i&lt;=Q;i++)&#123;                                         <span class="comment">//查询时间，将分钟累计转换成精确时间</span></span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;num);</span><br><span class="line">        <span class="keyword">if</span>(sorry[num] ==<span class="number">1</span>)<span class="built_in">printf</span>(<span class="string">&quot;Sorry\n&quot;</span>);</span><br><span class="line">        <span class="keyword">else</span> <span class="built_in">printf</span>(<span class="string">&quot;%02d:%02d\n&quot;</span>,time[num]/<span class="number">60</span> + <span class="number">8</span>,time[num]%<span class="number">60</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+
+            </div>
+
+            
+                <div class="post-copyright-info">
+                    <div class="article-copyright-info-container">
+    <ul>
+        <li><strong>Title:</strong> 1014 Waiting in Line PAT (Advanced Level) Practice</li>
+        <li><strong>Author:</strong> peng cheng</li>
+        <li><strong>Created at:</strong> 2022-04-20 04:11:36</li>
+        
+            <li>
+                <strong>Updated at:</strong> 2022-04-20 11:49:37
+            </li>
+        
+        <li>
+            <strong>Link:</strong> https://redefine.ohevan.com//[object Object]/2022/04/20/test-15/
+        </li>
+        <li>
+            <strong>License:</strong> This work is licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">CC BY-NC-SA 4.0</a>.
+        </li>
+    </ul>
+</div>
+
+                </div>
+            
+
+            
+                <ul class="post-tags-box">
+                    
+                        <li class="tag-item">
+                            <a href="/tags/PAT%E7%94%B2%E7%BA%A7/">#PAT甲级</a>&nbsp;
+                        </li>
+                    
+                        <li class="tag-item">
+                            <a href="/tags/queue/">#queue</a>&nbsp;
+                        </li>
+                    
+                        <li class="tag-item">
+                            <a href="/tags/%E9%98%9F/">#队</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            
+
+            
+
+            
+                <div class="article-nav">
+                    
+                        <div class="article-prev">
+                            <a class="prev"
+                            rel="prev"
+                            href="/%5Bobject%20Object%5D/2022/04/20/test-16/"
+                            >
+                                <span class="left arrow-icon flex-center">
+                                    <i class="fa-solid fa-chevron-left"></i>
+                                </span>
+                                <span class="title flex-center">
+                                    <span class="post-nav-title-item">1015 Reversible Primes PAT (Advanced Level) Practice</span>
+                                    <span class="post-nav-item">Prev posts</span>
+                                </span>
+                            </a>
+                        </div>
+                    
+                    
+                        <div class="article-next">
+                            <a class="next"
+                            rel="next"
+                            href="/%5Bobject%20Object%5D/2022/04/20/test-14/"
+                            >
+                                <span class="title flex-center">
+                                    <span class="post-nav-title-item">1013 Battle Over Cities PAT (Advanced Level) Practice</span>
+                                    <span class="post-nav-item">Next posts</span>
+                                </span>
+                                <span class="right arrow-icon flex-center">
+                                    <i class="fa-solid fa-chevron-right"></i>
+                                </span>
+                            </a>
+                        </div>
+                    
+                </div>
+            
+
+
+            
+                <div class="comment-container">
+                    <div class="comments-container">
+    <div id="comment-anchor"></div>
+    <div class="comment-area-title">
+        <i class="fa-solid fa-comments"></i>&nbsp;Comments
+    </div>
+    
+
+        
+            
+ 
+    <div id="waline"></div>
+    <script type="module"  data-pjax>
+        import { init } from 'https://evan.beee.top/js/waline.mjs';
+
+        function loadWaline() {
+            init({
+                el: '#waline',
+                serverURL: 'https://example.example.com',
+                lang: 'zh-CN',
+                dark: 'body[class~="dark-mode"]',
+                requiredMeta: ['nick','mail'], // cannot customize by theme config, change it yourself
+            });
+        }
+
+        if ('true') {
+            const loadWalineTimeout = setTimeout(() => {
+                loadWaline();
+                clearTimeout(loadWalineTimeout);
+            }, 1000);
+        } else {
+            window.addEventListener('DOMContentLoaded', loadWaline);
+        }
+        
+    </script>
+
+
+
+        
+    
+</div>
+
+                </div>
+            
+        </div>
+
+        
+            <div class="toc-content-container">
+                <div class="post-toc-wrap">
+    <div class="post-toc">
+        <div class="toc-title">On this page</div>
+        <div class="page-title">1014 Waiting in Line PAT (Advanced Level) Practice</div>
+        
+
+    </div>
+</div>
+            </div>
+        
+    </div>
+</div>
+
+
+                
+
+            </div>
+            
+            
+
+        </div>
+
+        <div class="main-content-footer">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info">
+            &copy;
+            
+              <span>2022</span>
+              -
+            
+            2023&nbsp;&nbsp;<i class="fa-solid fa-heart fa-beat" style="--fa-animation-duration: 0.5s; color: #f54545"></i>&nbsp;&nbsp;<a href="/">peng cheng</a>
+        </div>
+        
+            <script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    <span id="busuanzi_container_site_uv" class="busuanzi_container_site_uv">
+                        VISITOR COUNT&nbsp;<span id="busuanzi_value_site_uv" class="busuanzi_value_site_uv"></span>
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv" class="busuanzi_container_site_pv">
+                        TOTAL PAGE VIEWS&nbsp;<span id="busuanzi_value_site_pv" class="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            <span class="powered-by-container">POWERED BY <?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1rem" height="1rem" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><path fill="#0E83CD" d="M256.4,25.8l-200,115.5L56,371.5l199.6,114.7l200-115.5l0.4-230.2L256.4,25.8z M349,354.6l-18.4,10.7l-18.6-11V275H200v79.6l-18.4,10.7l-18.6-11v-197l18.5-10.6l18.5,10.8V237h112v-79.6l18.5-10.6l18.5,10.8V354.6z"/></svg><a target="_blank" href="https://hexo.io">Hexo</a></span>
+                <br>
+            <span class="theme-version-container">THEME&nbsp;<a class="theme-version" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v2.1.0</a>
+        </div>
+        
+        
+        
+            <div id="start_div" style="display:none">
+                2022/3/17 23:25:14
+            </div>
+            <div>
+                Blog up for <span class="odometer" id="runtime_days" ></span> days <span class="odometer" id="runtime_hours"></span> hrs <span class="odometer" id="runtime_minutes"></span> Min <span class="odometer" id="runtime_seconds"></span> Sec
+            </div>
+        
+        
+        
+            <script async data-pjax>
+                try {
+                    function odometer_init() {
+                    const elements = document.querySelectorAll('.odometer');
+                    elements.forEach(el => {
+                        new Odometer({
+                            el,
+                            format: '( ddd).dd',
+                            duration: 200
+                        });
+                    });
+                    }
+                    odometer_init();
+                } catch (error) {}
+            </script>
+        
+        
+        
+    </div>  
+</footer>
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="article-tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="right-bottom-tools page-aside-toggle">
+                <i class="fa-regular fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+            <li class="go-comment">
+                <i class="fa-regular fa-comments"></i>
+            </li>
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-side-tools-container">
+        <div class="side-tools-container">
+    <ul class="hidden-tools-list">
+        <li class="right-bottom-tools tool-font-adjust-plus flex-center">
+            <i class="fa-regular fa-magnifying-glass-plus"></i>
+        </li>
+
+        <li class="right-bottom-tools tool-font-adjust-minus flex-center">
+            <i class="fa-regular fa-magnifying-glass-minus"></i>
+        </li>
+
+        <li class="right-bottom-tools tool-expand-width flex-center">
+            <i class="fa-regular fa-expand"></i>
+        </li>
+
+        <li class="right-bottom-tools tool-dark-light-toggle flex-center">
+            <i class="fa-regular fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+
+        <li class="right-bottom-tools tool-scroll-to-bottom flex-center">
+            <i class="fa-regular fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="visible-tools-list">
+        <li class="right-bottom-tools toggle-tools-list flex-center">
+            <i class="fa-regular fa-cog fa-spin"></i>
+        </li>
+        
+            <li class="right-bottom-tools tool-scroll-to-top flex-center">
+                <i class="arrow-up fas fa-arrow-up"></i>
+                <span class="percent"></span>
+            </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+
+
+</main>
+
+
+
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/layouts/navbarShrink.js"></script>
+
+<script src="/js/tools/scrollTopBottom.js"></script>
+
+<script src="/js/tools/lightDarkSwitch.js"></script>
+
+
+
+
+
+    
+<script src="/js/tools/codeBlock.js"></script>
+
+
+
+
+    
+<script src="/js/layouts/lazyload.js"></script>
+
+
+
+
+    
+<script src="/js/tools/runtime.js"></script>
+
+    
+<script src="/js/layouts/odometer.min.js"></script>
+
+    
+<link rel="stylesheet" href="/assets/odometer-theme-minimal.css">
+
+
+
+
+  
+<script src="/js/libs/Typed.min.js"></script>
+
+  
+<script src="/js/plugins/typed.js"></script>
+
+
+
+
+
+
+
+<div class="post-scripts pjax">
+    
+        
+<script src="/js/tools/tocToggle.js"></script>
+
+<script src="/js/libs/anime.min.js"></script>
+
+<script src="/js/layouts/toc.js"></script>
+
+<script src="/js/plugins/tabs.js"></script>
+
+    
+</div>
+
+
+    
+<script src="/js/libs/pjax.min.js"></script>
+
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        window.pjax = new Pjax({
+            selectors: [
+                'head title',
+                '.page-container',
+                '.pjax'
+            ],
+            history: true,
+            debug: false,
+            cacheBust: false,
+            timeout: 0,
+            analytics: false,
+            currentUrlFullReload: false,
+            scrollRestoration: false,
+            // scrollTo: true,
+        });
+
+        document.addEventListener('pjax:send', () => {
+            Global.utils.pjaxProgressBarStart();
+        });
+
+        document.addEventListener('pjax:complete', () => {
+            Global.utils.pjaxProgressBarEnd();
+            window.pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'));
+            Global.refresh();
+        });
+    });
+</script>
+
+
+
+
+</body>
+</html>

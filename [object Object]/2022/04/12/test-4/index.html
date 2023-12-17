@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9V6Z62L6BY"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-9V6Z62L6BY');
+</script>
+<!-- End Google Analytics -->
+  
+  
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="Hexo Theme Redefine">
+    <meta name="description" content="hello">
+    <meta name="author" content="peng cheng">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-redefine.png">
+    <!-- preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://evan.beee.top" crossorigin>
+    
+    <!--- Seo Part-->
+    
+    <link rel="canonical" href="http://example.com/[object object]/2022/04/12/test-4/"/>
+    <meta name="robots" content="index,follow">
+    <meta name="googlebot" content="index,follow">
+    <meta name="revisit-after" content="1 days">
+    
+        <meta name="description" content="As an emergency rescue team leader of a city, you are given a special map of your country. The map shows several scattered cities connected by some roads. Amount of rescue teams in each city and the l">
+<meta property="og:type" content="article">
+<meta property="og:title" content="PAT (Advanced Level) Practice 1003 Emergency">
+<meta property="og:url" content="http://example.com/[object%20Object]/2022/04/12/test-4/index.html">
+<meta property="og:site_name" content="ピーターのブログ">
+<meta property="og:description" content="As an emergency rescue team leader of a city, you are given a special map of your country. The map shows several scattered cities connected by some roads. Amount of rescue teams in each city and the l">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-04-12T09:56:08.000Z">
+<meta property="article:modified_time" content="2023-03-20T08:49:24.358Z">
+<meta property="article:author" content="Peng Cheng">
+<meta property="article:tag" content="PAT">
+<meta property="article:tag" content="最短路">
+<meta name="twitter:card" content="summary">
+    
+    <!--- Icon Part-->
+    <link rel="icon" type="image/png" href="https://wespc.github.io/2022/04/10/game/939934C9823AD2CEFBD140696EB78B59.jpg" sizes="192x192">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://wespc.github.io/2022/04/10/game/939934C9823AD2CEFBD140696EB78B59.jpg">
+    <meta name="theme-color" content="#A31F34">
+    <link rel="shortcut icon" href="https://wespc.github.io/2022/04/10/game/939934C9823AD2CEFBD140696EB78B59.jpg">
+    <!--- Page Info-->
+    
+    <title>
+        
+            PAT (Advanced Level) Practice 1003 Emergency -
+        
+        チェンのブログ
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+<link rel="stylesheet" href="/assets/fonts.css">
+
+    <!--- Font Part-->
+    
+    
+    
+    
+
+    <!--- Inject Part-->
+    
+    <script id="hexo-configurations">
+    let Global = window.Global || {};
+    Global.hexo_config = {"hostname":"example.com","root":"/","language":"en"};
+    Global.theme_config = {"articles":{"style":{"font_size":"16px","line_height":1.5,"image_border_radius":"14px","image_alignment":"center"},"word_count":{"enable":true,"count":true,"min2read":true},"author_label":{"enable":false,"auto":false,"list":[""]},"code_block":{"copy":true,"style":"mac","font":{"enable":false,"family":null,"url":null}},"toc":{"enable":true,"max_depth":3,"number":false,"expand":true,"init_open":true},"copyright":true,"lazyload":true,"recommendation":{"enable":false,"title":"推荐阅读","limit":3,"placeholder":"/images/wallhaven-wqery6-light.webp","skip_dirs":[]}},"colors":{"primary":"#A31F34","secondary":null},"global":{"fonts":{"chinese":{"enable":false,"family":null,"url":null},"english":{"enable":false,"family":null,"url":null}},"content_max_width":"1000px","sidebar_width":"210px","hover":{"shadow":true,"scale":false},"scroll_progress":{"bar":false,"percentage":true},"busuanzi_counter":{"enable":true,"site_pv":true,"site_uv":true,"post_pv":true},"pjax":true,"open_graph":true},"home_banner":{"enable":true,"image":{"light":"/images/wallhaven-wqery6-light.webp","dark":"/images/wallhaven-wqery6-dark.webp"},"title":"Enjoy your wonderful life.","subtitle":{"text":[],"typing_speed":100,"backing_speed":80,"starting_delay":500,"backing_delay":1500,"loop":true,"smart_backspace":true},"text_color":{"light":"#fff","dark":"#d1d1b6"},"text_style":{"title_size":"2.8rem","subtitle_size":"1.5rem","line_height":1.2},"custom_font":{"enable":false,"family":null,"url":null},"social_links":{"enable":true,"links":{"github":"https://github.com/wespc","instagram":null,"zhihu":null,"twitter":null,"email":"pcid757@gmail.com","bilibili":null}}},"plugins":{"feed":{"enable":false},"aplayer":{"enable":false,"audios":[{"name":"Gymnopedie No.1","artist":"Erik Satie","url":"https://music.163.com/song?id=1436101985&userid=283128325","cover":"https://i.kfs.io/album/global/3922765,0v1/fit/500x500.jpg"},{"name":"fish in the pool","artist":"ヘクとパスカル","url":"https://music.163.com/song?id=31861287&userid=283128325","cover":"https://i.scdn.co/image/ab67616d00001e02627e71b21ea6ff3eb8b806da"}]},"mermaid":{"enable":false,"version":"9.3.0"}},"version":"2.1.0","navbar":{"auto_hide":false,"color":{"left":"#f78736","right":"#367df7","transparency":35},"links":{"Home":{"path":"/","icon":"fa-regular fa-house"},"Archives":{"path":"/archives","icon":"fa-regular fa-archive"}},"search":{"enable":false,"preload":true}},"page_templates":{"friends_column":2,"tags_style":"blur"},"home":{"sidebar":{"enable":true,"position":"left","announcement":null,"links":null},"article_date_format":"auto","categories":{"enable":true,"limit":3},"tags":{"enable":true,"limit":3}}};
+    Global.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
+  </script>
+    
+    <!--- Fontawesome Part-->
+    
+<link rel="stylesheet" href="/fontawesome/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/brands.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/solid.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/regular.min.css">
+
+    
+    
+    
+    
+<meta name="generator" content="Hexo 5.4.1"><link rel="alternate" href="/atom.xml" title="ピーターのブログ" type="application/atom+xml">
+</head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+        <span class="pjax-progress-icon">
+            <i class="fa-solid fa-circle-notch fa-spin"></i>
+        </span>
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="main-content-container">
+
+        <div class="main-content-header">
+            <header class="navbar-container">
+    
+    <div class="navbar-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                
+                チェンのブログ
+                
+            </a>
+        </div>
+
+        <div class="right">
+            <!-- PC -->
+            <div class="desktop">
+                <ul class="navbar-list">
+                    
+                        
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class="" 
+                                    href="/"  >
+                                    
+                                        
+                                            <i class="fa-regular fa-house"></i>
+                                        
+                                        HOME
+                                    
+                                </a>
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class="" 
+                                    href="/archives"  >
+                                    
+                                        
+                                            <i class="fa-regular fa-archive"></i>
+                                        
+                                        ARCHIVES
+                                    
+                                </a>
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                    
+                </ul>
+            </div>
+            <!-- Mobile -->
+            <div class="mobile">
+                
+                <div class="icon-item navbar-bar">
+                    <div class="navbar-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile drawer -->
+    <div class="navbar-drawer">
+        <ul class="drawer-navbar-list">
+            
+                
+                    <li class="drawer-navbar-item flex-center">
+                        <a class="" 
+                        href="/"  >
+                             
+                                
+                                    <i class="fa-regular fa-house"></i>
+                                
+                                HOME
+                            
+                        </a>
+                    </li>
+                    <!-- Submenu -->
+                    
+            
+                
+                    <li class="drawer-navbar-item flex-center">
+                        <a class="" 
+                        href="/archives"  >
+                             
+                                
+                                    <i class="fa-regular fa-archive"></i>
+                                
+                                ARCHIVES
+                            
+                        </a>
+                    </li>
+                    <!-- Submenu -->
+                    
+            
+
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="main-content-body">
+
+            
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="post-page-container">
+        <div class="article-content-container">
+
+            
+            
+                <div class="article-title">
+                    <h1 class="article-title-regular">PAT (Advanced Level) Practice 1003 Emergency</h1>
+                </div>
+            
+                
+            
+
+            
+                <div class="article-header">
+                    <div class="avatar">
+                        <img src="https://wespc.github.io/2022/04/10/game/939934C9823AD2CEFBD140696EB78B59.jpg">
+                    </div>
+                    <div class="info">
+                        <div class="author">
+                            <span class="name">peng cheng</span>
+                            
+                        </div>
+                        <div class="meta-info">
+                            <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fa-regular fa-pen-fancy"></i>&nbsp;
+        <span class="desktop">2022-04-12 17:56:08</span>
+        <span class="mobile">2022-04-12 17:56</span>
+        <span class="hover-info">Created</span>
+    </span>
+    
+        <span class="article-date article-meta-item">
+            <i class="fa-regular fa-wrench"></i>&nbsp;
+            <span class="desktop">2023-03-20 16:49:24</span>
+            <span class="mobile">2023-03-20 16:49</span>
+            <span class="hover-info">Updated</span>
+        </span>
+    
+
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fa-regular fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/PAT/">PAT</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/%E6%9C%80%E7%9F%AD%E8%B7%AF/">最短路</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+    
+    
+</div>
+
+                        </div>
+                    </div>
+                </div>
+            
+
+            <div class="article-content markdown-body">
+                <p>As an emergency rescue team leader of a city, you are given a special map of your country. The map shows several scattered cities connected by some roads. Amount of rescue teams in each city and the length of each road between any pair of cities are marked on the map. When there is an emergency call to you from some other city, your job is to lead your men to the place as quickly as possible, and at the mean time, call up as many hands on the way as possible.</p>
+<p><em>Input Specification:</em></p>
+<p>Each input file contains one test case. For each test case, the first line contains 4 positive integers: N (≤500) - the number of cities (and the cities are numbered from 0 to N−1), M - the number of roads, C1 and C2 - the cities that you are currently in and that you must save, respectively. The next line contains N integers, where the i-th integer is the number of rescue teams in the i-th city. Then M lines follow, each describes a road with three integers c1, c2 and L, which are the pair of cities connected by a road and the length of that road, respectively. It is guaranteed that there exists at least one path from C1 to C2.</p>
+<p><em>Output Specification:</em></p>
+<p>For each test case, print in one line two numbers: the number of different shortest paths between C1 and C2, and the maximum amount of rescue teams you can possibly gather. All the numbers in a line must be separated by exactly one space, and there is no extra space allowed at the end of a line.</p>
+<p><em>Sample Input:</em></p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">5 6 0 2</span><br><span class="line">1 2 1 5 3</span><br><span class="line">0 1 1</span><br><span class="line">0 2 2</span><br><span class="line">0 3 1</span><br><span class="line">1 2 1</span><br><span class="line">2 4 1</span><br><span class="line">3 4 1</span><br><span class="line"></span><br></pre></td></tr></table></figure></div>
+
+<p><em>Sample Output:</em></p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">2 4</span><br><span class="line"></span><br></pre></td></tr></table></figure></div>
+
+<p><em>Analysis</em><br>题意为找到两个点c1 和c2 的最短路（边权同时最小）数量，和最短路上的点权，如果最短路不止一条，输出最大点权。<br>这一题很难理解（～因为我是菜鸡( ´▽&#96; )ﾉ），因为在dijkstra单源最短路的基础上增加了求最大点权和最短路数量，我的做法参考了<a class="link"   target="_blank" rel="noopener" href="https://www.liuchuo.net/archives/2359" >柳神的题解 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>。除了s数组用于标记点是否求出最短路，d数组记录i点到起始点最短路长度，还需要num数组，记录i点到起始点最短路个数，w数组记录i点到起始点最大点权。</p>
+<p>根据严蔚敏数据结构书中的Dijkstra算法，在初始化辅助数组时，s[c1]需要先标记为1，在第一次查找所有点到起始点c1的最短路时就可以避开v0，但是柳神的解法并没有，并且这种解法在递推出num[i] 和 w[i] 时更方便，或许还有其他解法，当我想到时会更新这篇文章。</p>
+<p>更新num数组和w数组的方式是这一题的重点⭐️⭐️⭐️，先初始化w[c1]为 vexs[c1],num[c1] &#x3D; 1。在我们每次选出最小消耗的点后需要更新数组，</p>
+<p>1.如果有哪个节点 j 通过选出的点k到达起始点更近，我们就认为 j节点到达k 的最短路前驱为 k， 那 j节点到达 c1 的最短路数量就和k节点到达 c1 的最短路的数量相同，所以num[j] &#x3D; num[k],  此条最短路的最大点权，只有一个选择，就是 w[k] + vexs[j],k到达  c1 的最大点权加上 j 的点权。</p>
+<p>2.如果更新数组时发现 j 到 c1 的最短路和 j 通过 k而到c1 的最短路相同，那 num[j]  &#x3D; num[j] + num[k].由于最短路相同，我们要判断那条路的点权更大，并记下来，所以比较</p>
+<p>w[k]+ vexs[j] 和 w[j] ，如果前者更大，那w[j] &#x3D; w[k] + vexs[j]。</p>
+<p>按照柳神的写法，由于第一次循环以c1为开始，所以，会顺便更新每一个点到 c1 的num值，w值，这样就确保了数据的传递没有间断从而确保了答案的正确。</p>
+<p><em>Code</em></p>
+<div class="highlight-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> inf 99999999</span></span><br><span class="line"><span class="type">int</span> edge[<span class="number">520</span>][<span class="number">520</span>],vexs[<span class="number">520</span>],d[<span class="number">520</span>],s[<span class="number">520</span>],num[<span class="number">520</span>],w[<span class="number">520</span>];</span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">void</span>)</span>&#123;</span><br><span class="line">    <span class="type">int</span> n,m,c1,c2,v1,v2,k,min;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>;i &lt;<span class="number">520</span>;i++)                       <span class="comment">//初始化边数据</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">0</span>;j&lt;<span class="number">520</span>;j++)</span><br><span class="line">            edge[i][j] = inf;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d%d%d%d&quot;</span>,&amp;n,&amp;m,&amp;c1,&amp;c2);                <span class="comment">//获取第一行数据</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>;i&lt;n;i++)<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;vexs[i]);     <span class="comment">//获取第二行 n个点的数据</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>;i&lt;m;i++)&#123;                         <span class="comment">//获取接下来 m 行的边的数据</span></span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d%d%d&quot;</span>,&amp;v1,&amp;v2,&amp;k);</span><br><span class="line">        edge[v1][v2] = edge[v2][v1] = k;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//初始化辅助数组</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(i != c1)&#123;</span><br><span class="line">            s[i] = <span class="number">0</span>;</span><br><span class="line">            d[i] = edge[i][c1];</span><br><span class="line">            w[i] = <span class="number">0</span>;</span><br><span class="line">            num[i] = <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    d[c1] = <span class="number">0</span>;num[c1] = <span class="number">1</span>;w[c1] = vexs[c1];</span><br><span class="line">    <span class="comment">//起始点加入selected集合（s[i]为1即为s集合，说是集合，只是为便于理解）</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>;i&lt;n;i++)&#123;         <span class="comment">//循环 n-1 次 每次选择一个点加入 s 集合，作为已经求出最短路径的节点</span></span><br><span class="line">        k = <span class="number">-1</span>,min = inf;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">0</span>;j&lt;n;j++)</span><br><span class="line">        &#123;                         <span class="comment">//找到未求出最短路且消耗最小的节点</span></span><br><span class="line">            <span class="keyword">if</span>(!s[j] &amp;&amp; d[j] &lt; min)</span><br><span class="line">            &#123;</span><br><span class="line">                min = d[j];</span><br><span class="line">                k = j;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        s[k] = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">0</span>;j&lt;n;j++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(!s[j] &amp;&amp; d[k] + edge[k][j] &lt; d[j])</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="comment">//j 节点改为以k为前驱，则 到达 j的最短路数量就是到达 k节点的最短路数量</span></span><br><span class="line">                d[j] = d[k] + edge[k][j];</span><br><span class="line">                num[j] = num[k];</span><br><span class="line">                w[j] = w[k]+vexs[j];</span><br><span class="line">            &#125;<span class="keyword">else</span> <span class="keyword">if</span>(!s[j] &amp;&amp; d[k] + edge[k][j] == d[j])</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="comment">//j节点以k为前驱的消耗和其原路消耗相同,那到达j的最短路应为两边之和</span></span><br><span class="line">                num[j] = num[j] + num[k];</span><br><span class="line">                <span class="comment">//到达j的点权判断是否要更新</span></span><br><span class="line">                <span class="keyword">if</span>(w[k]+ vexs[j] &gt; w[j])</span><br><span class="line">                &#123;</span><br><span class="line">                    w[j] = w[k]+vexs[j];</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d %d\n&quot;</span>,num[c2],w[c2]);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+
+            </div>
+
+            
+                <div class="post-copyright-info">
+                    <div class="article-copyright-info-container">
+    <ul>
+        <li><strong>Title:</strong> PAT (Advanced Level) Practice 1003 Emergency</li>
+        <li><strong>Author:</strong> peng cheng</li>
+        <li><strong>Created at:</strong> 2022-04-12 17:56:08</li>
+        
+            <li>
+                <strong>Updated at:</strong> 2023-03-20 16:49:24
+            </li>
+        
+        <li>
+            <strong>Link:</strong> https://redefine.ohevan.com//[object Object]/2022/04/12/test-4/
+        </li>
+        <li>
+            <strong>License:</strong> This work is licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">CC BY-NC-SA 4.0</a>.
+        </li>
+    </ul>
+</div>
+
+                </div>
+            
+
+            
+                <ul class="post-tags-box">
+                    
+                        <li class="tag-item">
+                            <a href="/tags/PAT/">#PAT</a>&nbsp;
+                        </li>
+                    
+                        <li class="tag-item">
+                            <a href="/tags/%E6%9C%80%E7%9F%AD%E8%B7%AF/">#最短路</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            
+
+            
+
+            
+                <div class="article-nav">
+                    
+                        <div class="article-prev">
+                            <a class="prev"
+                            rel="prev"
+                            href="/%5Bobject%20Object%5D/2022/04/13/test-5/"
+                            >
+                                <span class="left arrow-icon flex-center">
+                                    <i class="fa-solid fa-chevron-left"></i>
+                                </span>
+                                <span class="title flex-center">
+                                    <span class="post-nav-title-item">PAT (Advanced Level) Practice 1004 Counting Leaves</span>
+                                    <span class="post-nav-item">Prev posts</span>
+                                </span>
+                            </a>
+                        </div>
+                    
+                    
+                        <div class="article-next">
+                            <a class="next"
+                            rel="next"
+                            href="/%5Bobject%20Object%5D/2022/04/11/test-3/"
+                            >
+                                <span class="title flex-center">
+                                    <span class="post-nav-title-item">PAT (Advanced Level) Practice 1002 A+B for Polynomials</span>
+                                    <span class="post-nav-item">Next posts</span>
+                                </span>
+                                <span class="right arrow-icon flex-center">
+                                    <i class="fa-solid fa-chevron-right"></i>
+                                </span>
+                            </a>
+                        </div>
+                    
+                </div>
+            
+
+
+            
+                <div class="comment-container">
+                    <div class="comments-container">
+    <div id="comment-anchor"></div>
+    <div class="comment-area-title">
+        <i class="fa-solid fa-comments"></i>&nbsp;Comments
+    </div>
+    
+
+        
+            
+ 
+    <div id="waline"></div>
+    <script type="module"  data-pjax>
+        import { init } from 'https://evan.beee.top/js/waline.mjs';
+
+        function loadWaline() {
+            init({
+                el: '#waline',
+                serverURL: 'https://example.example.com',
+                lang: 'zh-CN',
+                dark: 'body[class~="dark-mode"]',
+                requiredMeta: ['nick','mail'], // cannot customize by theme config, change it yourself
+            });
+        }
+
+        if ('true') {
+            const loadWalineTimeout = setTimeout(() => {
+                loadWaline();
+                clearTimeout(loadWalineTimeout);
+            }, 1000);
+        } else {
+            window.addEventListener('DOMContentLoaded', loadWaline);
+        }
+        
+    </script>
+
+
+
+        
+    
+</div>
+
+                </div>
+            
+        </div>
+
+        
+            <div class="toc-content-container">
+                <div class="post-toc-wrap">
+    <div class="post-toc">
+        <div class="toc-title">On this page</div>
+        <div class="page-title">PAT (Advanced Level) Practice 1003 Emergency</div>
+        
+
+    </div>
+</div>
+            </div>
+        
+    </div>
+</div>
+
+
+                
+
+            </div>
+            
+            
+
+        </div>
+
+        <div class="main-content-footer">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info">
+            &copy;
+            
+              <span>2022</span>
+              -
+            
+            2023&nbsp;&nbsp;<i class="fa-solid fa-heart fa-beat" style="--fa-animation-duration: 0.5s; color: #f54545"></i>&nbsp;&nbsp;<a href="/">peng cheng</a>
+        </div>
+        
+            <script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    <span id="busuanzi_container_site_uv" class="busuanzi_container_site_uv">
+                        VISITOR COUNT&nbsp;<span id="busuanzi_value_site_uv" class="busuanzi_value_site_uv"></span>
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv" class="busuanzi_container_site_pv">
+                        TOTAL PAGE VIEWS&nbsp;<span id="busuanzi_value_site_pv" class="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            <span class="powered-by-container">POWERED BY <?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1rem" height="1rem" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><path fill="#0E83CD" d="M256.4,25.8l-200,115.5L56,371.5l199.6,114.7l200-115.5l0.4-230.2L256.4,25.8z M349,354.6l-18.4,10.7l-18.6-11V275H200v79.6l-18.4,10.7l-18.6-11v-197l18.5-10.6l18.5,10.8V237h112v-79.6l18.5-10.6l18.5,10.8V354.6z"/></svg><a target="_blank" href="https://hexo.io">Hexo</a></span>
+                <br>
+            <span class="theme-version-container">THEME&nbsp;<a class="theme-version" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v2.1.0</a>
+        </div>
+        
+        
+        
+            <div id="start_div" style="display:none">
+                2022/3/17 23:25:14
+            </div>
+            <div>
+                Blog up for <span class="odometer" id="runtime_days" ></span> days <span class="odometer" id="runtime_hours"></span> hrs <span class="odometer" id="runtime_minutes"></span> Min <span class="odometer" id="runtime_seconds"></span> Sec
+            </div>
+        
+        
+        
+            <script async data-pjax>
+                try {
+                    function odometer_init() {
+                    const elements = document.querySelectorAll('.odometer');
+                    elements.forEach(el => {
+                        new Odometer({
+                            el,
+                            format: '( ddd).dd',
+                            duration: 200
+                        });
+                    });
+                    }
+                    odometer_init();
+                } catch (error) {}
+            </script>
+        
+        
+        
+    </div>  
+</footer>
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="article-tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="right-bottom-tools page-aside-toggle">
+                <i class="fa-regular fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+            <li class="go-comment">
+                <i class="fa-regular fa-comments"></i>
+            </li>
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-side-tools-container">
+        <div class="side-tools-container">
+    <ul class="hidden-tools-list">
+        <li class="right-bottom-tools tool-font-adjust-plus flex-center">
+            <i class="fa-regular fa-magnifying-glass-plus"></i>
+        </li>
+
+        <li class="right-bottom-tools tool-font-adjust-minus flex-center">
+            <i class="fa-regular fa-magnifying-glass-minus"></i>
+        </li>
+
+        <li class="right-bottom-tools tool-expand-width flex-center">
+            <i class="fa-regular fa-expand"></i>
+        </li>
+
+        <li class="right-bottom-tools tool-dark-light-toggle flex-center">
+            <i class="fa-regular fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+
+        <li class="right-bottom-tools tool-scroll-to-bottom flex-center">
+            <i class="fa-regular fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="visible-tools-list">
+        <li class="right-bottom-tools toggle-tools-list flex-center">
+            <i class="fa-regular fa-cog fa-spin"></i>
+        </li>
+        
+            <li class="right-bottom-tools tool-scroll-to-top flex-center">
+                <i class="arrow-up fas fa-arrow-up"></i>
+                <span class="percent"></span>
+            </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+
+
+</main>
+
+
+
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/layouts/navbarShrink.js"></script>
+
+<script src="/js/tools/scrollTopBottom.js"></script>
+
+<script src="/js/tools/lightDarkSwitch.js"></script>
+
+
+
+
+
+    
+<script src="/js/tools/codeBlock.js"></script>
+
+
+
+
+    
+<script src="/js/layouts/lazyload.js"></script>
+
+
+
+
+    
+<script src="/js/tools/runtime.js"></script>
+
+    
+<script src="/js/layouts/odometer.min.js"></script>
+
+    
+<link rel="stylesheet" href="/assets/odometer-theme-minimal.css">
+
+
+
+
+  
+<script src="/js/libs/Typed.min.js"></script>
+
+  
+<script src="/js/plugins/typed.js"></script>
+
+
+
+
+
+
+
+<div class="post-scripts pjax">
+    
+        
+<script src="/js/tools/tocToggle.js"></script>
+
+<script src="/js/libs/anime.min.js"></script>
+
+<script src="/js/layouts/toc.js"></script>
+
+<script src="/js/plugins/tabs.js"></script>
+
+    
+</div>
+
+
+    
+<script src="/js/libs/pjax.min.js"></script>
+
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        window.pjax = new Pjax({
+            selectors: [
+                'head title',
+                '.page-container',
+                '.pjax'
+            ],
+            history: true,
+            debug: false,
+            cacheBust: false,
+            timeout: 0,
+            analytics: false,
+            currentUrlFullReload: false,
+            scrollRestoration: false,
+            // scrollTo: true,
+        });
+
+        document.addEventListener('pjax:send', () => {
+            Global.utils.pjaxProgressBarStart();
+        });
+
+        document.addEventListener('pjax:complete', () => {
+            Global.utils.pjaxProgressBarEnd();
+            window.pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'));
+            Global.refresh();
+        });
+    });
+</script>
+
+
+
+
+</body>
+</html>

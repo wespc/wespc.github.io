@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9V6Z62L6BY"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-9V6Z62L6BY');
+</script>
+<!-- End Google Analytics -->
+  
+  
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="Hexo Theme Redefine">
+    <meta name="description" content="hello">
+    <meta name="author" content="peng cheng">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-redefine.png">
+    <!-- preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://evan.beee.top" crossorigin>
+    
+    <!--- Seo Part-->
+    
+    <link rel="canonical" href="http://example.com/temp/oj.html"/>
+    <meta name="robots" content="index,follow">
+    <meta name="googlebot" content="index,follow">
+    <meta name="revisit-after" content="1 days">
+    
+        <meta name="description" content="蓝桥杯算法题本人比较懒，先放两个在上面装饰一下吧，不定期更新！ 回文日期题目描述2020 年春节期间，有一个特殊的日期引起了大家的注意：2020 年 2 月 2 日。因为如果将这个日期按 “yyyymmdd” 的格式写成一个 8 位数是 20200202，恰好是一个回文数。我们称这样的日期是回文日期。有人表示 20200202 是 “千年一遇” 的特殊日子。对此小明很不认同，因为不到 2 年之后就">
+<meta property="og:type" content="website">
+<meta property="og:title" content="算法笔记">
+<meta property="og:url" content="http://example.com/temp/oj.html">
+<meta property="og:site_name" content="ピーターのブログ">
+<meta property="og:description" content="蓝桥杯算法题本人比较懒，先放两个在上面装饰一下吧，不定期更新！ 回文日期题目描述2020 年春节期间，有一个特殊的日期引起了大家的注意：2020 年 2 月 2 日。因为如果将这个日期按 “yyyymmdd” 的格式写成一个 8 位数是 20200202，恰好是一个回文数。我们称这样的日期是回文日期。有人表示 20200202 是 “千年一遇” 的特殊日子。对此小明很不认同，因为不到 2 年之后就">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-04-04T10:46:00.000Z">
+<meta property="article:modified_time" content="2022-04-06T07:11:23.630Z">
+<meta property="article:author" content="Peng Cheng">
+<meta property="article:tag" content="蓝桥杯">
+<meta property="article:tag" content="算法竞赛">
+<meta name="twitter:card" content="summary">
+    
+    <!--- Icon Part-->
+    <link rel="icon" type="image/png" href="https://wespc.github.io/2022/04/10/game/939934C9823AD2CEFBD140696EB78B59.jpg" sizes="192x192">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://wespc.github.io/2022/04/10/game/939934C9823AD2CEFBD140696EB78B59.jpg">
+    <meta name="theme-color" content="#A31F34">
+    <link rel="shortcut icon" href="https://wespc.github.io/2022/04/10/game/939934C9823AD2CEFBD140696EB78B59.jpg">
+    <!--- Page Info-->
+    
+    <title>
+        
+            算法笔记 -
+        
+        チェンのブログ
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+<link rel="stylesheet" href="/assets/fonts.css">
+
+    <!--- Font Part-->
+    
+    
+    
+    
+
+    <!--- Inject Part-->
+    
+    <script id="hexo-configurations">
+    let Global = window.Global || {};
+    Global.hexo_config = {"hostname":"example.com","root":"/","language":"en"};
+    Global.theme_config = {"articles":{"style":{"font_size":"16px","line_height":1.5,"image_border_radius":"14px","image_alignment":"center"},"word_count":{"enable":true,"count":true,"min2read":true},"author_label":{"enable":false,"auto":false,"list":[""]},"code_block":{"copy":true,"style":"mac","font":{"enable":false,"family":null,"url":null}},"toc":{"enable":true,"max_depth":3,"number":false,"expand":true,"init_open":true},"copyright":true,"lazyload":true,"recommendation":{"enable":false,"title":"推荐阅读","limit":3,"placeholder":"/images/wallhaven-wqery6-light.webp","skip_dirs":[]}},"colors":{"primary":"#A31F34","secondary":null},"global":{"fonts":{"chinese":{"enable":false,"family":null,"url":null},"english":{"enable":false,"family":null,"url":null}},"content_max_width":"1000px","sidebar_width":"210px","hover":{"shadow":true,"scale":false},"scroll_progress":{"bar":false,"percentage":true},"busuanzi_counter":{"enable":true,"site_pv":true,"site_uv":true,"post_pv":true},"pjax":true,"open_graph":true},"home_banner":{"enable":true,"image":{"light":"/images/wallhaven-wqery6-light.webp","dark":"/images/wallhaven-wqery6-dark.webp"},"title":"Enjoy your wonderful life.","subtitle":{"text":[],"typing_speed":100,"backing_speed":80,"starting_delay":500,"backing_delay":1500,"loop":true,"smart_backspace":true},"text_color":{"light":"#fff","dark":"#d1d1b6"},"text_style":{"title_size":"2.8rem","subtitle_size":"1.5rem","line_height":1.2},"custom_font":{"enable":false,"family":null,"url":null},"social_links":{"enable":true,"links":{"github":"https://github.com/wespc","instagram":null,"zhihu":null,"twitter":null,"email":"pcid757@gmail.com","bilibili":null}}},"plugins":{"feed":{"enable":false},"aplayer":{"enable":false,"audios":[{"name":"Gymnopedie No.1","artist":"Erik Satie","url":"https://music.163.com/song?id=1436101985&userid=283128325","cover":"https://i.kfs.io/album/global/3922765,0v1/fit/500x500.jpg"},{"name":"fish in the pool","artist":"ヘクとパスカル","url":"https://music.163.com/song?id=31861287&userid=283128325","cover":"https://i.scdn.co/image/ab67616d00001e02627e71b21ea6ff3eb8b806da"}]},"mermaid":{"enable":false,"version":"9.3.0"}},"version":"2.1.0","navbar":{"auto_hide":false,"color":{"left":"#f78736","right":"#367df7","transparency":35},"links":{"Home":{"path":"/","icon":"fa-regular fa-house"},"Archives":{"path":"/archives","icon":"fa-regular fa-archive"}},"search":{"enable":false,"preload":true}},"page_templates":{"friends_column":2,"tags_style":"blur"},"home":{"sidebar":{"enable":true,"position":"left","announcement":null,"links":null},"article_date_format":"auto","categories":{"enable":true,"limit":3},"tags":{"enable":true,"limit":3}}};
+    Global.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
+  </script>
+    
+    <!--- Fontawesome Part-->
+    
+<link rel="stylesheet" href="/fontawesome/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/brands.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/solid.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/regular.min.css">
+
+    
+    
+    
+    
+<meta name="generator" content="Hexo 5.4.1"><link rel="alternate" href="/atom.xml" title="ピーターのブログ" type="application/atom+xml">
+</head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+        <span class="pjax-progress-icon">
+            <i class="fa-solid fa-circle-notch fa-spin"></i>
+        </span>
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="main-content-container">
+
+        <div class="main-content-header">
+            <header class="navbar-container">
+    
+    <div class="navbar-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                
+                チェンのブログ
+                
+            </a>
+        </div>
+
+        <div class="right">
+            <!-- PC -->
+            <div class="desktop">
+                <ul class="navbar-list">
+                    
+                        
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class="" 
+                                    href="/"  >
+                                    
+                                        
+                                            <i class="fa-regular fa-house"></i>
+                                        
+                                        HOME
+                                    
+                                </a>
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class="" 
+                                    href="/archives"  >
+                                    
+                                        
+                                            <i class="fa-regular fa-archive"></i>
+                                        
+                                        ARCHIVES
+                                    
+                                </a>
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                    
+                </ul>
+            </div>
+            <!-- Mobile -->
+            <div class="mobile">
+                
+                <div class="icon-item navbar-bar">
+                    <div class="navbar-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile drawer -->
+    <div class="navbar-drawer">
+        <ul class="drawer-navbar-list">
+            
+                
+                    <li class="drawer-navbar-item flex-center">
+                        <a class="" 
+                        href="/"  >
+                             
+                                
+                                    <i class="fa-regular fa-house"></i>
+                                
+                                HOME
+                            
+                        </a>
+                    </li>
+                    <!-- Submenu -->
+                    
+            
+                
+                    <li class="drawer-navbar-item flex-center">
+                        <a class="" 
+                        href="/archives"  >
+                             
+                                
+                                    <i class="fa-regular fa-archive"></i>
+                                
+                                ARCHIVES
+                            
+                        </a>
+                    </li>
+                    <!-- Submenu -->
+                    
+            
+
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="main-content-body">
+
+            
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="page-template-container">
+        
+        
+        <div class="page-template-content markdown-body">
+            
+                <h1 id="蓝桥杯算法题"><a href="#蓝桥杯算法题" class="headerlink" title="蓝桥杯算法题"></a>蓝桥杯算法题</h1><p>本人比较懒，先放两个在上面装饰一下吧，不定期更新！</p>
+<h2 id="回文日期"><a href="#回文日期" class="headerlink" title="回文日期"></a>回文日期</h2><p><em>题目描述</em><br>2020 年春节期间，有一个特殊的日期引起了大家的注意：2020 年 2 月 2 日。因为如果将这个日期按 “yyyymmdd” 的格式写成一个 8 位数是 20200202，恰好是一个回文数。我们称这样的日期是回文日期。<br>有人表示 20200202 是 “千年一遇” 的特殊日子。对此小明很不认同，因为不到 2 年之后就是下一个回文日期：20211202 即 2021 年 12 月 2 日。<br>也有人表示 20200202 并不仅仅是一个回文日期，还是一个 ABABBABA 型的回文日期。对此小明也不认同，因为大约 100 年后就能遇到下一个 ABABBABA 型的回文日期：21211212 即 2121 年 12 月 12 日。算不上 “千年一遇”，顶多算 “千年两遇”。<br>给定一个 8 位数的日期，请你计算该日期之后下一个回文日期和下一个 ABABBABA 型的回文日期各是哪一天。<br><em>输入描述</em><br>输入包含一个八位整数N，表示日期。对于所有测试用例，10000101&lt;&#x3D;N&lt;&#x3D;89991231,保证N是一个合法日期的8位数字<br><em>输出描述</em><br>输出两行，每行 1 个八位数。第一行表示下一个回文日期，第二行表示下一个 ABABBABA 型的回文日期。<br><em>输入输出样例</em><br>输入<br>20200202<br>输出<br>20211202<br>21211212</p>
+<hr>
+<p><em>题解</em></p>
+<div class="highlight-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">mirror</span><span class="params">(<span class="type">char</span> *s)</span>&#123;</span><br><span class="line">    <span class="type">int</span> flag = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>;i &lt;<span class="number">4</span>;i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(s[i] != s[<span class="number">7</span>-i])&#123;</span><br><span class="line">            flag = <span class="number">0</span>;<span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> flag;</span><br><span class="line">&#125;<span class="comment">//判断会文函数</span></span><br><span class="line"><span class="type">int</span> <span class="title function_">ab</span><span class="params">(<span class="type">char</span> *s)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(s[<span class="number">0</span>] == s[<span class="number">2</span>] &amp;&amp; s[<span class="number">2</span>] == s[<span class="number">5</span>] &amp;&amp; s[<span class="number">5</span>] == s[<span class="number">7</span>] &amp;&amp; s[<span class="number">1</span>] == s[<span class="number">3</span>] &amp;&amp; s[<span class="number">3</span>] == s[<span class="number">4</span>] &amp;&amp; s[<span class="number">4</span>] == s[<span class="number">6</span>])</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;<span class="comment">//判断为ababbaba回文型函数</span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">int</span> argc, <span class="type">char</span> *argv[])</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">//变量定义</span></span><br><span class="line">    <span class="type">int</span> year,month,day,num,leap = <span class="number">0</span>,pld = <span class="number">0</span>,abflag = <span class="number">0</span>;</span><br><span class="line">    <span class="comment">//分别作为保存日期的临时数组，回文日期数组，ababbaba回文日期数组</span></span><br><span class="line">    <span class="type">char</span> s[<span class="number">20</span>],palidrm[<span class="number">20</span>],abtype[<span class="number">20</span>];</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;num);</span><br><span class="line">    <span class="comment">//从获取数字提取年月日</span></span><br><span class="line">    day = num%<span class="number">100</span>;              </span><br><span class="line">    num/=<span class="number">100</span>;</span><br><span class="line">    month = num%<span class="number">100</span>;</span><br><span class="line">    num/=<span class="number">100</span>;</span><br><span class="line">    year = num;</span><br><span class="line">    <span class="comment">//判断闰年</span></span><br><span class="line">    <span class="keyword">if</span>((year %<span class="number">400</span> == <span class="number">0</span>) || (year%<span class="number">100</span> != <span class="number">0</span> &amp;&amp; year %<span class="number">4</span> == <span class="number">0</span>))leap = <span class="number">1</span>;</span><br><span class="line">    <span class="comment">//月份天数数字</span></span><br><span class="line">    <span class="type">int</span> cycle[<span class="number">2</span>][<span class="number">13</span>] = &#123;&#123;<span class="number">0</span>,<span class="number">31</span>,<span class="number">28</span>,<span class="number">31</span>,<span class="number">30</span>,<span class="number">31</span>,<span class="number">30</span>,<span class="number">31</span>,<span class="number">31</span>,<span class="number">30</span>,<span class="number">31</span>,<span class="number">30</span>,<span class="number">31</span>&#125;,</span><br><span class="line">                        &#123;<span class="number">0</span>,<span class="number">31</span>,<span class="number">29</span>,<span class="number">31</span>,<span class="number">30</span>,<span class="number">31</span>,<span class="number">30</span>,<span class="number">31</span>,<span class="number">31</span>,<span class="number">30</span>,<span class="number">31</span>,<span class="number">30</span>,<span class="number">31</span>&#125;&#125;;</span><br><span class="line">    num = year*<span class="number">10000</span> + month *<span class="number">100</span> +day;</span><br><span class="line">    <span class="comment">//循环查找</span></span><br><span class="line">    <span class="keyword">while</span>(num &lt; <span class="number">89991231</span>)&#123;</span><br><span class="line">        <span class="comment">//从所给日期下一天开始验证</span></span><br><span class="line">        day+=<span class="number">1</span>;</span><br><span class="line">        <span class="comment">//如果日期越界更新</span></span><br><span class="line">        <span class="keyword">if</span>(day &gt;cycle[leap][month])&#123;</span><br><span class="line">            day = <span class="number">1</span>;</span><br><span class="line">            ++month;</span><br><span class="line">            <span class="keyword">if</span>(month &gt;<span class="number">12</span>)&#123;</span><br><span class="line">                month = <span class="number">1</span>;</span><br><span class="line">                ++year;</span><br><span class="line">                leap = <span class="number">0</span>;</span><br><span class="line">                <span class="keyword">if</span>((year %<span class="number">400</span> == <span class="number">0</span>) || (year%<span class="number">100</span> != <span class="number">0</span> &amp;&amp; year %<span class="number">4</span> == <span class="number">0</span>))leap = <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//将日期按照格式输入字符串判断是否复合条件</span></span><br><span class="line">        <span class="built_in">sprintf</span>(s,<span class="string">&quot;%04d%02d%02d&quot;</span>,year,month,day);</span><br><span class="line">        <span class="comment">//回文日期判断，需要确保找到的日期为第一个遇到的回文提起</span></span><br><span class="line">        <span class="keyword">if</span>(mirror(s) &amp;&amp; pld == <span class="number">0</span>)&#123;</span><br><span class="line">            <span class="built_in">strcpy</span>(palidrm,s);</span><br><span class="line">            pld = <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//ababbaba回文日期判断，同理</span></span><br><span class="line">        <span class="keyword">if</span>(ab(s) &amp;&amp; abflag == <span class="number">0</span>)&#123;</span><br><span class="line">            <span class="built_in">strcpy</span>(abtype,s);</span><br><span class="line">            abflag = <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(pld == <span class="number">1</span> &amp;&amp; abflag == <span class="number">1</span>)<span class="keyword">break</span>;</span><br><span class="line">        </span><br><span class="line">        num = year*<span class="number">10000</span> + month *<span class="number">100</span> +day;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//如果找到</span></span><br><span class="line">    <span class="keyword">if</span>(abflag == <span class="number">1</span> &amp;&amp; pld == <span class="number">1</span>)</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%s\n%s\n&quot;</span>,palidrm,abtype);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure></div>
+<hr>
+<h2 id="最短路"><a href="#最短路" class="headerlink" title="最短路"></a>最短路</h2><p><em>题目描述</em><br>如下图所示，<br>G 是一个无向图，其中蓝色边的长度是1、橘色边的长度是2、绿色边的长度是3。则从 A 到 S 的最短距离是多少？</p>
+
+
+
+<hr>
+<p><em>代码：</em></p>
+<div class="highlight-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdbool.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;time.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> MAX_INT  32767</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> &#123;</span>        <span class="comment">//邻接矩阵数据类型</span></span><br><span class="line">    <span class="type">char</span> vexs[<span class="number">19</span>];</span><br><span class="line">    <span class="type">int</span> arcs[<span class="number">19</span>][<span class="number">19</span>];</span><br><span class="line">    <span class="type">int</span> vexsnum,arcsnum;</span><br><span class="line">&#125;AMGraph;</span><br><span class="line"><span class="type">int</span> <span class="title function_">Locate</span><span class="params">(AMGraph G,<span class="type">char</span> v)</span>&#123;   <span class="comment">//element locate function.</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>;i &lt;<span class="number">19</span>;i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(G.vexs[i] == v)<span class="keyword">return</span> i;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">void</span> <span class="title function_">add</span><span class="params">(AMGraph *G,<span class="type">char</span> v1,<span class="type">char</span> v2,<span class="type">int</span> w)</span>&#123;     <span class="comment">//加边函数</span></span><br><span class="line">    <span class="type">int</span> i,j;</span><br><span class="line">    i = Locate(*G,v1);j = Locate(*G,v2);</span><br><span class="line">    G-&gt;arcs[j][i] = G-&gt;arcs[i][j] = w;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">int</span> argc, <span class="type">char</span> *argv[])</span></span><br><span class="line">&#123;</span><br><span class="line">    AMGraph G;      <span class="comment">//create Graph</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>;i&lt;<span class="number">19</span>;i++)&#123;        <span class="comment">//图初始化</span></span><br><span class="line">        G.vexs[i] = <span class="string">&#x27;A&#x27;</span>+i;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">0</span>;j&lt;<span class="number">19</span>;j++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(i != j) G.arcs[i][j] = G.arcs[j][i] = MAX_INT;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    G.vexsnum = <span class="number">19</span>; <span class="comment">//initialize graph</span></span><br><span class="line">    add(&amp;G,<span class="string">&#x27;A&#x27;</span>,<span class="string">&#x27;B&#x27;</span>,<span class="number">2</span>);</span><br><span class="line">    add(&amp;G,<span class="string">&#x27;A&#x27;</span>,<span class="string">&#x27;C&#x27;</span>,<span class="number">1</span>);</span><br><span class="line">    add(&amp;G,<span class="string">&#x27;A&#x27;</span>,<span class="string">&#x27;D&#x27;</span>,<span class="number">1</span>);</span><br><span class="line">    add(&amp;G,<span class="string">&#x27;A&#x27;</span>,<span class="string">&#x27;E&#x27;</span>,<span class="number">1</span>);</span><br><span class="line">    add(&amp;G,<span class="string">&#x27;B&#x27;</span>,<span class="string">&#x27;J&#x27;</span>,<span class="number">2</span>);</span><br><span class="line">    add(&amp;G,<span class="string">&#x27;B&#x27;</span>,<span class="string">&#x27;G&#x27;</span>,<span class="number">1</span>);</span><br><span class="line">    add(&amp;G,<span class="string">&#x27;C&#x27;</span>,<span class="string">&#x27;F&#x27;</span>,<span class="number">3</span>);</span><br><span class="line">    add(&amp;G,<span class="string">&#x27;C&#x27;</span>,<span class="string">&#x27;G&#x27;</span>,<span class="number">3</span>);</span><br><span class="line">    add(&amp;G,<span class="string">&#x27;C&#x27;</span>,<span class="string">&#x27;D&#x27;</span>,<span class="number">3</span>);</span><br><span class="line">    add(&amp;G,<span class="string">&#x27;D&#x27;</span>,<span class="string">&#x27;G&#x27;</span>,<span class="number">2</span>);</span><br><span class="line">    add(&amp;G,<span class="string">&#x27;D&#x27;</span>,<span class="string">&#x27;H&#x27;</span>,<span class="number">1</span>);</span><br><span class="line">    add(&amp;G,<span class="string">&#x27;D&#x27;</span>,<span class="string">&#x27;E&#x27;</span>,<span class="number">1</span>);</span><br><span class="line">    add(&amp;G,<span class="string">&#x27;D&#x27;</span>,<span class="string">&#x27;I&#x27;</span>,<span class="number">2</span>);</span><br><span class="line">    add(&amp;G,<span class="string">&#x27;E&#x27;</span>,<span class="string">&#x27;H&#x27;</span>,<span class="number">1</span>);</span><br><span class="line">    add(&amp;G,<span class="string">&#x27;E&#x27;</span>,<span class="string">&#x27;I&#x27;</span>,<span class="number">3</span>);</span><br><span class="line">    add(&amp;G,<span class="string">&#x27;F&#x27;</span>,<span class="string">&#x27;G&#x27;</span>,<span class="number">1</span>);</span><br><span class="line">    add(&amp;G,<span class="string">&#x27;F&#x27;</span>,<span class="string">&#x27;J&#x27;</span>,<span class="number">1</span>);</span><br><span class="line">    add(&amp;G,<span class="string">&#x27;G&#x27;</span>,<span class="string">&#x27;J&#x27;</span>,<span class="number">1</span>);</span><br><span class="line">    add(&amp;G,<span class="string">&#x27;G&#x27;</span>,<span class="string">&#x27;I&#x27;</span>,<span class="number">3</span>);</span><br><span class="line">    add(&amp;G,<span class="string">&#x27;G&#x27;</span>,<span class="string">&#x27;K&#x27;</span>,<span class="number">2</span>);</span><br><span class="line">    add(&amp;G,<span class="string">&#x27;H&#x27;</span>,<span class="string">&#x27;I&#x27;</span>,<span class="number">1</span>);</span><br><span class="line">    add(&amp;G,<span class="string">&#x27;H&#x27;</span>,<span class="string">&#x27;L&#x27;</span>,<span class="number">2</span>);</span><br><span class="line">    add(&amp;G,<span class="string">&#x27;I&#x27;</span>,<span class="string">&#x27;M&#x27;</span>,<span class="number">3</span>);</span><br><span class="line">    add(&amp;G,<span class="string">&#x27;J&#x27;</span>,<span class="string">&#x27;S&#x27;</span>,<span class="number">2</span>);</span><br><span class="line">    add(&amp;G,<span class="string">&#x27;K&#x27;</span>,<span class="string">&#x27;L&#x27;</span>,<span class="number">3</span>);</span><br><span class="line">    add(&amp;G,<span class="string">&#x27;K&#x27;</span>,<span class="string">&#x27;N&#x27;</span>,<span class="number">1</span>);</span><br><span class="line">    add(&amp;G,<span class="string">&#x27;K&#x27;</span>,<span class="string">&#x27;P&#x27;</span>,<span class="number">2</span>);</span><br><span class="line">    add(&amp;G,<span class="string">&#x27;L&#x27;</span>,<span class="string">&#x27;M&#x27;</span>,<span class="number">1</span>);</span><br><span class="line">    add(&amp;G,<span class="string">&#x27;L&#x27;</span>,<span class="string">&#x27;R&#x27;</span>,<span class="number">1</span>);</span><br><span class="line">    add(&amp;G,<span class="string">&#x27;M&#x27;</span>,<span class="string">&#x27;N&#x27;</span>,<span class="number">2</span>);</span><br><span class="line">    add(&amp;G,<span class="string">&#x27;M&#x27;</span>,<span class="string">&#x27;Q&#x27;</span>,<span class="number">1</span>);</span><br><span class="line">    add(&amp;G,<span class="string">&#x27;M&#x27;</span>,<span class="string">&#x27;S&#x27;</span>,<span class="number">1</span>);</span><br><span class="line">    add(&amp;G,<span class="string">&#x27;N&#x27;</span>,<span class="string">&#x27;P&#x27;</span>,<span class="number">1</span>);</span><br><span class="line">    add(&amp;G,<span class="string">&#x27;O&#x27;</span>,<span class="string">&#x27;P&#x27;</span>,<span class="number">1</span>);</span><br><span class="line">    add(&amp;G,<span class="string">&#x27;O&#x27;</span>,<span class="string">&#x27;Q&#x27;</span>,<span class="number">1</span>);</span><br><span class="line">    add(&amp;G,<span class="string">&#x27;O&#x27;</span>,<span class="string">&#x27;R&#x27;</span>,<span class="number">3</span>);</span><br><span class="line">    add(&amp;G,<span class="string">&#x27;R&#x27;</span>,<span class="string">&#x27;S&#x27;</span>,<span class="number">1</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//边 G.arcs[i][i] 为0 或者1，会不会影响dijkstra算法？</span></span><br><span class="line">    <span class="type">int</span> S[<span class="number">19</span>];</span><br><span class="line">    <span class="type">int</span> Path[<span class="number">19</span>];</span><br><span class="line">    <span class="type">int</span> D[<span class="number">19</span>];</span><br><span class="line">    <span class="comment">//dijkstra算法</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>;i &lt; <span class="number">19</span>;i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(i != <span class="number">0</span>)&#123;</span><br><span class="line">            S[i] = <span class="literal">false</span>;           <span class="comment">//除了 A元素节点外，所有节点加入 V-S 集合</span></span><br><span class="line">            D[i] = G.arcs[<span class="number">0</span>][i];</span><br><span class="line">            Path[i] = <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="type">int</span> k;</span><br><span class="line">    S[<span class="number">0</span>] = <span class="literal">true</span>;</span><br><span class="line">    D[<span class="number">0</span>] = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>;i &lt; <span class="number">19</span>;i++)&#123;              </span><br><span class="line">        <span class="type">int</span> min = MAX_INT;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">0</span>;j &lt; <span class="number">19</span>;j++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(S[j] == <span class="literal">false</span> &amp;&amp; D[j] &lt; min)&#123;</span><br><span class="line">                k = j;</span><br><span class="line">                min = D[j];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        S[k] = <span class="literal">true</span>;            <span class="comment">//将 k加入S集合</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">0</span>;j&lt;<span class="number">19</span>;j++)&#123;        <span class="comment">//更新点到源点的消耗</span></span><br><span class="line">            <span class="keyword">if</span>(S[j] == <span class="literal">false</span> &amp;&amp; D[k] + G.arcs[j][k] &lt; D[j])&#123;</span><br><span class="line">                D[j] = D[k] +G.arcs[j][k];</span><br><span class="line">                Path[j] = k;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot; %d\n&quot;</span>,D[<span class="number">18</span>]);        <span class="comment">//查看源点a到s的最短路权</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;TIme used = %.2lf\n&quot;</span>,(<span class="type">double</span>) clock()/CLOCKS_PER_SEC);  <span class="comment">//输出运行时</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure></div>
+<hr>
+<h2 id="数字三角形"><a href="#数字三角形" class="headerlink" title="数字三角形"></a>数字三角形</h2>
+
+<p><em>题目描述</em></p>
+<p>上图给出了一个数字三角形。从三角形的顶部到底部有很多条不同的路径。对于每条路径，把路径上面的数加起来可以得到一个和，你的任务就是找到最大的和。路径上的每一步只能从一个数走到下一层和它最近的左边的那个数或者右 边的那个数。此外，向左下走的次数与向右下走的次数相差不能超过 1。</p>
+<p><em>输入描述</em></p>
+<p>输入的第一行包含一个整数 N (1≤N≤100)，表示三角形的行数。下面的 N 行给出数字三角形。数字三角形上的数都是 0 至 100 之间的整数。<br><em>输出描述</em></p>
+<p>输出一个整数，表示答案。</p>
+<p><em>代码：</em></p>
+<div class="highlight-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> max(a,b) (a)&gt;(b)?(a):(b)</span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">int</span> argc, <span class="type">char</span> *argv[])</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="type">int</span> n,num[<span class="number">120</span>][<span class="number">120</span>] = &#123;<span class="number">0</span>&#125;;    <span class="comment">//数组设置为120防止溢出</span></span><br><span class="line">  <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;n);</span><br><span class="line">  <span class="comment">//获取三角形数据</span></span><br><span class="line">  <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>;i &lt;= n;i++)&#123;   <span class="comment">//为了计算方便，0行0列均不用且为0</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">1</span>;j&lt;=i;j++)&#123;</span><br><span class="line">      <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;num[i][j]);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">//循环累加，从第二行开始每个数为 max(左上，右上)+这个数</span></span><br><span class="line">  <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">2</span>;i&lt;=n;i++)&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">1</span>;j&lt;=i;j++)&#123;</span><br><span class="line">      num[i][j] += max(num[i<span class="number">-1</span>][j<span class="number">-1</span>],num[i<span class="number">-1</span>][j]);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">//向左走的次数和向右走的次数相等或者差一，则这个数为n行中间的数（n为基数）或中间两个数中的max（n为偶）</span></span><br><span class="line">  <span class="keyword">if</span>(n%<span class="number">2</span> == <span class="number">0</span>)&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>,max(num[n][n/<span class="number">2</span>],num[n][n/<span class="number">2</span>+<span class="number">1</span>]));</span><br><span class="line">  &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>,num[n][(n+<span class="number">1</span>)/<span class="number">2</span>]);</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<hr>
+<h2 id="排序算法"><a href="#排序算法" class="headerlink" title="排序算法"></a>排序算法</h2><p><em>分享一道很有意思的题，题解的分析真的太强了，当我还在BF的时候，大佬已经口算出来了( ；´Д｀)</em> </p>
+<p><em>题目描述</em></p>
+<p>小蓝最近学习了一些排序算法，其中冒泡排序让他印象深刻。</p>
+<p>在冒泡排序中，每次只能交换相邻的两个元素。</p>
+<p>小蓝发现，如果对一个字符串中的字符排序，只允许交换相邻的两个字符， 则在所有可能的排序方案中，冒泡排序的总交换次数是最少的。</p>
+<p>例如，对于字符串 lan 排序，只需要 1 次交换。对于字符串 qiao排序，总共需要 4次交换。</p>
+<p>小蓝找到了很多字符串试图排序，他恰巧碰到一个字符串，需要 100 次交 换，可是他忘了吧这个字符串记下来，现在找不到了。</p>
+<p>请帮助小蓝找一个只包含小写英文字母且没有字母重复出现的字符串，对 该串的字符排序，正好需要 100 次交换。如果可能找到多个，请告诉小蓝最短的那个。如果最短的仍然有多个，请告诉小蓝字典序最小的那个。</p>
+<div class="highlight-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">int</span> argc, <span class="type">char</span> *argv[])</span></span><br><span class="line">&#123;</span><br><span class="line">  </span><br><span class="line">  <span class="comment">//冒泡排序   对有N个字母的字符串时 完全乱序时 需要交换N*(N-1)/2次数  </span></span><br><span class="line">  <span class="comment">//即最少需要15个字母</span></span><br><span class="line">  <span class="comment">//要求字典序最小 显然要取a-o这15个字典序最小的字母</span></span><br><span class="line">  <span class="comment">/*</span></span><br><span class="line"><span class="comment">    逆向思考 字符串经过100次交换后 得到正序字符串abcdefghijklmno</span></span><br><span class="line"><span class="comment">    而完全乱序的字符串onmlkjihgfedcba变成正序字符串需要105次交换  </span></span><br><span class="line"><span class="comment">    则将完全乱序的字符串交换5次即为所求答案</span></span><br><span class="line"><span class="comment">    而要求字典序最小 将j交换5次到字符串最前面 就得到了最小情况</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">  <span class="built_in">printf</span>(<span class="string">&quot;jonmlkihgfedcba&quot;</span>);</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+
+
+<hr>
+<h2 id="递增序列"><a href="#递增序列" class="headerlink" title="递增序列"></a>递增序列</h2><p><em>题目描述</em></p>
+<p>对于一个字母矩阵，我们称矩阵中的一个递增序列是指在矩阵中找到两个字母，它们在同一行，同一列，或者在同一 4545 度的斜线上，这两个字母从左向右看、或者从上向下看是递增的。</p>
+<p>例如，如下矩阵中</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">LANN</span><br><span class="line">QIAO</span><br></pre></td></tr></table></figure></div>
+
+<p>有LN、LN、AN、AN、IO、AO、LQ、AI、NO、NO、AQ、IN、AN等 13 个 递增序列。注意当两个字母是从左下到右上排列时，从左向右看和从上向下看 是不同的顺序。</p>
+<p>对于下面的 30 行 50 列的矩阵，请问总共有多少个递增序列？</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">VLPWJVVNNZSWFGHSFRBCOIJTPYNEURPIGKQGPSXUGNELGRVZAG</span><br><span class="line">SDLLOVGRTWEYZKKXNKIRWGZWXWRHKXFASATDWZAPZRNHTNNGQF</span><br><span class="line">ZGUGXVQDQAEAHOQEADMWWXFBXECKAVIGPTKTTQFWSWPKRPSMGA</span><br><span class="line">BDGMGYHAOPPRRHKYZCMFZEDELCALTBSWNTAODXYVHQNDASUFRL</span><br><span class="line">YVYWQZUTEPFSFXLTZBMBQETXGXFUEBHGMJKBPNIHMYOELYZIKH</span><br><span class="line">ZYZHSLTCGNANNXTUJGBYKUOJMGOGRDPKEUGVHNZJZHDUNRERBU</span><br><span class="line">XFPTZKTPVQPJEMBHNTUBSMIYEGXNWQSBZMHMDRZZMJPZQTCWLR</span><br><span class="line">ZNXOKBITTPSHEXWHZXFLWEMPZTBVNKNYSHCIQRIKQHFRAYWOPG</span><br><span class="line">MHJKFYYBQSDPOVJICWWGGCOZSBGLSOXOFDAADZYEOBKDDTMQPA</span><br><span class="line">VIDPIGELBYMEVQLASLQRUKMXSEWGHRSFVXOMHSJWWXHIBCGVIF</span><br><span class="line">GWRFRFLHAMYWYZOIQODBIHHRIIMWJWJGYPFAHZZWJKRGOISUJC</span><br><span class="line">EKQKKPNEYCBWOQHTYFHHQZRLFNDOVXTWASSQWXKBIVTKTUIASK</span><br><span class="line">PEKNJFIVBKOZUEPPHIWLUBFUDWPIDRJKAZVJKPBRHCRMGNMFWW</span><br><span class="line">CGZAXHXPDELTACGUWBXWNNZNDQYYCIQRJCULIEBQBLLMJEUSZP</span><br><span class="line">RWHHQMBIJWTQPUFNAESPZHAQARNIDUCRYQAZMNVRVZUJOZUDGS</span><br><span class="line">PFGAYBDEECHUXFUZIKAXYDFWJNSAOPJYWUIEJSCORRBVQHCHMR</span><br><span class="line">JNVIPVEMQSHCCAXMWEFSYIGFPIXNIDXOTXTNBCHSHUZGKXFECL</span><br><span class="line">YZBAIIOTWLREPZISBGJLQDALKZUKEQMKLDIPXJEPENEIPWFDLP</span><br><span class="line">HBQKWJFLSEXVILKYPNSWUZLDCRTAYUUPEITQJEITZRQMMAQNLN</span><br><span class="line">DQDJGOWMBFKAIGWEAJOISPFPLULIWVVALLIIHBGEZLGRHRCKGF</span><br><span class="line">LXYPCVPNUKSWCCGXEYTEBAWRLWDWNHHNNNWQNIIBUCGUJYMRYW</span><br><span class="line">CZDKISKUSBPFHVGSAVJBDMNPSDKFRXVVPLVAQUGVUJEXSZFGFQ</span><br><span class="line">IYIJGISUANRAXTGQLAVFMQTICKQAHLEBGHAVOVVPEXIMLFWIYI</span><br><span class="line">ZIIFSOPCMAWCBPKWZBUQPQLGSNIBFADUUJJHPAIUVVNWNWKDZB</span><br><span class="line">HGTEEIISFGIUEUOWXVTPJDVACYQYFQUCXOXOSSMXLZDQESHXKP</span><br><span class="line">FEBZHJAGIFGXSMRDKGONGELOALLSYDVILRWAPXXBPOOSWZNEAS</span><br><span class="line">VJGMAOFLGYIFLJTEKDNIWHJAABCASFMAKIENSYIZZSLRSUIPCJ</span><br><span class="line">BMQGMPDRCPGWKTPLOTAINXZAAJWCPUJHPOUYWNWHZAKCDMZDSR</span><br><span class="line">RRARTVHZYYCEDXJQNQAINQVDJCZCZLCQWQQIKUYMYMOVMNCBVY</span><br><span class="line">ABTCRRUXVGYLZILFLOFYVWFFBZNFWDZOADRDCLIRFKBFBHMAXX</span><br></pre></td></tr></table></figure></div>
+
+
+
+<p>&#x2F;&#x2F;简单题，我直接重拳出击:D</p>
+<p><em>题解</em></p>
+<div class="highlight-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">int</span> argc, <span class="type">char</span> *argv[])</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="comment">//原矩阵用A包围，共，32行，52列，对内部字幕分别判断右上，右，下和左下字母，判断是否为递增序列		</span></span><br><span class="line">  <span class="comment">//刚开始的想法好像错了，这样做似乎没必要，不过删除太麻烦了，就这样吧！(´▽｀)</span></span><br><span class="line">  <span class="type">char</span> matrix[<span class="number">35</span>][<span class="number">55</span>]= &#123;    </span><br><span class="line">  <span class="string">&quot;AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA&quot;</span>,</span><br><span class="line">  <span class="string">&quot;AVLPWJVVNNZSWFGHSFRBCOIJTPYNEURPIGKQGPSXUGNELGRVZAGA&quot;</span>,</span><br><span class="line">  <span class="string">&quot;ASDLLOVGRTWEYZKKXNKIRWGZWXWRHKXFASATDWZAPZRNHTNNGQFA&quot;</span>,</span><br><span class="line">  <span class="string">&quot;AZGUGXVQDQAEAHOQEADMWWXFBXECKAVIGPTKTTQFWSWPKRPSMGAA&quot;</span>,</span><br><span class="line">  <span class="string">&quot;ABDGMGYHAOPPRRHKYZCMFZEDELCALTBSWNTAODXYVHQNDASUFRLA&quot;</span>,</span><br><span class="line">  <span class="string">&quot;AYVYWQZUTEPFSFXLTZBMBQETXGXFUEBHGMJKBPNIHMYOELYZIKHA&quot;</span>,</span><br><span class="line">  <span class="string">&quot;AZYZHSLTCGNANNXTUJGBYKUOJMGOGRDPKEUGVHNZJZHDUNRERBUA&quot;</span>,</span><br><span class="line">  <span class="string">&quot;AXFPTZKTPVQPJEMBHNTUBSMIYEGXNWQSBZMHMDRZZMJPZQTCWLRA&quot;</span>,</span><br><span class="line">  <span class="string">&quot;AZNXOKBITTPSHEXWHZXFLWEMPZTBVNKNYSHCIQRIKQHFRAYWOPGA&quot;</span>,</span><br><span class="line">  <span class="string">&quot;AMHJKFYYBQSDPOVJICWWGGCOZSBGLSOXOFDAADZYEOBKDDTMQPAA&quot;</span>,</span><br><span class="line">  <span class="string">&quot;AVIDPIGELBYMEVQLASLQRUKMXSEWGHRSFVXOMHSJWWXHIBCGVIFA&quot;</span>,</span><br><span class="line">  <span class="string">&quot;AGWRFRFLHAMYWYZOIQODBIHHRIIMWJWJGYPFAHZZWJKRGOISUJCA&quot;</span>,</span><br><span class="line">  <span class="string">&quot;AEKQKKPNEYCBWOQHTYFHHQZRLFNDOVXTWASSQWXKBIVTKTUIASKA&quot;</span>,</span><br><span class="line">  <span class="string">&quot;APEKNJFIVBKOZUEPPHIWLUBFUDWPIDRJKAZVJKPBRHCRMGNMFWWA&quot;</span>,</span><br><span class="line">  <span class="string">&quot;ACGZAXHXPDELTACGUWBXWNNZNDQYYCIQRJCULIEBQBLLMJEUSZPA&quot;</span>,</span><br><span class="line">  <span class="string">&quot;ARWHHQMBIJWTQPUFNAESPZHAQARNIDUCRYQAZMNVRVZUJOZUDGSA&quot;</span>,</span><br><span class="line">  <span class="string">&quot;APFGAYBDEECHUXFUZIKAXYDFWJNSAOPJYWUIEJSCORRBVQHCHMRA&quot;</span>,</span><br><span class="line">  <span class="string">&quot;AJNVIPVEMQSHCCAXMWEFSYIGFPIXNIDXOTXTNBCHSHUZGKXFECLA&quot;</span>,</span><br><span class="line">  <span class="string">&quot;AYZBAIIOTWLREPZISBGJLQDALKZUKEQMKLDIPXJEPENEIPWFDLPA&quot;</span>,</span><br><span class="line">  <span class="string">&quot;AHBQKWJFLSEXVILKYPNSWUZLDCRTAYUUPEITQJEITZRQMMAQNLNA&quot;</span>,</span><br><span class="line">  <span class="string">&quot;ADQDJGOWMBFKAIGWEAJOISPFPLULIWVVALLIIHBGEZLGRHRCKGFA&quot;</span>,</span><br><span class="line">  <span class="string">&quot;ALXYPCVPNUKSWCCGXEYTEBAWRLWDWNHHNNNWQNIIBUCGUJYMRYWA&quot;</span>,</span><br><span class="line">  <span class="string">&quot;ACZDKISKUSBPFHVGSAVJBDMNPSDKFRXVVPLVAQUGVUJEXSZFGFQA&quot;</span>,</span><br><span class="line">  <span class="string">&quot;AIYIJGISUANRAXTGQLAVFMQTICKQAHLEBGHAVOVVPEXIMLFWIYIA&quot;</span>,</span><br><span class="line">  <span class="string">&quot;AZIIFSOPCMAWCBPKWZBUQPQLGSNIBFADUUJJHPAIUVVNWNWKDZBA&quot;</span>,</span><br><span class="line">  <span class="string">&quot;AHGTEEIISFGIUEUOWXVTPJDVACYQYFQUCXOXOSSMXLZDQESHXKPA&quot;</span>,</span><br><span class="line">  <span class="string">&quot;AFEBZHJAGIFGXSMRDKGONGELOALLSYDVILRWAPXXBPOOSWZNEASA&quot;</span>,</span><br><span class="line">  <span class="string">&quot;AVJGMAOFLGYIFLJTEKDNIWHJAABCASFMAKIENSYIZZSLRSUIPCJA&quot;</span>,</span><br><span class="line">  <span class="string">&quot;ABMQGMPDRCPGWKTPLOTAINXZAAJWCPUJHPOUYWNWHZAKCDMZDSRA&quot;</span>,</span><br><span class="line">  <span class="string">&quot;ARRARTVHZYYCEDXJQNQAINQVDJCZCZLCQWQQIKUYMYMOVMNCBVYA&quot;</span>,</span><br><span class="line">  <span class="string">&quot;AABTCRRUXVGYLZILFLOFYVWFFBZNFWDZOADRDCLIRFKBFBHMAXXA&quot;</span>,</span><br><span class="line">  <span class="string">&quot;AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA&quot;</span>&#125;;</span><br><span class="line">  <span class="type">int</span> count = <span class="number">0</span>,m,n;</span><br><span class="line">  <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>;i &lt;=<span class="number">30</span>;i++)&#123;  <span class="comment">//循环判断</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">1</span>;j&lt;=<span class="number">50</span>;j++)&#123;</span><br><span class="line">      <span class="comment">//检测右</span></span><br><span class="line">      <span class="keyword">for</span>(<span class="type">int</span> k = j+<span class="number">1</span>;k &lt;= <span class="number">50</span>;k++) <span class="keyword">if</span>(matrix[i][k] &gt; matrix[i][j])count++;</span><br><span class="line">      <span class="comment">//检测下</span></span><br><span class="line">      <span class="keyword">for</span>(<span class="type">int</span> k = i+<span class="number">1</span>;k&lt;=<span class="number">30</span>;k++) <span class="keyword">if</span>(matrix[k][j] &gt; matrix[i][j])count++;</span><br><span class="line">      m = i<span class="number">-1</span>;n = j+<span class="number">1</span>;</span><br><span class="line">      <span class="keyword">while</span>(m &gt;= <span class="number">1</span>  &amp;&amp; n &lt;=<span class="number">50</span>)&#123;</span><br><span class="line">        <span class="keyword">if</span>(matrix[m][n] &gt; matrix[i][j])count++;</span><br><span class="line">        m--;n++;</span><br><span class="line">      &#125;</span><br><span class="line">      m = i+<span class="number">1</span>;n = j<span class="number">-1</span>;</span><br><span class="line">      <span class="keyword">while</span>(m &lt;=<span class="number">30</span> &amp;&amp; n &gt;=<span class="number">1</span>)&#123;</span><br><span class="line">        <span class="keyword">if</span>(matrix[m][n] &gt;matrix[i][j])count++;</span><br><span class="line">        m++;n--;</span><br><span class="line">      &#125;</span><br><span class="line">      m = i+<span class="number">1</span>;n = j+<span class="number">1</span>;</span><br><span class="line">      <span class="keyword">while</span>(m &lt;=<span class="number">30</span> &amp;&amp; n &lt;=<span class="number">50</span>)&#123;</span><br><span class="line">        <span class="keyword">if</span>(matrix[m][n] &gt; matrix[i][j])count++;</span><br><span class="line">        m++;n++;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>,count);</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<hr>
+<h2 id="货物摆放"><a href="#货物摆放" class="headerlink" title="货物摆放"></a>货物摆放</h2><p><em>题目描述</em></p>
+<p>小蓝有一个超大的仓库，可以摆放很多货物。</p>
+<p>现在，小蓝有 n箱货物要摆放在仓库，每箱货物都是规则的正方体。小蓝规定了长、宽、高三个互相垂直的方向，每箱货物的边都必须严格平行于长、宽、高。</p>
+<p>小蓝希望所有的货物最终摆成一个大的长方体。即在长、宽、高的方向上分别堆 L、W、H 的货物,满足 n&#x3D;L×W×H。</p>
+<p>给定 n，请问有多少种堆放货物的方案满足要求。</p>
+<p>例如，当 n&#x3D;4时，有以下6 种方案：1×1×4、1×2×2、1×4×1、2×1×2、2×2×1、4×1×1。</p>
+<p>请问，当 n&#x3D;2021041820210418（注意有 16位数字）时，总共有多少种方案？</p>
+<p>提示：建议使用计算机编程解决问题。</p>
+<p><em>笔记📒</em></p>
+<ul>
+<li><p>long long 型变量为最大整形，范围是 -2^31 ~2^31-1,-2147483648 到2147483647</p>
+</li>
+<li><p>floor()函数，向负无穷取整，包含在math.h头文件内</p>
+</li>
+</ul>
+<p><em>题解</em></p>
+<div class="highlight-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//如果用暴力，这个题可能要算几天，也就是我最初的算法🫠</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">int</span> argc, <span class="type">char</span> *argv[])</span></span><br><span class="line">&#123;</span><br><span class="line">  </span><br><span class="line">  <span class="type">long</span> <span class="type">long</span> n = <span class="number">2021041820210418</span>;</span><br><span class="line">  <span class="type">int</span> count = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">for</span>(<span class="type">long</span> <span class="type">long</span> i = <span class="number">1</span>;i*i*i &lt;=n;i++)&#123;</span><br><span class="line">    <span class="keyword">if</span>(n%i == <span class="number">0</span>)&#123;</span><br><span class="line">      <span class="keyword">for</span>(<span class="type">long</span> <span class="type">long</span> j = i;i*j*j &lt;=n;j++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(n/i%j == <span class="number">0</span>)&#123;</span><br><span class="line">          <span class="type">long</span> <span class="type">long</span> k = n/i/j;</span><br><span class="line">          <span class="keyword">if</span>(i== j &amp;&amp; i == k)count++;         <span class="comment">//三个数相等，一种排列组合</span></span><br><span class="line">          <span class="keyword">else</span> <span class="keyword">if</span>(i == j &amp;&amp; i != k)count+=<span class="number">3</span>;  <span class="comment">//两个数相等，三种排列组合</span></span><br><span class="line">          <span class="keyword">else</span> count+=<span class="number">6</span>;                      <span class="comment">//没有数相等，六种排列组合</span></span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>,count);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure></div>
+
+
+
+<p>&#x2F;&#x2F;一定是因为我太菜了，才做不出这道题(T_T)</p>
+<hr>
+<h2 id="跳跃"><a href="#跳跃" class="headerlink" title="跳跃"></a>跳跃</h2><p><em>题目描述</em></p>
+<p>小蓝在一个 n行 m 列的方格图中玩一个游戏。开始时，小蓝站在方格图的左上角，即第 1 行第1 列。小蓝可以在方格图上走动，走动时，如果当前在第 r 行第 c 列，他不能走到行号比 r 小的行，也不能走到列号比 c小的列。同时，他一步走的直线距离不超过 3。例如，如果当前小蓝在第 3 行第 5 列，他下一步可以走到第 3 行第 6 列、第 3 行第 7 列、第 3 行第 8 列、第 4行第 5 列、第 44 行第 6 列、第 4 行第 7 列、第 5 行第 5列、第 5 行第 6 列、第 6 行第 5列之一。小蓝最终要走到第 n 行第 m 列。在图中，有的位置有奖励，走上去即可获得，有的位置有惩罚，走上去就要接受惩罚。奖励和惩罚最终抽象成一个权值，奖励为正，惩罚为负。小蓝希望，从第 1 行第 1 列走到第 n 行第 m 列后，总的权值和最大。请问最大是多少？</p>
+<p><em>输入描述</em></p>
+<p>输入的第一行包含两个整数 n,m表示图的大小。接下来 n行，每行 m个整数，表示方格图中每个点的权值。其中，1≤n≤100，−10^4≤权值≤10^4。</p>
+<p><em>输出描述</em></p>
+<p>输出一个整数，表示最大权值和。</p>
+<p><em>输入输出样例</em></p>
+<p>输入</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">3 5</span><br><span class="line">-4 -5 -10 -3 1</span><br><span class="line">7 5 -9 3 -10</span><br><span class="line">10 -2 6 -10 -4</span><br></pre></td></tr></table></figure></div>
+
+<p>输出</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">15</span><br></pre></td></tr></table></figure></div>
+
+
+
+<p><em>题解</em></p>
+<div class="highlight-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> MIN_INT -32768</span></span><br><span class="line"><span class="type">int</span> matrix[<span class="number">120</span>][<span class="number">120</span>];</span><br><span class="line"><span class="type">int</span> <span class="title function_">findMax</span><span class="params">(<span class="type">int</span> m,<span class="type">int</span> n)</span>&#123;</span><br><span class="line">    <span class="type">int</span> max = MIN_INT;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = m;i &gt;=<span class="number">1</span>;i--)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> j = n;j &gt;=<span class="number">1</span>;j--)&#123;</span><br><span class="line">            <span class="comment">//满足三个条件，1.不在原地踏步，2.在可以走到的范围内，3.找到更大的奖励才更新max</span></span><br><span class="line">            <span class="keyword">if</span>(!(m==i &amp;&amp; n == j)&amp;&amp; (m-i+n-j&lt;=<span class="number">3</span>) &amp;&amp; max &lt; matrix[i][j])&#123;</span><br><span class="line">                max = matrix[i][j];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> max;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//这种方法并不能记录下行走路径，只是记录到达某点的最大奖励值</span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">int</span> argc, <span class="type">char</span> *argv[])</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// 请在此输入您的代码</span></span><br><span class="line">    <span class="type">int</span> m,n,temp;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d %d&quot;</span>,&amp;m,&amp;n);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>;i &lt;=m;i++)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">1</span>;j &lt;=n;j++)&#123;</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;matrix[i][j]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>;i &lt;=m;i++)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">1</span>;j&lt;=n;j++)&#123;</span><br><span class="line"></span><br><span class="line">            temp = findMax(i,j);		<span class="comment">//matrix[1][1]会返回MIN_INT</span></span><br><span class="line">            <span class="keyword">if</span>(temp != MIN_INT)&#123;</span><br><span class="line">                matrix[i][j]+=temp;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>,matrix[m][n]);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+
+
+<p><em>总结</em></p>
+<ul>
+<li>蓝桥杯oj抽风了，所以没法提交，不确定有没有bug，测试了样例和全为负值的情况，答案都是对的，如果你发现我的答案有问题，请与我联系！^_^</li>
+<li>第一次做这个题型，看了别人的题解才有思路。</li>
+<li>要注意路径并不一定是连续的，中间可以有间隔，只要路径长度不超过3即可。</li>
+<li>动态规划题，我也不知道什么是<a class="link"   target="_blank" rel="noopener" href="https://blog.csdn.net/u013309870/article/details/75193592" >动态规划 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a> &#x3D;)</li>
+</ul>
+<hr>
+<h2 id="时间显示🕙"><a href="#时间显示🕙" class="headerlink" title="时间显示🕙"></a>时间显示🕙</h2><p><em>题目描述</em></p>
+<p>小蓝要和朋友合作开发一个时间显示的网站。</p>
+<p>在服务器上，朋友已经获取了当前的时间，用一个整数表示，值为从 1970 年 1 月 1 日 00:00:00到当前时刻经过的毫秒数。</p>
+<p>现在，小蓝要在客户端显示出这个时间。小蓝不用显示出年月日，只需要显示出时分秒即可，毫秒也不用显示，直接舍去即可。</p>
+<p>给定一个用整数表示的时间，请将这个时间对应的时分秒输出。</p>
+<p><em>输入描述</em></p>
+<p>输入一行包含一个整数，表示时间。</p>
+<p><em>输出描述</em></p>
+<p>输出时分秒表示的当前时间，格式形如 <code>HH:MM:SS</code>，其中 <code>HH</code> 表示时，值为 00 到 2323，<code>MM</code> 表示分，值为 0 到 59，<code>SS</code>表示秒，值为 0 到 59。时、分、秒 不足两位时补前导 0。</p>
+<p><em>输入输出示例</em></p>
+<p>输入</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1618708103123</span><br></pre></td></tr></table></figure></div>
+
+<p>输出</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">01:08:23</span><br></pre></td></tr></table></figure></div>
+
+<p><em>题解</em></p>
+<div class="highlight-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">int</span> argc, <span class="type">char</span> *argv[])</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// 请在此输入您的代码</span></span><br><span class="line">    <span class="type">long</span> <span class="type">long</span> cycle = <span class="number">24</span>*<span class="number">60</span>*<span class="number">60</span>,n;</span><br><span class="line">    <span class="type">int</span> h,m,s;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%lld&quot;</span>,&amp;n);</span><br><span class="line">    n = n/<span class="number">1000</span>;     <span class="comment">//舍去毫秒部分</span></span><br><span class="line"></span><br><span class="line">    n=n%cycle;      <span class="comment">//舍去超过一天时间的部分</span></span><br><span class="line">    <span class="comment">//分别获取一天内的小时，分钟，秒</span></span><br><span class="line">    h = n/<span class="number">3600</span>;</span><br><span class="line">    m = n%<span class="number">3600</span>/<span class="number">60</span>;</span><br><span class="line">    s = n%<span class="number">60</span>;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%02d:%02d:%02d&quot;</span>,h,m,s);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<hr>
+<h2 id="跳跃-1"><a href="#跳跃-1" class="headerlink" title="跳跃"></a>跳跃</h2><p><em>题目描述</em></p>
+<p>小蓝学习了最短路径之后特别高兴，他定义了一个特别的图，希望找到图 中的最短路径。小蓝的图由 2021 个结点组成，依次编号 1 至 2021。对于两个不同的结点 a, b，如果 a 和 b 的差的绝对值大于 21，则两个结点 之间没有边相连；如果 a 和 b 的差的绝对值小于等于 21，则两个点之间有一条 长度为 a 和 b 的最小公倍数的无向边相连。</p>
+<p>例如：结点 1 和结点 23 之间没有边相连；结点 3 和结点 24 之间有一条无 向边，长度为 24；结点 15 和结点 25 之间有一条无向边，长度为 75。</p>
+<p>请计算，结点 1 和结点 2021 之间的最短路径长度是多少。</p>
+<p><em>分析</em></p>
+<p>利用<a class="link"   target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E6%AD%90%E5%B9%BE%E9%87%8C%E5%BE%97%E7%AE%97%E6%B3%95/1647675" >欧几里得辗转相除法 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>求的最大公约数gcd，再利用最大公约数求的最小公倍数lcm，用邻接矩阵表示图，狄杰斯特拉单源最短路算法求的最短路径长度。</p>
+
+
+<p><em>题解</em></p>
+<div class="highlight-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdbool.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> MAXINT 99999999</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> &#123;</span></span><br><span class="line">    <span class="type">int</span> vexs[<span class="number">2050</span>];</span><br><span class="line">    <span class="type">int</span> arcs[<span class="number">2050</span>][<span class="number">2050</span>];</span><br><span class="line">    <span class="type">int</span> vexnum,arcnum;</span><br><span class="line">&#125;AMGraph;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span>  <span class="title function_">lcm</span><span class="params">(<span class="type">int</span> a,<span class="type">int</span> b)</span>&#123;</span><br><span class="line">    <span class="type">int</span> gcd,c,d,temp,lcm,m,n;</span><br><span class="line">    m = a;n = b;</span><br><span class="line">    <span class="keyword">if</span>(a &lt;b)&#123;                 <span class="comment">// 若a &lt; b,交换a，b；</span></span><br><span class="line">        temp = a; a = b; b = temp;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%4d %4d  &quot;</span>,a,b);</span><br><span class="line">    <span class="keyword">do</span>&#123;                   <span class="comment">// a / b = c 余 d   欧几里得算法求最大公约数</span></span><br><span class="line">        d = a%b;</span><br><span class="line">        a = b; b = d;</span><br><span class="line">    &#125;<span class="keyword">while</span>(d!= <span class="number">0</span>);</span><br><span class="line">    gcd = a;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;gcd %4d  &quot;</span>,a);</span><br><span class="line">    lcm = m*n/gcd;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;lcm %8d\n&quot;</span>,lcm);</span><br><span class="line">    <span class="keyword">return</span> lcm;</span><br><span class="line">&#125;   <span class="comment">//求最小公倍数</span></span><br><span class="line">AMGraph G;</span><br><span class="line"><span class="type">int</span> Path[<span class="number">2050</span>],S[<span class="number">2050</span>];</span><br><span class="line"><span class="type">int</span> D[<span class="number">2050</span>];</span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">int</span> argc, <span class="type">char</span> *argv[])</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>;i &lt;=<span class="number">2021</span>;i++)&#123;        <span class="comment">//图初始化</span></span><br><span class="line">        G.vexs[i] = i;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">1</span>;j&lt;=<span class="number">2021</span>;j++)&#123;</span><br><span class="line">            G.arcs[i][j] = MAXINT;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    G.vexnum = <span class="number">2021</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>;i &lt;=<span class="number">2021</span>;i++)&#123;          <span class="comment">//求节点之间边的权值           //</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">1</span>;j&lt;=<span class="number">21</span> &amp;&amp; i+j &lt;=<span class="number">2021</span>;j++)&#123;         <span class="comment">// i 的21范围内的节点求权值</span></span><br><span class="line">            G.arcs[i][i+j] = lcm(i,i+j);</span><br><span class="line">            G.arcs[i+j][i] = G.arcs[i][i+j];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//求节点1 到所有节点的最短路径</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">2</span>;i&lt;=<span class="number">2021</span>;i++)&#123;         <span class="comment">//初始化辅助数组</span></span><br><span class="line">        S[i] = <span class="literal">false</span>;</span><br><span class="line">        D[i] = G.arcs[<span class="number">1</span>][i];</span><br><span class="line">    &#125;</span><br><span class="line">    D[<span class="number">1</span>] =<span class="number">0</span>;</span><br><span class="line">    S[<span class="number">1</span>] = <span class="literal">true</span>;</span><br><span class="line">    <span class="type">int</span> min,v;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">2</span>;i &lt;= <span class="number">2021</span>;i++)&#123;            <span class="comment">//循环 2021-2+1 次，将 v-s 中的点加入 s</span></span><br><span class="line">        min = MAXINT;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">1</span>;j &lt;=<span class="number">2021</span>;j++)&#123;          <span class="comment">//找到最小消耗</span></span><br><span class="line">            <span class="keyword">if</span>(S[j] == <span class="literal">false</span> &amp;&amp; D[j] &lt; min)&#123;</span><br><span class="line">                min  = D[j];</span><br><span class="line">                v = j;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        S[v] = <span class="literal">true</span>;        <span class="comment">//v 加入 s集合</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">1</span>;j &lt;=<span class="number">2021</span>;j++)&#123; <span class="comment">//更新v-s 集合到 v0的最短路</span></span><br><span class="line">            <span class="keyword">if</span>(S[j] == <span class="literal">false</span> &amp;&amp; D[v] + G.arcs[v][j] &lt; D[j])&#123;      <span class="comment">//要不要加s[i] == false??</span></span><br><span class="line">                D[j] = D[v] + G.arcs[v][j];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>,D[<span class="number">2021</span>]);</span><br><span class="line"><span class="comment">//    printf(&quot;%d&quot;, lcm(24,7));</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+
+
+<p><em>总结</em></p>
+<ul>
+<li><p>在求边长度时，外层循环设置为2000（2021-21），因为想到内层不能超过2021，2000之后的节点没有求出边长，导致答案错误，大于正确答案。</p>
+</li>
+<li><p>节点数组好像可以直接忽略，降低空间复杂度。</p>
+</li>
+<li><p>在函数内设置大量数组空间过大导致段错误（不确定是不是这个原因，但把数组改为全局后问题解决。</p>
+</li>
+</ul>
+<blockquote><p>在运行时，程序会动态创建一个堆栈段，里面存放着调用栈，因此保存着函数的函数的调用关系和局部变量。</p>
+<p>建议把较大的数组放在main函数之外，因为局部变量也是存放在堆栈段，栈溢出不见得是递归调用太多，也可能是局部变量太大了，只要总大小超过了允许的范围，就会产生栈溢出。</p>
+<footer><strong>刘汝佳</strong><cite>算法竞赛入门经典</cite></footer></blockquote>
+
+<hr>
+
+            
+        </div>
+        <div class="page-template-comments">
+            
+        </div>
+    </div>
+</div>
+
+
+                
+
+            </div>
+            
+            
+
+        </div>
+
+        <div class="main-content-footer">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info">
+            &copy;
+            
+              <span>2022</span>
+              -
+            
+            2023&nbsp;&nbsp;<i class="fa-solid fa-heart fa-beat" style="--fa-animation-duration: 0.5s; color: #f54545"></i>&nbsp;&nbsp;<a href="/">peng cheng</a>
+        </div>
+        
+            <script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    <span id="busuanzi_container_site_uv" class="busuanzi_container_site_uv">
+                        VISITOR COUNT&nbsp;<span id="busuanzi_value_site_uv" class="busuanzi_value_site_uv"></span>
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv" class="busuanzi_container_site_pv">
+                        TOTAL PAGE VIEWS&nbsp;<span id="busuanzi_value_site_pv" class="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            <span class="powered-by-container">POWERED BY <?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1rem" height="1rem" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><path fill="#0E83CD" d="M256.4,25.8l-200,115.5L56,371.5l199.6,114.7l200-115.5l0.4-230.2L256.4,25.8z M349,354.6l-18.4,10.7l-18.6-11V275H200v79.6l-18.4,10.7l-18.6-11v-197l18.5-10.6l18.5,10.8V237h112v-79.6l18.5-10.6l18.5,10.8V354.6z"/></svg><a target="_blank" href="https://hexo.io">Hexo</a></span>
+                <br>
+            <span class="theme-version-container">THEME&nbsp;<a class="theme-version" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v2.1.0</a>
+        </div>
+        
+        
+        
+            <div id="start_div" style="display:none">
+                2022/3/17 23:25:14
+            </div>
+            <div>
+                Blog up for <span class="odometer" id="runtime_days" ></span> days <span class="odometer" id="runtime_hours"></span> hrs <span class="odometer" id="runtime_minutes"></span> Min <span class="odometer" id="runtime_seconds"></span> Sec
+            </div>
+        
+        
+        
+            <script async data-pjax>
+                try {
+                    function odometer_init() {
+                    const elements = document.querySelectorAll('.odometer');
+                    elements.forEach(el => {
+                        new Odometer({
+                            el,
+                            format: '( ddd).dd',
+                            duration: 200
+                        });
+                    });
+                    }
+                    odometer_init();
+                } catch (error) {}
+            </script>
+        
+        
+        
+    </div>  
+</footer>
+        </div>
+    </div>
+
+    
+
+    <div class="right-side-tools-container">
+        <div class="side-tools-container">
+    <ul class="hidden-tools-list">
+        <li class="right-bottom-tools tool-font-adjust-plus flex-center">
+            <i class="fa-regular fa-magnifying-glass-plus"></i>
+        </li>
+
+        <li class="right-bottom-tools tool-font-adjust-minus flex-center">
+            <i class="fa-regular fa-magnifying-glass-minus"></i>
+        </li>
+
+        <li class="right-bottom-tools tool-expand-width flex-center">
+            <i class="fa-regular fa-expand"></i>
+        </li>
+
+        <li class="right-bottom-tools tool-dark-light-toggle flex-center">
+            <i class="fa-regular fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+
+        <li class="right-bottom-tools tool-scroll-to-bottom flex-center">
+            <i class="fa-regular fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="visible-tools-list">
+        <li class="right-bottom-tools toggle-tools-list flex-center">
+            <i class="fa-regular fa-cog fa-spin"></i>
+        </li>
+        
+            <li class="right-bottom-tools tool-scroll-to-top flex-center">
+                <i class="arrow-up fas fa-arrow-up"></i>
+                <span class="percent"></span>
+            </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+
+
+</main>
+
+
+
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/layouts/navbarShrink.js"></script>
+
+<script src="/js/tools/scrollTopBottom.js"></script>
+
+<script src="/js/tools/lightDarkSwitch.js"></script>
+
+
+
+
+
+    
+<script src="/js/tools/codeBlock.js"></script>
+
+
+
+
+    
+<script src="/js/layouts/lazyload.js"></script>
+
+
+
+
+    
+<script src="/js/tools/runtime.js"></script>
+
+    
+<script src="/js/layouts/odometer.min.js"></script>
+
+    
+<link rel="stylesheet" href="/assets/odometer-theme-minimal.css">
+
+
+
+
+  
+<script src="/js/libs/Typed.min.js"></script>
+
+  
+<script src="/js/plugins/typed.js"></script>
+
+
+
+
+
+
+
+<div class="post-scripts pjax">
+    
+</div>
+
+
+    
+<script src="/js/libs/pjax.min.js"></script>
+
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        window.pjax = new Pjax({
+            selectors: [
+                'head title',
+                '.page-container',
+                '.pjax'
+            ],
+            history: true,
+            debug: false,
+            cacheBust: false,
+            timeout: 0,
+            analytics: false,
+            currentUrlFullReload: false,
+            scrollRestoration: false,
+            // scrollTo: true,
+        });
+
+        document.addEventListener('pjax:send', () => {
+            Global.utils.pjaxProgressBarStart();
+        });
+
+        document.addEventListener('pjax:complete', () => {
+            Global.utils.pjaxProgressBarEnd();
+            window.pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'));
+            Global.refresh();
+        });
+    });
+</script>
+
+
+
+
+</body>
+</html>
