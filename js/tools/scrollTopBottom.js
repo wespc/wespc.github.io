@@ -1,37 +1,34 @@
-Global.initBackToTop = () => {
+const initScrollTopBottom = () => {
+  const backToTopButton_dom = document.querySelector(".tool-scroll-to-top");
+  const backToBottomButton_dom = document.querySelector(
+    ".tool-scroll-to-bottom",
+  );
 
-  Global.utils = {
+  const backToTop = () => {
+    window.scrollTo({
+      top: 0, // scrolls to the top of the page
+      behavior: "smooth",
+    });
+  };
 
-    ...Global.utils,
+  const backToBottom = () => {
+    const docHeight = document.body.scrollHeight;
+    window.scrollTo({
+      top: docHeight, // scrolls to the bottom of the page
+      behavior: "smooth",
+    });
+  };
 
-    backToBottomButton_dom: document.querySelector('.tool-scroll-to-bottom'),
+  const initBackToTop = () => {
+    backToTopButton_dom.addEventListener("click", backToTop);
+  };
 
-    backtotop() {
-      document.body.scrollIntoView({
-        behavior: "smooth"
-      });
-    },
+  const initBackToBottom = () => {
+    backToBottomButton_dom.addEventListener("click", backToBottom);
+  };
 
-    backToBottom() {
-      document.querySelector(".main-content-footer").scrollIntoView({
-        behavior: "smooth"
-      });
-    },
+  initBackToTop();
+  initBackToBottom();
+};
 
-    initBackToTop() {
-      this.backToTopButton_dom.addEventListener('click', () => {
-        this.backtotop();
-      });
-    },
-
-    initBackToBottom() {
-      this.backToBottomButton_dom.addEventListener('click', () => {
-        this.backToBottom();
-      });
-    },
-  }
-
-  Global.utils.initBackToTop();
-  Global.utils.initBackToBottom();
-
-}
+export default initScrollTopBottom;
