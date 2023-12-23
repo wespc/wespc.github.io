@@ -1,0 +1,1084 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="Hexo Theme Redefine">
+    
+    <meta name="author" content="peng cheng">
+    <!-- preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    
+    <!--- Seo Part-->
+    
+    <link rel="canonical" href="https://wespc.github.io/[object object]/2023/02/19/calculus18d01/"/>
+    <meta name="robots" content="index,follow">
+    <meta name="googlebot" content="index,follow">
+    <meta name="revisit-after" content="1 days">
+    
+        <meta name="description" content="Sourcehttps:&#x2F;&#x2F;ocw.mit.edu&#x2F;courses&#x2F;18-01sc-single-variable-calculus-fall-2010&#x2F;  @ToDo  LaTex支持  图片加载 Session 30隐式微分和最小值,最大值 问题: 固定体积的盒子怎么才能有最小的表面积,盒子没有顶部.另一个解决这个问题的方法是隐式导数, 我们给出前提 底面是正方形, 我们以同样的方式开始 $$">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2.Part B Optimization,Related Rates and Newton’s Method">
+<meta property="og:url" content="https://wespc.github.io/[object%20Object]/2023/02/19/calculus18d01/index.html">
+<meta property="og:site_name" content="ピーターのブログ">
+<meta property="og:description" content="Sourcehttps:&#x2F;&#x2F;ocw.mit.edu&#x2F;courses&#x2F;18-01sc-single-variable-calculus-fall-2010&#x2F;  @ToDo  LaTex支持  图片加载 Session 30隐式微分和最小值,最大值 问题: 固定体积的盒子怎么才能有最小的表面积,盒子没有顶部.另一个解决这个问题的方法是隐式导数, 我们给出前提 底面是正方形, 我们以同样的方式开始 $$">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://s3-us-west-2.amazonaws.com/secure.notion-static.com/eba9d381-63ee-4965-ab68-de3a5cdf15ee/Untitled.png">
+<meta property="og:image" content="https://s3-us-west-2.amazonaws.com/secure.notion-static.com/a81f3515-0a69-4606-aac7-1560074a988e/Untitled.png">
+<meta property="og:image" content="https://s3-us-west-2.amazonaws.com/secure.notion-static.com/f1141ea7-8d60-4936-bb7e-7aae9f0207e8/Untitled.png">
+<meta property="og:image" content="https://s3-us-west-2.amazonaws.com/secure.notion-static.com/332e4ba3-501a-4e8a-94bf-72d14aeef7ad/Untitled.png">
+<meta property="og:image" content="https://s3-us-west-2.amazonaws.com/secure.notion-static.com/82e74e01-1b6d-4fd7-bfc8-42b7e4474761/Untitled.png">
+<meta property="og:image" content="https://s3-us-west-2.amazonaws.com/secure.notion-static.com/1e1e135a-7352-41c1-bf7f-581e5cbda158/Untitled.png">
+<meta property="og:image" content="https://s3-us-west-2.amazonaws.com/secure.notion-static.com/02c9178d-f3da-44dd-8ee2-391ee994ac55/Untitled.png">
+<meta property="og:image" content="https://s3-us-west-2.amazonaws.com/secure.notion-static.com/3c84e531-54d2-46de-8ae1-c5d231d32077/Untitled.png">
+<meta property="og:image" content="https://s3-us-west-2.amazonaws.com/secure.notion-static.com/7b66fe4d-63e6-4a2f-a7ba-e70e7b9e7ba9/Untitled.png">
+<meta property="article:published_time" content="2023-02-19T02:59:29.000Z">
+<meta property="article:modified_time" content="2023-04-09T16:09:10.697Z">
+<meta property="article:author" content="Peng Cheng">
+<meta property="article:tag" content="calculus 18.01">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s3-us-west-2.amazonaws.com/secure.notion-static.com/eba9d381-63ee-4965-ab68-de3a5cdf15ee/Untitled.png">
+    
+    
+    <!--- Icon Part-->
+    <link rel="icon" type="image/png" href="/images/IMG_3147_2.jpeg" sizes="192x192">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/IMG_3147_2.jpeg">
+    <meta name="theme-color" content="#A31F34">
+    <link rel="shortcut icon" href="/images/IMG_3147_2.jpeg">
+    <!--- Page Info-->
+    
+    <title>
+        
+            2.Part B Optimization,Related Rates and Newton’s Method -
+        
+        チェンのブログ
+    </title>
+
+    
+<link rel="stylesheet" href="/fonts/Chillax/chillax.css">
+
+
+    
+        <style>
+    :root {
+        --preloader-background-color: #fff;
+        --preloader-text-color: #000;
+    }
+
+    @media (prefers-color-scheme: dark) {
+        :root {
+            --preloader-background-color: #202124;
+            --preloader-text-color: #fff;
+        }
+    }
+
+    @media (prefers-color-scheme: light) {
+        :root {
+            --preloader-background-color: #fff;
+            --preloader-text-color: #000;
+        }
+    }
+
+    @media (max-width: 600px) {
+        .ml13 {
+            font-size: 2.6rem !important; /* Adjust this value as needed */
+        }
+    }
+
+    .preloader {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem; /* Tailwind 'gap-4' is 1rem */
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        padding: 12px;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh; /* 'h-screen' is 100% of the viewport height */
+        background-color: var(--preloader-background-color);
+        z-index: 1100; /* 'z-[1100]' sets the z-index */
+        transition: opacity 0.2s ease-in-out;
+    }
+
+    .ml13 {
+        font-size: 3.2rem;
+        /* text-transform: uppercase; */
+        color: var(--preloader-text-color);
+        letter-spacing: -1px;
+        font-weight: 500;
+        font-family: 'Chillax-Variable', sans-serif;
+        text-align: center;
+    }
+
+    .ml13 .word {
+        display: inline-flex;
+        flex-wrap: wrap;
+        white-space: nowrap;
+    }
+
+    .ml13 .letter {
+        display: inline-block;
+        line-height: 1em;
+    }
+</style>
+
+<div class="preloader">
+    
+<script src="/js/libs/anime.min.js"></script>
+
+    <h1 class="ml13">
+        チェンのブログ
+    </h1>
+    <script>
+        var textWrapper = document.querySelector('.ml13');
+        // Split text into words
+        var words = textWrapper.textContent.trim().split(' ');
+
+        // Clear the existing content
+        textWrapper.innerHTML = '';
+
+        // Wrap each word and its letters in spans
+        words.forEach(function(word) {
+            var wordSpan = document.createElement('span');
+            wordSpan.classList.add('word');
+            wordSpan.innerHTML = word.replace(/\S/g, "<span class='letter'>$&</span>");
+            textWrapper.appendChild(wordSpan);
+            textWrapper.appendChild(document.createTextNode(' ')); // Add space between words
+        });
+
+
+        anime.timeline({loop: true})
+            .add({
+                targets: '.ml13 .letter',
+                translateY: [100,0],
+                translateZ: 0,
+                opacity: [0,1],
+                easing: "easeOutExpo",
+                duration: 1400,
+                delay: (el, i) => 300 + 30 * i
+            }).add({
+            targets: '.ml13 .letter',
+            translateY: [0,-100],
+            opacity: [1,0],
+            easing: "easeInExpo",
+            duration: 1200,
+            delay: (el, i) => 100 + 30 * i
+        });
+
+        let themeStatus = JSON.parse(localStorage.getItem('REDEFINE-THEME-STATUS'))?.isDark;
+
+        // If the theme status is not found in local storage, check the preferred color scheme
+        if (themeStatus === undefined || themeStatus === null) {
+            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                themeStatus = 'dark';
+            } else {
+                themeStatus = 'light';
+            }
+        }
+
+        // Now you can use the themeStatus variable in your code
+        if (themeStatus) {
+            document.documentElement.style.setProperty('--preloader-background-color', '#202124');
+            document.documentElement.style.setProperty('--preloader-text-color', '#fff');
+        } else {
+            document.documentElement.style.setProperty('--preloader-background-color', '#fff');
+            document.documentElement.style.setProperty('--preloader-text-color', '#000');
+        }
+
+        window.addEventListener('load', function () {
+            hidePreloaderAfterTimeout(1000); // Hide after 1000 milliseconds once the window has loaded
+        });
+
+        // Backup failsafe: Hide preloader after a maximum of 5000 milliseconds, regardless of the window load event
+        hidePreloaderAfterTimeout(5000);
+
+        function hidePreloaderAfterTimeout(delay) {
+            setTimeout(function () {
+                var preloader = document.querySelector('.preloader');
+                preloader.style.opacity = '0';
+                setTimeout(function () {
+                    preloader.style.display = 'none';
+                }, 200);
+            }, delay);
+        }
+    </script>
+</div>
+    
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    
+        
+<link rel="stylesheet" href="/assets/build/styles.css">
+
+    
+
+    
+<link rel="stylesheet" href="/fonts/fonts.css">
+
+    
+<link rel="stylesheet" href="/fonts/Satoshi/satoshi.css">
+
+    <!--- Font Part-->
+    
+    
+    
+    
+
+    <!--- Inject Part-->
+    
+    <script id="hexo-configurations">
+    window.config = {"hostname":"wespc.github.io","root":"/","language":"en"};
+    window.theme = {"articles":{"style":{"font_size":"16px","line_height":1.5,"image_border_radius":"14px","image_alignment":"center","image_caption":false,"link_icon":true,"title_alignment":"left"},"word_count":{"enable":true,"count":true,"min2read":true},"author_label":{"enable":true,"auto":false,"list":["love and courage"]},"code_block":{"copy":true,"style":"mac","font":{"enable":false,"family":null,"url":null}},"toc":{"enable":true,"max_depth":3,"number":false,"expand":true,"init_open":true},"copyright":{"enable":true,"default":"cc_by_nc_sa"},"lazyload":true,"recommendation":{"enable":false,"title":"推荐阅读","limit":3,"mobile_limit":2,"placeholder":"/images/wallhaven-wqery6-light.webp","skip_dirs":[]}},"colors":{"primary":"#A31F34","secondary":null},"global":{"fonts":{"chinese":{"enable":false,"family":null,"url":null},"english":{"enable":false,"family":null,"url":null}},"content_max_width":"1000px","sidebar_width":"210px","hover":{"shadow":true,"scale":false},"scroll_progress":{"bar":false,"percentage":true},"website_counter":{"url":"https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js","enable":true,"site_pv":true,"site_uv":true,"post_pv":true},"single_page":true,"preloader":true,"open_graph":true,"google_analytics":{"enable":false,"id":null}},"home_banner":{"enable":true,"style":"fixed","image":{"light":"/images/wallhaven-wqery6-light.webp","dark":"/images/wallhaven-wqery6-dark.webp"},"title":"Enjoy your wonderful life 1.","subtitle":{"text":[],"hitokoto":{"enable":false,"api":"https://v1.hitokoto.cn"},"typing_speed":100,"backing_speed":80,"starting_delay":500,"backing_delay":1500,"loop":true,"smart_backspace":true},"text_color":{"light":"#fff","dark":"#d1d1b6"},"text_style":{"title_size":"2.8rem","subtitle_size":"1.5rem","line_height":1.2},"custom_font":{"enable":false,"family":null,"url":null},"social_links":{"enable":false,"links":{"github":"https://github.com/wespc","instagram":null,"zhihu":null,"twitter":null,"email":"pcid757@gmail.com"},"qrs":{"weixin":null}}},"plugins":{"feed":{"enable":false},"aplayer":{"enable":false,"type":"fixed","audios":[{"name":null,"artist":null,"url":null,"cover":null}]},"mermaid":{"enable":false,"version":"9.3.0"}},"version":"2.6.0","navbar":{"auto_hide":false,"color":{"left":"#f78736","right":"#367df7","transparency":35},"links":{"Home":{"path":"/","icon":"fa-regular fa-house"}},"search":{"enable":false,"preload":true}},"page_templates":{"friends_column":2,"tags_style":"blur"},"home":{"sidebar":{"enable":true,"position":"left","first_item":"menu","announcement":null,"links":null},"article_date_format":"auto","categories":{"enable":true,"limit":3},"tags":{"enable":true,"limit":3}},"footerStart":"2022/8/17 11:45:14"};
+    window.lang_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
+    window.data = {"masonry":false};
+  </script>
+    
+    <!--- Fontawesome Part-->
+    
+<link rel="stylesheet" href="/fontawesome/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/brands.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/solid.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/regular.min.css">
+
+    
+    
+    
+    
+<meta name="generator" content="Hexo 5.2.0"><link rel="alternate" href="/atom.xml" title="ピーターのブログ" type="application/atom+xml">
+</head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+<!--        <span class="swup-progress-icon">-->
+<!--            <i class="fa-solid fa-circle-notch fa-spin"></i>-->
+<!--        </span>-->
+    
+</div>
+
+
+<main class="page-container" id="swup">
+
+    
+
+    <div class="main-content-container">
+
+
+        <div class="main-content-header">
+            <header class="navbar-container">
+
+    <div class="navbar-content">
+        <div class="left">
+            
+                <a class="logo-image" href="/">
+                    <img src="/images/IMG_3147_2.jpeg">
+                </a>
+            
+            <a class="logo-title" href="/">
+                
+                チェンのブログ
+                
+            </a>
+        </div>
+
+        <div class="right">
+            <!-- PC -->
+            <div class="desktop">
+                <ul class="navbar-list">
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/"
+                                        >
+                                    <i class="fa-regular fa-house fa-fw"></i>
+                                    HOME
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                    
+                </ul>
+            </div>
+            <!-- Mobile -->
+            <div class="mobile">
+                
+                <div class="icon-item navbar-bar">
+                    <div class="navbar-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile drawer -->
+    <div class="navbar-drawer h-screen w-full absolute top-0 left-0 bg-background-color flex flex-col justify-between">
+        <ul class="drawer-navbar-list flex flex-col px-4 justify-center items-start">
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/"
+                        >
+                            <span>
+                                HOME
+                            </span>
+                            
+                                <i class="fa-regular fa-house fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+        </ul>
+
+        <div class="statistics flex justify-around my-2.5">
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/tags">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">24</div>
+        <div class="label text-third-text-color text-sm">Tags</div>
+    </a>
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/categories">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">1</div>
+        <div class="label text-third-text-color text-sm">Categories</div>
+    </a>
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">45</div>
+        <div class="label text-third-text-color text-sm">Posts</div>
+    </a>
+</div>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="main-content-body">
+
+            
+
+            <div class="main-content">
+
+                
+                    <div class="post-page-container flex relative justify-between box-border w-full h-full">
+    <div class="article-content-container">
+
+        <div class="article-title relative w-full">
+            
+                <div class="w-full flex items-center pt-6 justify-start">
+                    <h1 class="article-title-regular text-second-text-color text-4xl md:text-6xl font-bold px-2 sm:px-6 md:px-8 py-3">2.Part B Optimization,Related Rates and Newton’s Method</h1>
+                </div>
+            
+            </div>
+
+        
+            <div class="article-header flex flex-row gap-2 items-center px-2 sm:px-6 md:px-8">
+                <div class="avatar w-[46px] h-[46px] flex-shrink-0 rounded-medium border border-border-color p-[1px]">
+                    <img src="/images/IMG_3147_2.jpeg">
+                </div>
+                <div class="info flex flex-col justify-between">
+                    <div class="author flex items-center">
+                        <span class="name text-default-text-color text-lg font-semibold">peng cheng</span>
+                        
+                            <span class="author-label ml-1.5 text-xs px-2 py-0.5 rounded-small text-third-text-color border border-shadow-color-1">love and courage</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fa-regular fa-pen-fancy"></i>&nbsp;
+        <span class="desktop">2023-02-19 10:59:29</span>
+        <span class="mobile">2023-02-19 10:59:29</span>
+        <span class="hover-info">Created</span>
+    </span>
+    
+        <span class="article-date article-meta-item">
+            <i class="fa-regular fa-wrench"></i>&nbsp;
+            <span class="desktop">2023-04-10 00:09:10</span>
+            <span class="mobile">2023-04-10 00:09:10</span>
+            <span class="hover-info">Updated</span>
+        </span>
+    
+
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fa-regular fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/calculus-18-01/">calculus 18.01</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fa-regular fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        
+
+
+        <div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
+            <h3 id="Source"><a href="#Source" class="headerlink" title="Source"></a>Source</h3><p><a class="link"   target="_blank" rel="noopener" href="https://ocw.mit.edu/courses/18-01sc-single-variable-calculus-fall-2010/" >https://ocw.mit.edu/courses/18-01sc-single-variable-calculus-fall-2010/ <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<p>@ToDo<br>  LaTex支持<br>  图片加载</p>
+<h1 id="Session-30"><a href="#Session-30" class="headerlink" title="Session 30"></a>Session 30</h1><p>隐式微分和最小值,最大值</p>
+<h3 id="问题-固定体积的盒子怎么才能有最小的表面积-盒子没有顶部"><a href="#问题-固定体积的盒子怎么才能有最小的表面积-盒子没有顶部" class="headerlink" title="问题: 固定体积的盒子怎么才能有最小的表面积,盒子没有顶部."></a>问题: 固定体积的盒子怎么才能有最小的表面积,盒子没有顶部.</h3><p>另一个解决这个问题的方法是隐式导数, 我们给出前提 底面是正方形,</p>
+<p>我们以同样的方式开始</p>
+<p>$$<br>V &#x3D; x^2y, \quad A&#x3D;x^2 +4xy<br>$$</p>
+<p>目标是找到A的最小值,V是常量</p>
+<p>下一步我们求导</p>
+<p>$$<br>\frac{d}{dx}V &#x3D; 2xy +x^2\frac{dy}{dx} \implies 0 &#x3D; 2xy + x^2y<br>$$</p>
+<p>所以$y’ &#x3D; -\frac{2y}{x}$ </p>
+<p>$$<br>\frac{dA}{dx} &#x3D; 2x +4y +4xy’<br>$$</p>
+<p>当我们把$y’ &#x3D; -\frac{2y}{x}$ 带入,我们得到</p>
+<p>$$<br>\frac{dA}{dx}  &#x3D;  2x + 4y + 4x(-\frac{2y}{x}) &#x3D; 2x +4y -8y<br>$$</p>
+<p>$$<br>\frac{dA}{dx} &#x3D; 2x - 4y<br>$$</p>
+<p>为了找到关键点,我们设 $\frac{dA}{dx} &#x3D; 0$ 我们得到 $0 &#x3D; 2x -4y$ 所以</p>
+<p>$$<br>\frac{x}{y} &#x3D; 2<br>$$</p>
+<p>所以我们可以得到底面边长和高的比例为2的时候,表面积最小. ,这是一个无量纲量,不会因为单位变化而变化.</p>
+<p>缺点是,我们没办法检验这个关键点是最大值还是最小值.</p>
+<h3 id="怎么检查呢"><a href="#怎么检查呢" class="headerlink" title="怎么检查呢?"></a>怎么检查呢?</h3><p>通过观察 A(0+) 和A(无穷) 或者通过你的直觉,是一个底很小的长盒子表面积大还是相反呢?</p>
+<h2 id="问题-罐头设计"><a href="#问题-罐头设计" class="headerlink" title="问题:罐头设计"></a>问题:罐头设计</h2><p>在食品包装中有很多要考虑的因素,包括市场,可持续性,成本和材料,这个问题中我们最小化一个罐子的成本.</p>
+<p>一个体积为1000cm³的罐子,找到他的高和半径,使得表面积最小</p>
+<h1 id="Session-31"><a href="#Session-31" class="headerlink" title="Session 31"></a>Session 31</h1><p>相关比率介绍</p>
+<h3 id="例子"><a href="#例子" class="headerlink" title="例子:"></a>例子:</h3><p>考虑一个锥形罐子,灌顶半径为4feet,整个的高度为10feet,以2立方尺每分的速率注水,当水深5feet的时候,水升高的速度为多少?</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://s3-us-west-2.amazonaws.com/secure.notion-static.com/eba9d381-63ee-4965-ab68-de3a5cdf15ee/Untitled.png"
+                      alt="Untitled"
+                ></p>
+<p>这个图会帮我们思考,例如,角很窄,所以高度的变化率不同,我们需要反应水位,我们还发现画一个精确地三维图很困难,一个简单的二维图也许会有帮助.</p>
+<p>关键是画一个二维截面图, </p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://s3-us-west-2.amazonaws.com/secure.notion-static.com/a81f3515-0a69-4606-aac7-1560074a988e/Untitled.png"
+                      alt="Untitled"
+                ></p>
+<p>我们会用变量r代表睡眠顶部从中心到边的距离,h代表水位高度.我们会发现r和h可以用相似三角形.</p>
+<p>$$<br>\frac{r}{h} &#x3D; \frac{4}{10}<br>$$</p>
+<p>我们的目标是找到当水到一半深的时候水上升的速度.我们知道的是水箱中水体积的变化速度是2立方尺每分钟, 我们需要水箱中水量和水的深度联立出方程</p>
+<p>水箱的体积是:</p>
+<p>$$<br>V &#x3D; \frac{1}{3} \cdot\pi r^2 \cdot h<br>$$</p>
+<p>这个公式将体积和半径和高度连立起来,我们又知道半径和高度的关系,我们还有另一个可以用的信息</p>
+<p>$$<br>\frac{dV}{dt} &#x3D; 2<br>$$</p>
+<p>问题是 当h &#x3D; 5时, $\frac{dh}{dt}$是多少?</p>
+<p>我们已经将描述中的所有信息转化为公式, </p>
+<p>我们可以通过隐式微分解决问题,但是用h解决r很容易.</p>
+<p>$$<br>r &#x3D; \frac{2}{5}h<br>$$</p>
+<p>我们将公式带入V得到</p>
+<p>$$<br>V &#x3D; \frac{1}{3}\pi(\frac{2}{5}h)^2 &#x3D; \frac{4}{3(25)}\pi h^3<br>$$</p>
+<p>这个时候,我们可以解出h,但那是个糟糕的主意,隐式微分要更容易</p>
+<p>$$<br>\frac{dV}{dt} &#x3D;\frac{dV}{dh}\frac{dh}{dt} &#x3D; \frac{\pi}{3}(\frac{2}{5})^23h^2\frac{dh}{dt} &#x3D; \frac{4}{25}\pi h^2h’<br>$$</p>
+<p>我们将 $\frac{dV}{dt} &#x3D; 2, h&#x3D;5$ 带入得到 $h’ &#x3D; \frac{1}{2\pi}$</p>
+<p>我们有水箱中水量变化的比率,要求水箱中水位上升的速度,关键点在于利用链式法则</p>
+<p>$$<br>\frac{dV}{dt} &#x3D;\frac{dV}{dh}\frac{dh}{dt}<br>$$</p>
+<p>相关率变化的问题的关键都在以应用链式法则解决问题.</p>
+<h2 id="问题-用隐式微分求解优化问题"><a href="#问题-用隐式微分求解优化问题" class="headerlink" title="问题:用隐式微分求解优化问题"></a>问题:用隐式微分求解优化问题</h2><p>假设你要建设一个体积为V的粮仓,该粮仓由钢桶和半球形屋顶组成.覆盖桶表面的钢板非常昂贵,所以你希望最小化筒仓表面积,对给定V,筒仓的高和半径因为多少?</p>
+<p>尽管这个问题的解法可以使用和罐头设计的解法相同,但用$\frac{d}{dr}SA$隐式微分更容易.</p>
+<p>针对以下两种问题回答</p>
+<p>a) 带有圆形地板的筒仓(放置地鼠进入)</p>
+<p>b) 没有内置地板的筒仓(没有地鼠的区域使用)</p>
+<h3 id="答案"><a href="#答案" class="headerlink" title="答案:"></a>答案:</h3><p>我们的首要任务是绘制筒仓的草图,浙江也有助于我们找到总表面积喝体积.筒仓有半径r和高h.</p>
+<p>a) 有地面的筒仓</p>
+<p>所以表面积为</p>
+<p>$$<br>SA &#x3D; 2\pi rh + 2\pi r^2 +\pi r^2 &#x3D; 2\pi rh + 3\pi r^2<br>$$</p>
+<p>体积为</p>
+<p>$$<br>V &#x3D; \pi r^2h + \frac{2}{3}\pi r^3<br>$$</p>
+<p>我们可以利用这个公式求出$h &#x3D; \frac{2r}{3} - \frac{V}{\pi r^2}$ 然后代入表面积公式求导,但计算很复杂. 我们可以用另一种方法,隐式微分求解</p>
+<p>$$<br>SA &#x3D; 2\pi rh &#x3D; 3\pi r^2 \<br>\frac{d}{dr} SA &#x3D; 2\pi h + 2\pi r \frac{dh}{dr} +6\pi r \qquad ①<br>$$</p>
+<p>我们对体积公式用隐式微分</p>
+<p>$$<br>V &#x3D; \pi r^2h + \frac{2}{3}\pi r^3<br>$$</p>
+<p>$$<br>0 &#x3D; h’\pi r^2 + 2\pi rh +2\pi r^2 \<br>h’ &#x3D; -2\frac{h+r}{r}<br>$$</p>
+<p>带入①式得</p>
+<p>$$<br>\begin{align}<br>\frac{d}{dr} SA &amp; &#x3D; 2\pi h + 2\pi r (-2\frac{h+r}{r}) +6\pi r \<br>&amp; &#x3D;-2\pi h + 2\pi r</p>
+<p>\end{align}<br>$$</p>
+<p>令 $\frac{d}{dr} SA &#x3D; 0$ , 得到 $h &#x3D;r &#x3D; ^3\sqrt{\frac{3V}{5\pi}}$</p>
+<p>这是最小值吗? 没有其他的关键点,极限是高而薄的筒仓,表面积非常大或小</p>
+<p>使用体积V以求r的公式后我们知道 h&#x3D;0时,我们带入得到</p>
+<p>$$<br>SA &#x3D; ^3\sqrt{\frac{243V^2\pi}{4}}<br>$$</p>
+<p>当$h &#x3D;r &#x3D; ^3\sqrt{\frac{3V}{5\pi}}$,</p>
+<p>$$<br>SA &#x3D; ^3\sqrt{9V^2\pi}<br>$$</p>
+<p>结论是r&#x3D;h时有最小的表面积.</p>
+<p>实际上我们计算出的筒仓是一个矩形,更像一个水箱或油桶,现实生活中高而薄的筒仓为农田流出空间.</p>
+<p>b)不带底的筒仓</p>
+<p>同理计算即可,最后得出 h&#x3D;0,说明当筒仓只有上部分半圆的时候可以达到最小表面积.</p>
+<hr>
+<h1 id="Session-32-Ring-on-a-String"><a href="#Session-32-Ring-on-a-String" class="headerlink" title="Session 32 Ring on a String"></a>Session 32 Ring on a String</h1><p>我们在做一个最大值,最小值的问题</p>
+<p>考虑一个被点(0,0) 和点(a,b)固定的绳子上的一个圆环,</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://s3-us-west-2.amazonaws.com/secure.notion-static.com/f1141ea7-8d60-4936-bb7e-7aae9f0207e8/Untitled.png"
+                      alt="Untitled"
+                ></p>
+<p>圆环可以自由滑动到任一点,找到圆环滑动到的点(x,y).</p>
+<p>请注意, 如果b &#x3D; 0,如果两端在同一高度,圆环会停在两端的中间($x &#x3D; \frac{a}{2}$),我们可以通过物理实验验证这点.我们现在想通过数学来解释结果.这个问题有趣的原因之一是在做悬桥时,这个问题必须被考虑.</p>
+<h3 id="物理原理"><a href="#物理原理" class="headerlink" title="物理原理:"></a>物理原理:</h3><p>圆环停在最低点(最低势能),所以问题是在约束下(x,y)在弦上的y最小值是多少?</p>
+<h3 id="限制"><a href="#限制" class="headerlink" title="限制:"></a>限制:</h3><p>弦的长度L固定了</p>
+<p>$$<br>\sqrt{x^2 + y^2} + \sqrt{(x-a)^2 +(y-b)^2} &#x3D; L.<br>$$</p>
+<p>函数y&#x3D;y(x) 在以上约束方程隐式确定.</p>
+<p>我们在图中描述了约束曲线(环的可能位置) 这条曲线是有焦点(0,0)和(a,b)的椭圆,但知道这单并不有利于我们找到最低点.</p>
+<p>实验表明环位于x&#x3D;0和x&#x3D;a之间(这是我们可以确定最小点不在弦的一端的方法,不要用二阶导测试).因为约束曲线两端高于中间,最低点是一个关键点.(y’(x) &#x3D;0的点),在课堂上我们还通过绘制最低点水平切线来确定这点.</p>
+<p>为了确定这单,对约束方程隐式求导.</p>
+<p>图中最后一个方程我们可以几何解读为:</p>
+<p>$$<br>sin\alpha &#x3D;sin\beta \implies\alpha &#x3D; \beta<br>$$</p>
+<p>α和β是左侧弦和右侧与垂直部分形成的夹角.</p>
+<h3 id="物理和几何结论"><a href="#物理和几何结论" class="headerlink" title="物理和几何结论:"></a>物理和几何结论:</h3><p><strong>角α和β相等.</strong></p>
+<p>使用向量计算计算重力在弦的两端的分力,人们发现弦的两半有相等的张力,———物理平衡. 这在建筑中是可取的,如果一端比另一端承受更多的力,他可能会断裂.</p>
+<p>另一方面,等角属性表达了椭圆的几何属性:假设椭圆是一个镜子,来自焦点(0,0)的光线根据规则反射,入射角等于反射角,因此光线直接射向另一个焦点(a,b)这在 1990 年代初在德科尔多瓦博物馆的“天才之笔：艺术家的迷你高尔夫”展览中得到了很好的效果;通过将三通放在椭圆的一个焦点上，将孔放在另一个焦点上,一位艺术家创造了一个高尔夫球场，任何击球都会以一个洞结束。</p>
+<h3 id="x和y的公式"><a href="#x和y的公式" class="headerlink" title="x和y的公式"></a>x和y的公式</h3><p>我们还没有找到(x,y)的位置我们现在来看看</p>
+<p>$$<br>x &#x3D; \dfrac{a}{2}(1-\dfrac{b}{\sqrt{L^2 - a^2}}), \quad y &#x3D; \frac{1}{2}(b - \sqrt{L^2 -a^2})<br>$$</p>
+<p>因为 α &#x3D; β</p>
+<p>$$<br>x &#x3D; \sqrt{x^2 + y^2}sin\alpha; \quad a-x &#x3D; \sqrt{(x-a)^2 + (y-b)^2}sin\alpha<br>$$</p>
+<p>将这连个等式加起来:</p>
+<p>$$<br>a &#x3D; (\sqrt{x^2 +y^2} +\sqrt{(x-a)^2 + (y-b)^2})sin\alpha &#x3D; Lsin\alpha \implies sin\alpha &#x3D; \frac{a}{L}<br>$$</p>
+<p>直角三角形的垂直边的方程是 (注意y &lt; 0):</p>
+<p>$$<br>-y &#x3D; \sqrt{x^2 +y^2}cos\alpha; b-y &#x3D; \sqrt{(x-a)^2 + (y-b)^2}cos \beta<br>$$</p>
+<p>将两个式子相加然后使用 α &#x3D; β得到</p>
+<p>$$<br>b-2y &#x3D; (\sqrt{x^2 +y^2} +\sqrt{(x-a)^2 +(y-b)^2})cos\alpha &#x3D; Lcos\alpha \<br>\implies \<br>y &#x3D; \frac{1}{2}(b - Lcos\alpha)<br>$$</p>
+<p>使用 关系$\alpha &#x3D; \frac{a}{L}$得到:</p>
+<p>$$<br>\begin{align}<br>Lcos \alpha &amp;&#x3D;L\sqrt{1-sin^2\alpha} \<br>&amp;&#x3D;\sqrt{L^2 - a^2}<br>\end{align}<br>$$</p>
+<p>然后得出</p>
+<p>$$<br>y &#x3D; \frac{1}{2}(b-\sqrt{L^2 -a^2})<br>$$</p>
+<p>最后,要求x,使用类似的直角三角形</p>
+<p>$$<br>tan\alpha &#x3D; \frac{x}{-y} &#x3D; \frac{a-x}{b-y} \implies x(b-y) &#x3D; (-y)(a-x) \implies (b-2y)x &#x3D; -ay<br>$$</p>
+<p>因此</p>
+<p>$$<br>x &#x3D; \frac{-ay}{b-2y} &#x3D; \frac{a}{2}(1- \frac{b}{\sqrt{L^2-a^2}})<br>$$</p>
+<p>至此,我们已经用a,b和L表示了L</p>
+<h3 id="结语"><a href="#结语" class="headerlink" title="结语:"></a>结语:</h3><p>在 18.02 中，您将学习如何使用称为拉格朗日乘数的方法处理任意数量变量中的约束最大&#x2F;最小值问题</p>
+<h1 id="Session-33"><a href="#Session-33" class="headerlink" title="Session 33"></a>Session 33</h1><h2 id="牛顿方法"><a href="#牛顿方法" class="headerlink" title="牛顿方法"></a>牛顿方法</h2><p>牛顿方法在解形式为$f(x) &#x3D; 0$的方程时是很有用的工具.</p>
+<p><strong>举例</strong>: 解决 $x^2 &#x3D; 5$</p>
+<p>我们用牛顿的方法找到$\sqrt{5}$的近似.,任何你理解的方程都能用这种方法解.为了用牛顿的方法,我们定义 $f(x) &#x3D; x^2 +5$. 通过找到f(x) &#x3D;0时x的值,我们解出 $x^2 &#x3D; 5$.</p>
+<p>我们的目标是找到图像在哪穿过x轴,我们首先猜$x_0 &#x3D; 2,因为\sqrt{5} \approx \sqrt{4} &#x3D; 2$ .这个猜测并不准确,f(2) &#x3D; -1, 我们再找f(x)&#x3D; 0的值,我们改善我们的猜想.</p>
+<p>我们假设函数是线性的,不找到$x_0$ 处函数的切线穿过x轴.看图像,$(x_1,0)$  这一点给我们一个新的猜想.</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://s3-us-west-2.amazonaws.com/secure.notion-static.com/332e4ba3-501a-4e8a-94bf-72d14aeef7ad/Untitled.png"
+                      alt="Untitled"
+                ></p>
+<p>切线的方程是</p>
+<p>$$<br>y - y_0 &#x3D; m(x - x_0)<br>$$</p>
+<p>当切线截取x轴时,y&#x3D;0, x1是我们的新猜想</p>
+<p>$$<br>\begin{align}<br>-y_0 &amp;&#x3D; m(x-x_0)\<br>-\frac{y_0}{m} &amp;&#x3D; x_1 - x_0 \<br>x_1 &amp;&#x3D; x_0 - \frac{y_0}{m}<br>\end{align}<br>$$</p>
+<p>用f表示:</p>
+<p>$$<br>y_0 &#x3D; f(x_0) \<br>m &#x3D; f’(x_0)<br>$$</p>
+<p>因为m是y&#x3D;f(x)在点$(x_0,y_0)$处切线的斜率</p>
+<p>$$<br>x_1 &#x3D; x_0 -\frac{f(x_0)}{f’(f_0)}<br>$$</p>
+<p>牛顿方法的重点是我们可以通过不断重复上面得步骤来改善答案为了得到我们的$(n+1)^{st}$猜想,我们将这个公式应用于我们的第n个猜想</p>
+<p>$$<br>x_{n+1} &#x3D; x_n -\frac{f(x_n)}{f’(f_n)}<br>$$</p>
+<p>在我们的例子中,$x_0 &#x3D; 2, \quad f(x) &#x3D; x^2 -5, \quad f’(x) &#x3D; 2x$ ,因此</p>
+<p>$$<br>x_1 &#x3D; x_0 - \frac{(x_0^2-5)}{2x_0} &#x3D; \frac{1}{2}x_0 + \frac{5}{2x_0}<br>$$</p>
+<p>主要思想是不断重复这个过程:</p>
+<p>$$<br>x_2 &#x3D; &#x3D; \frac{1}{2}x_1 + \frac{5}{2x_1} \<br>x_2 &#x3D; &#x3D; \frac{1}{2}x_2 + \frac{5}{2x_2}<br>$$</p>
+<p>一直下去,该过程会非常接近$\sqrt{5}$</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://s3-us-west-2.amazonaws.com/secure.notion-static.com/82e74e01-1b6d-4fd7-bfc8-42b7e4474761/Untitled.png"
+                      alt="Untitled"
+                ></p>
+<p>注意到每次迭代时,精度的位数都会翻倍.$x_2$已经可以达到你的要求,$x_3$ 和计算机显示的一样好.</p>
+<h2 id="牛顿方法继续"><a href="#牛顿方法继续" class="headerlink" title="牛顿方法继续"></a>牛顿方法继续</h2><p>今天我们来讨论牛顿法的准确性.</p>
+<p>回忆牛顿法怎么工作:为了找到图像在那里穿越x轴, 你在和x轴相交处做一个简单的猜测$x_0$</p>
+<p>然后你知道$x_0$处切线用来改善你的答案:$x_1$是切线与x轴的交点.现在你可以画出$x_1$处切线然后做出新的猜测$x_2$,一直下去.</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://s3-us-west-2.amazonaws.com/secure.notion-static.com/1e1e135a-7352-41c1-bf7f-581e5cbda158/Untitled.png"
+                      alt="Untitled"
+                ></p>
+<p>用代数术语来讲</p>
+<p>$$<br>x_1 &#x3D; x_0 -\frac{f(x_0)}{f’(x_0)}\quad x_{k+1} &#x3D; x_k -\frac{f(x_k)}{f’(x_k)}<br>$$</p>
+<p>如果我们用这种方式获得近似解,我们要知道它的精确度是多少.如果 x是 精确地答案,那么 $x_1$就离准确值差了 $E_1 &#x3D; |x-x_1|$,我们第n步的误差为$E_n &#x3D; |x-x_n|$ </p>
+<p>上次我们看到误差值$E_n &#x3D; |\sqrt{5} - x_n|$ 很快接近0 .事实证明$E_2 \sim E_1^2$ .所以如果 $E_0 &#x3D; 10^{-1}$,误差值会像下面这样降低:</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://s3-us-west-2.amazonaws.com/secure.notion-static.com/02c9178d-f3da-44dd-8ee2-391ee994ac55/Untitled.png"
+                      alt="Untitled"
+                ></p>
+<p>数字精度每次都会翻倍.</p>
+<p>牛顿的方法在$|f’|不是很小,|f’’|$不是很大,$x_0在答案x附近$的情况下工作很好.</p>
+<h2 id="牛顿方法-那里可能出错"><a href="#牛顿方法-那里可能出错" class="headerlink" title="牛顿方法:那里可能出错?"></a>牛顿方法:那里可能出错?</h2><p>牛顿的方法在$|f’|不是很小,|f’’|$不是很大,$x_0在答案x附近$的情况下工作很好.我们不会太详细的讨论各种情况,但让我们看看为什么存在.如果$|f’’|$太大,图像会集聚弯曲,这种情况下切线也许不是很好的近似方法, $x_1$ 也许和答案并不靠近.如果$x_0$和$x_1$差很远会发生很多错误, 我们接下来讨论.</p>
+<p>如果误差$E_0 &#x3D; |x-x_0|$ 比1大并且$E_1 \sim E_0^2$, 你估计的误差实际上会随着牛顿方法变大.</p>
+<p>在例子$f(x) &#x3D; x^2 -5$中, 如果我们选择  $x_0 &#x3D; -2$ 我们会发现解决方案$-\sqrt{5}$,而不是 $\sqrt{5}$</p>
+<p>这种与意外根的收敛如图所示</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://s3-us-west-2.amazonaws.com/secure.notion-static.com/3c84e531-54d2-46de-8ae1-c5d231d32077/Untitled.png"
+                      alt="Untitled"
+                ></p>
+<p>在相同的例子中,如果我们选则$x_0 &#x3D; 0,然后 f’(x_0) &#x3D; 0$ 那么 $x_1 &#x3D; x_0 - \frac{f(x_0)}{f’(x_0)}$是未定义的.</p>
+<p>最后, 牛顿方法有可能一直循环在两个值中并且不收敛,这个问题在图二中展现.</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://s3-us-west-2.amazonaws.com/secure.notion-static.com/7b66fe4d-63e6-4a2f-a7ba-e70e7b9e7ba9/Untitled.png"
+                      alt="Untitled"
+                ></p>
+<p>牛顿的方法是求近解的好方法,但应用它需要一些智慧.你必须要小心得到不想要的值或者完全不是结果.你最初的猜测越好,你越可能得到正确的答案.</p>
+<h2 id="x的立方根"><a href="#x的立方根" class="headerlink" title="x的立方根"></a>x的立方根</h2><p>表明对于任何非零起点$x_0,$牛顿方法永远没办法找到$x^3 &#x3D; 0$的确切值.</p>
+<h2 id="习题"><a href="#习题" class="headerlink" title="习题"></a>习题</h2><h3 id="2c-1"><a href="#2c-1" class="headerlink" title="2c-1"></a>2c-1</h3><p>在12*12的纸板的四角切四个相等的正方形,折叠两侧,成为没有顶部的盒子,找到使盒子体积最大的切法.</p>
+<h3 id="2c-2"><a href="#2c-2" class="headerlink" title="2c-2"></a>2c-2</h3><p>您需要设计一个长方形的谷仓，占地 20000 平方英尺，三面有围栏，第四面是长谷仓的墙壁。</p>
+<p>找到最短围栏长度.</p>
+<h3 id="2c-4"><a href="#2c-4" class="headerlink" title="2c-4"></a>2c-4</h3><p>美国邮政服务接受箱子的要求是长度加周长最大108inch,箱子最大体积是多少,尺寸是多少?</p>
+<p>“长度”是三个维度中最长的，“周长”是垂直于长度的面部四个边的长度之和，即盒子的“腰线”测量值。请注意，此矩形面垂直于长度的最佳形状必须是正方形</p>
+<h3 id="2c-10"><a href="#2c-10" class="headerlink" title="2c-10"></a>2c-10</h3><p>游泳者在海滩A点,垂直到达海滩的最短距离点是P,水中有一平台B,海岸线上离B最近的桥称为Q,假设A到P100米,B到Q 100米,P到Q 是a米,最后假设游泳者可以在海滩上5m&#x2F;s的跑步,子啊说中2m&#x2F;s的游泳,证明A到B话费最短时间的路径有下面的性质:路径与海岸线成角的正弦之比是两者中速度之比的倒数</p>
+<p>$$<br>\frac{sin a^{-&gt;}}{sinb^{-&gt;}} &#x3D; \frac{5}{2}<br>$$</p>
+<p>（在光学中，这被称为斯涅尔定律，描述了光线通过两个连续介质所走的路径。斯内尔通过实验发现，上述正弦之比是一个常数，不取决于路径的起点和终点。这个问题表明斯涅尔定律遵循一个最小原理：光线采取的路径最小化其总行进时间。正弦的比率是恒定的，因为它只取决于两种介质中的光速。)</p>
+<h3 id="2c-13"><a href="#2c-13" class="headerlink" title="2c -13"></a>2c -13</h3><p>a) 一家航空公司将以200美元的票价填补其飞机的100个座位。票价每上涨5美元，飞机就会失去两名乘客。每减少5美元，该公司就会增加两名乘客。什幺价格可以最大化收入？</p>
+<p>b) 一家公用事业公司有一个小型发电厂，每天可以生产x千瓦时的电力，每个成本为10 - x&#x2F;105美分，0 ≤ x ≤8×105。 消费者每天将使用105（10 − p &#x2F; 2）千瓦时的电力，价格为每千瓦时p美分。公用事业公司应该收取什幺价格才能最大化其利润？</p>
+<h3 id="2E-2"><a href="#2E-2" class="headerlink" title="2E-2"></a>2E-2</h3><p>离岸4英里的信标灯（从直线垂直测量）以每分钟3转的速度旋转。当光束与海岸线成 60◦ 的角度时，海岸线上的光斑移动速度有多快？</p>
+<h3 id="2E-3"><a href="#2E-3" class="headerlink" title="2E-3"></a>2E-3</h3><p>两艘船以30英里&#x2F;小时的速度行驶，第一艘向北行驶，第二艘船向东行驶。第二个在第一个到达后的第一个 10 分钟穿过路径。当第二个越过交叉点 10 英里时，他们的距离以什幺速度增加？</p>
+<h3 id="2E-5"><a href="#2E-5" class="headerlink" title="2E-5"></a>2E-5</h3><p>一个人从滑轮上走开，拉着一根挂在滑轮上的绳子。绳索被固定在滑轮下方 10 英尺的高度。假设绳索另一端的重量以每秒 4 英尺的速度上升。当他&#x2F;她离滑轮正下方 20 英尺时，他&#x2F;她以什幺速度行走？</p>
+<h3 id="2E-7"><a href="#2E-7" class="headerlink" title="2E-7"></a>2E-7</h3><p>一个槽以每秒 1 立方米的速度充满水。槽呈梯形横截面，下部底部长半米，侧面向外开口，与底座成45◦角。槽的长度为4米。当h为半米时，水位h上升的速度是多少？</p>
+
+        </div>
+
+        
+            <div class="post-copyright-info w-full my-8 px-2 sm:px-6 md:px-8">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li><strong>Title:</strong> 2.Part B Optimization,Related Rates and Newton’s Method</li>
+        <li><strong>Author:</strong> peng cheng</li>
+        <li><strong>Created at
+                :</strong> 2023-02-19 10:59:29</li>
+        
+            <li>
+                <strong>Updated at
+                    :</strong> 2023-04-10 00:09:10
+            </li>
+        
+        <li>
+            <strong>Link:</strong> https://wespc.github.io//[object Object]/2023/02/19/calculus18d01/
+        </li>
+        <li>
+            <strong>
+                License:
+            </strong>
+            
+
+            
+                This work is licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0">CC BY-NC-SA 4.0</a>.
+            
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+            <ul class="post-tags-box text-lg mt-1.5 flex-wrap justify-center flex md:hidden">
+                
+                    <li class="tag-item mx-0.5">
+                        <a href="/tags/calculus-18-01/">#calculus 18.01</a>&nbsp;
+                    </li>
+                
+            </ul>
+        
+
+        
+
+        
+            <div class="article-nav my-8 flex justify-between items-center px-2 sm:px-6 md:px-8">
+                
+                    <div class="article-prev border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+                        <a class="prev"
+                        rel="prev"
+                        href="/%5Bobject%20Object%5D/2023/02/19/calculus18d01-1/"
+                        >
+                            <span class="left arrow-icon flex justify-center items-center">
+                                <i class="fa-solid fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex justify-center items-center">
+                                <span class="post-nav-title-item">2.Part C Mean Value Theorem, Antiderivatives and Differential Equations</span>
+                                <span class="post-nav-item">Prev posts</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="article-next border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+                        <a class="next"
+                        rel="next"
+                        href="/%5Bobject%20Object%5D/2023/02/18/makefile/"
+                        >
+                            <span class="title flex justify-center items-center">
+                                <span class="post-nav-title-item">makefile</span>
+                                <span class="post-nav-item">Next posts</span>
+                            </span>
+                            <span class="right arrow-icon flex justify-center items-center">
+                                <i class="fa-solid fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+
+        
+            <div class="comment-container px-2 sm:px-6 md:px-8 pb-8">
+                <div class="comments-container mt-10 w-full ">
+    <div id="comment-anchor" class="w-full h-2.5"></div>
+    <div class="comment-area-title w-full my-1.5 md:my-2.5 text-xl md:text-3xl font-bold">
+        Comments
+    </div>
+    
+
+        
+            
+    <div id="waline"></div>
+    <script type="module" data-swup-reload-script>
+      import { init } from '/js/libs/waline.mjs';
+
+      function loadWaline() {
+        init({
+          el: '#waline',
+          serverURL: 'https://example.example.com',
+          lang: 'zh-CN',
+          dark: 'body[class~="dark-mode"]',
+          requiredMeta: ['nick', 'mail'],
+          emoji: [],
+          recaptchaV3Key: "wasd",
+          
+        });
+      }
+
+      if (typeof swup !== 'undefined') {
+        loadWaline();
+      } else {
+        window.addEventListener('DOMContentLoaded', loadWaline);
+      }
+    </script>
+
+
+
+        
+    
+</div>
+
+            </div>
+        
+    </div>
+
+    
+        <div class="toc-content-container">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <div class="toc-title">On this page</div>
+        <div class="page-title">2.Part B Optimization,Related Rates and Newton’s Method</div>
+        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Source"><span class="nav-text">Source</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Session-30"><span class="nav-text">Session 30</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%97%AE%E9%A2%98-%E5%9B%BA%E5%AE%9A%E4%BD%93%E7%A7%AF%E7%9A%84%E7%9B%92%E5%AD%90%E6%80%8E%E4%B9%88%E6%89%8D%E8%83%BD%E6%9C%89%E6%9C%80%E5%B0%8F%E7%9A%84%E8%A1%A8%E9%9D%A2%E7%A7%AF-%E7%9B%92%E5%AD%90%E6%B2%A1%E6%9C%89%E9%A1%B6%E9%83%A8"><span class="nav-text">问题: 固定体积的盒子怎么才能有最小的表面积,盒子没有顶部.</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%8E%E4%B9%88%E6%A3%80%E6%9F%A5%E5%91%A2"><span class="nav-text">怎么检查呢?</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%97%AE%E9%A2%98-%E7%BD%90%E5%A4%B4%E8%AE%BE%E8%AE%A1"><span class="nav-text">问题:罐头设计</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Session-31"><span class="nav-text">Session 31</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BE%8B%E5%AD%90"><span class="nav-text">例子:</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%97%AE%E9%A2%98-%E7%94%A8%E9%9A%90%E5%BC%8F%E5%BE%AE%E5%88%86%E6%B1%82%E8%A7%A3%E4%BC%98%E5%8C%96%E9%97%AE%E9%A2%98"><span class="nav-text">问题:用隐式微分求解优化问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AD%94%E6%A1%88"><span class="nav-text">答案:</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Session-32-Ring-on-a-String"><span class="nav-text">Session 32 Ring on a String</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%89%A9%E7%90%86%E5%8E%9F%E7%90%86"><span class="nav-text">物理原理:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%99%90%E5%88%B6"><span class="nav-text">限制:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%89%A9%E7%90%86%E5%92%8C%E5%87%A0%E4%BD%95%E7%BB%93%E8%AE%BA"><span class="nav-text">物理和几何结论:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#x%E5%92%8Cy%E7%9A%84%E5%85%AC%E5%BC%8F"><span class="nav-text">x和y的公式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%93%E8%AF%AD"><span class="nav-text">结语:</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Session-33"><span class="nav-text">Session 33</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%89%9B%E9%A1%BF%E6%96%B9%E6%B3%95"><span class="nav-text">牛顿方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%89%9B%E9%A1%BF%E6%96%B9%E6%B3%95%E7%BB%A7%E7%BB%AD"><span class="nav-text">牛顿方法继续</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%89%9B%E9%A1%BF%E6%96%B9%E6%B3%95-%E9%82%A3%E9%87%8C%E5%8F%AF%E8%83%BD%E5%87%BA%E9%94%99"><span class="nav-text">牛顿方法:那里可能出错?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#x%E7%9A%84%E7%AB%8B%E6%96%B9%E6%A0%B9"><span class="nav-text">x的立方根</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B9%A0%E9%A2%98"><span class="nav-text">习题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2c-1"><span class="nav-text">2c-1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2c-2"><span class="nav-text">2c-2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2c-4"><span class="nav-text">2c-4</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2c-10"><span class="nav-text">2c-10</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2c-13"><span class="nav-text">2c -13</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2E-2"><span class="nav-text">2E-2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2E-3"><span class="nav-text">2E-3</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2E-5"><span class="nav-text">2E-5</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2E-7"><span class="nav-text">2E-7</span></a></li></ol>
+
+    </div>
+</div>
+        </div>
+    
+</div>
+
+
+
+                
+
+            </div>
+
+            
+
+        </div>
+
+        <div class="main-content-footer">
+            <footer class="footer mt-5 py-5 h-auto text-base text-third-text-color relative border-t-2 border-t-border-color">
+    <div class="info-container py-3 text-center">
+        
+        <div class="text-center">
+            &copy;
+            
+              <span>2022</span>
+              -
+            
+            2023&nbsp;&nbsp;<i class="fa-solid fa-heart fa-beat" style="--fa-animation-duration: 0.5s; color: #f54545"></i>&nbsp;&nbsp;<a href="/">peng cheng</a>
+        </div>
+        
+            <script data-swup-reload-script src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="relative text-center lg:absolute lg:right-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-right">
+                
+                    <span id="busuanzi_container_site_uv" class="lg:!block">
+                        <span class="text-sm">VISITOR COUNT</span>
+                        <span id="busuanzi_value_site_uv"></span>
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv" class="lg:!block">
+                        <span class="text-sm">TOTAL PAGE VIEWS</span>
+                        <span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="relative text-center lg:absolute lg:left-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-left">
+            <span class="lg:block text-sm">POWERED BY <?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg class="relative top-[2px] inline-block align-baseline" version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1rem" height="1rem" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><path fill="#0E83CD" d="M256.4,25.8l-200,115.5L56,371.5l199.6,114.7l200-115.5l0.4-230.2L256.4,25.8z M349,354.6l-18.4,10.7l-18.6-11V275H200v79.6l-18.4,10.7l-18.6-11v-197l18.5-10.6l18.5,10.8V237h112v-79.6l18.5-10.6l18.5,10.8V354.6z"/></svg><a target="_blank" class="text-base" href="https://hexo.io">Hexo</a></span>
+            <span class="text-sm lg:block">THEME&nbsp;<a class="text-base" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v2.6.0</a></span>
+        </div>
+        
+        
+            <div>
+                Blog up for <span class="odometer" id="runtime_days" ></span> days <span class="odometer" id="runtime_hours"></span> hrs <span class="odometer" id="runtime_minutes"></span> Min <span class="odometer" id="runtime_seconds"></span> Sec
+            </div>
+        
+        
+            <script data-swup-reload-script>
+                try {
+                    function odometer_init() {
+                    const elements = document.querySelectorAll('.odometer');
+                    elements.forEach(el => {
+                        new Odometer({
+                            el,
+                            format: '( ddd).dd',
+                            duration: 200
+                        });
+                    });
+                    }
+                    odometer_init();
+                } catch (error) {}
+            </script>
+        
+        
+        
+    </div>  
+</footer>
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="article-tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="right-bottom-tools page-aside-toggle">
+                <i class="fa-regular fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+            <li class="go-comment">
+                <i class="fa-regular fa-comments"></i>
+            </li>
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-side-tools-container">
+        <div class="side-tools-container">
+    <ul class="hidden-tools-list">
+        <li class="right-bottom-tools tool-font-adjust-plus flex justify-center items-center">
+            <i class="fa-regular fa-magnifying-glass-plus"></i>
+        </li>
+
+        <li class="right-bottom-tools tool-font-adjust-minus flex justify-center items-center">
+            <i class="fa-regular fa-magnifying-glass-minus"></i>
+        </li>
+
+        <li class="right-bottom-tools tool-dark-light-toggle flex justify-center items-center">
+            <i class="fa-regular fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+
+        <li class="right-bottom-tools tool-scroll-to-bottom flex justify-center items-center">
+            <i class="fa-regular fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="visible-tools-list">
+        <li class="right-bottom-tools toggle-tools-list flex justify-center items-center">
+            <i class="fa-regular fa-cog fa-spin"></i>
+        </li>
+        
+            <li class="right-bottom-tools tool-scroll-to-top flex justify-center items-center">
+                <i class="arrow-up fas fa-arrow-up"></i>
+                <span class="percent"></span>
+            </li>
+        
+        
+    </ul>
+</div>
+
+    </div>
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+
+</main>
+
+
+    
+<script src="/js/libs/Swup.min.js"></script>
+
+<script src="/js/libs/SwupSlideTheme.min.js"></script>
+
+<script src="/js/libs/SwupScriptsPlugin.min.js"></script>
+
+<script src="/js/libs/SwupProgressPlugin.min.js"></script>
+
+<script src="/js/libs/SwupScrollPlugin.min.js"></script>
+
+<script src="/js/libs/SwupPreloadPlugin.min.js"></script>
+
+<script>
+    const swup = new Swup({
+        plugins: [
+            new SwupScriptsPlugin({
+                optin: true,
+            }),
+            new SwupProgressPlugin(),
+            new SwupScrollPlugin({
+                offset: 80,
+            }),
+            new SwupSlideTheme({
+                mainElement: ".main-content-body",
+            }),
+            new SwupPreloadPlugin(),
+        ],
+        containers: ["#swup"],
+    });
+</script>
+
+
+
+
+
+
+
+<script src="/js/tools/imageViewer.js" type="module"></script>
+
+<script src="/js/utils.js" type="module"></script>
+
+<script src="/js/main.js" type="module"></script>
+
+<script src="/js/layouts/navbarShrink.js" type="module"></script>
+
+<script src="/js/tools/scrollTopBottom.js" type="module"></script>
+
+<script src="/js/tools/lightDarkSwitch.js" type="module"></script>
+
+<script src="/js/layouts/categoryList.js" type="module"></script>
+
+
+
+
+
+    
+<script src="/js/tools/codeBlock.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/layouts/lazyload.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/tools/runtime.js"></script>
+
+    
+<script src="/js/libs/odometer.min.js"></script>
+
+    
+<link rel="stylesheet" href="/assets/odometer-theme-minimal.css">
+
+
+
+
+  
+<script src="/js/libs/Typed.min.js"></script>
+
+  
+<script src="/js/plugins/typed.js" type="module"></script>
+
+
+
+
+
+
+
+
+
+<div class="post-scripts" data-swup-reload-script>
+    
+        
+<script src="/js/tools/tocToggle.js" type="module"></script>
+
+<script src="/js/layouts/toc.js" type="module"></script>
+
+<script src="/js/plugins/tabs.js" type="module"></script>
+
+    
+</div>
+
+
+</body>
+</html>
