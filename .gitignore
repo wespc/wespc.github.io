@@ -1,0 +1,19 @@
+# Generated files by hugo
+/public/
+/resources/_gen/
+/assets/jsconfig.json
+hugo_stats.json
+
+# Executable may be added to repository
+hugo.exe
+hugo.darwin
+hugo.linux
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Lock files
+.hugo_build.lock
+package-lock.json
+yarn.lock

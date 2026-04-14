@@ -1,0 +1,51 @@
+baseURL: "https://example.org/"
+languageCode: "en-us"
+title: "Peng's Academic Profile"
+theme: "PaperMod"
+
+params:
+  env: production
+  title: "Dr. Peng"
+  description: "Personal academic and research portfolio."
+  author: "Peng"
+  images: ["/avatar.jpeg"]
+  profileMode:
+    enabled: true
+    title: "Hi, I'm Peng 👋"
+    subtitle: "I am a graduate student in the Intelligent Systems program at the Graduate School of Informatics, Nagoya University, supervised by Professor Ryuichiro Higashinaka. My research focuses on dialogue systems. Specifically, I aim to enhance the realism of AI interactions by providing background settings and persona information to the system. I also explore ways to introduce variability and natural fluctuations in conversations, as well as improve the AI’s ability to expand and shift topics dynamically."
+    imageUrl: "/avatar.jpeg"
+    imageWidth: 150
+    imageHeight: 150
+    imageTitle: "Peng's Avatar"
+    buttons:
+      - name: "📄 Publications"
+        url: "/publications"
+      - name: "💻 Projects"
+        url: "/projects"
+      - name: "📜 CV"
+        url: "https://docs.google.com/document/d/1Q-1k_62qrgkQKRwSL0gcc0dPj3myQ3Sy5teQ_svZ9N8/edit?usp=sharing"
+  
+  socialIcons:
+    - name: "github"
+      url: "https://github.com/wespc"
+    - name: "email"
+      url: "mailto:pcid757@gmail.com"
+
+menu:
+  main:
+    - identifier: home
+      name: Home
+      url: /
+      weight: 10
+    - identifier: publications
+      name: Publications
+      url: /publications/
+      weight: 20
+    - identifier: projects
+      name: Projects
+      url: /projects/
+      weight: 30
+    - identifier: cv
+      name: CV
+      url: https://docs.google.com/document/d/1Q-1k_62qrgkQKRwSL0gcc0dPj3myQ3Sy5teQ_svZ9N8/edit?usp=sharing
+      weight: 40
